@@ -2,17 +2,20 @@ package tv.mapper.mapperbase.data.gen;
 
 import java.util.function.Consumer;
 
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.item.BaseItems;
 
-public class Recipes extends RecipeProvider
+public class BaseRecipes extends RecipeProvider
 {
-    public Recipes(DataGenerator generatorIn)
+    public BaseRecipes(DataGenerator generatorIn)
     {
         super(generatorIn);
     }
@@ -22,6 +25,9 @@ public class Recipes extends RecipeProvider
     {
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_INGOT), BaseItems.STEEL_INGOT, 1.0f, 120).addCriterion("has_iron_ingot", this.hasItem(Items.IRON_INGOT)).build(consumer,
             "steel_ingot");
+
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("xxx").patternLine("xxx").patternLine("xxx").key('x', BaseItems.STEEL_INGOT).addCriterion("steel",
+            InventoryChangeTrigger.Instance.forItems(BaseItems.STEEL_INGOT)).build(consumer);
     }
 
 }

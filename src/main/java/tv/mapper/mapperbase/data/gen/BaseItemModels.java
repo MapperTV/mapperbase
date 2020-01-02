@@ -23,6 +23,7 @@ public class BaseItemModels extends ItemModelProvider
     protected void registerModels()
     {
         getBuilder("steel_ingot").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_ingot"));
+        getBuilder("steel_block").parent(new UncheckedModelFile(modid + ":block/steel_block"));
     }
 
 }

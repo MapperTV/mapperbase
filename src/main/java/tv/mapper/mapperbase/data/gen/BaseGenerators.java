@@ -12,9 +12,12 @@ public class BaseGenerators
     public static void gatherData(GatherDataEvent event)
     {
         DataGenerator generator = event.getGenerator();
-        generator.addProvider(new Recipes(generator));
+        generator.addProvider(new BaseRecipes(generator));
         // generator.addProvider(new LootTables(generator));
-        generator.addProvider(new BaseItemModels(generator, event.getExistingFileHelper()));
+
+        generator.addProvider(new BaseBlockStates(generator, event.getExistingFileHelper()));
         generator.addProvider(new BaseBlockModels(generator, event.getExistingFileHelper()));
+        generator.addProvider(new BaseItemModels(generator, event.getExistingFileHelper()));
+
     }
 }

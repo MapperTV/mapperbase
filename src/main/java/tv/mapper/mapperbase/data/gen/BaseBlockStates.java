@@ -1,0 +1,23 @@
+package tv.mapper.mapperbase.data.gen;
+
+import net.minecraft.data.DataGenerator;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ExistingFileHelper;
+import tv.mapper.mapperbase.MapperBase;
+import tv.mapper.mapperbase.block.BaseBlocks;
+
+public class BaseBlockStates extends BlockStateProvider
+{
+
+    public BaseBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper)
+    {
+        super(gen, MapperBase.MODID, exFileHelper);
+    }
+
+    @Override
+    protected void registerStatesAndModels()
+    {
+        simpleBlock(BaseBlocks.STEEL_BLOCK);
+    }
+
+}
