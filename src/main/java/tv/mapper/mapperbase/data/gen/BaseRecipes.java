@@ -23,10 +23,11 @@ public class BaseRecipes extends RecipeProvider
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
     {
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_INGOT), BaseItems.STEEL_INGOT, 1.0f, 120).addCriterion("has_iron_ingot", this.hasItem(Items.IRON_INGOT)).build(consumer,
-            "steel_ingot");
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_INGOT), BaseItems.STEEL_INGOT, 1.0f, 120).addCriterion("has_iron_ingot", this.hasItem(Items.IRON_INGOT)).build(consumer);
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_BLOCK), BaseBlocks.STEEL_BLOCK, 1.0f, 120).addCriterion("has_iron_block", this.hasItem(Items.IRON_BLOCK)).build(consumer,
+            "mapperbase:steel_block_from_blasting");
 
-        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("xxx").patternLine("xxx").patternLine("xxx").key('x', BaseItems.STEEL_INGOT).addCriterion("steel",
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("xxx").patternLine("xxx").patternLine("xxx").key('x', BaseItems.STEEL_INGOT).addCriterion("has_steel_ingot",
             InventoryChangeTrigger.Instance.forItems(BaseItems.STEEL_INGOT)).build(consumer);
     }
 
