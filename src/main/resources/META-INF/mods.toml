@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[30,)"
+#issueTrackerURL="http://my.issue.tracker/"
+[[mods]]
+modId="mapperbase"
+version="${file.jarVersion}"
+displayName="Mapper Base"
+#updateJSONURL="http://myurl.me/"
+displayURL="http://mapper.tv/"
+logoFile="mapperbase.png"
+credits="Thanks to the Forge team and everyone helping around."
+authors="Mapper"
+description='''
+Mapper Base
+
+This mod simply provides the basic stuff for my other mods to avoid duplicate elements.
+'''
+
+[[dependencies.examplemod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[30,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.1]"
+    ordering="NONE"
+    side="BOTH"

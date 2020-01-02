@@ -1,0 +1,31 @@
+# exclude all
+/*
+
+
+# include important folders
+# need gradle 
+!gradle/
+!gradlew
+!gradlew.bat
+!build.gradle
+!gradle.properties
+
+# include markdowns
+!README.md
+!LICENSE
+
+# include sourcecode
+!src/
+
+# include git important files
+!.gitmodules
+!.gitignore
+
+# Github specific files and directories
+!.github/
+
+# Explicit ignores
+Thumbs.db
+
+#Excludes generated json folder
+src/generated/
