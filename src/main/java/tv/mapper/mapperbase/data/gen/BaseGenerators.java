@@ -14,5 +14,6 @@ public class BaseGenerators
         DataGenerator generator = event.getGenerator();
         generator.addProvider(new Recipes(generator));
         // generator.addProvider(new LootTables(generator));
+        generator.addProvider(new BaseItemModels(generator, event.getExistingFileHelper()));
     }
 }
