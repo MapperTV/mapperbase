@@ -50,7 +50,8 @@ public class BaseRecipes extends RecipeProvider
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.STEEL_PLATE).addIngredient(BaseItems.STEEL_INGOT).addIngredient(BaseItems.FLATTER_HAMMER).addCriterion("has_steel_ingot",
             this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.STEEL_NUGGET, 9).addIngredient(BaseItems.STEEL_INGOT).addCriterion("has_steel_ingot", this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
-        ShapelessRecipeBuilder.shapelessRecipe(BaseItems.STEEL_INGOT, 9).addIngredient(BaseBlocks.STEEL_BLOCK).addCriterion("has_steel_block", this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer);
+        ShapelessRecipeBuilder.shapelessRecipe(BaseItems.STEEL_INGOT, 9).addIngredient(BaseBlocks.STEEL_BLOCK).addCriterion("has_steel_block", this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer,
+            "mapperbase:steel_ingot_from_nuggets");
 
     }
 
