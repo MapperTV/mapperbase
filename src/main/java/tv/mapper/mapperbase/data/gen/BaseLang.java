@@ -33,7 +33,13 @@ public class BaseLang extends LanguageProvider
                 add(BaseItems.STEEL_NUGGET, "Steel Nugget");
                 add(BaseItems.STEEL_PLATE, "Steel Plate");
                 add(BaseItems.STEEL_ROD, "Steel Rod");
-
+                
+                add(BaseItems.STEEL_AXE, "Steel Axe");
+                add(BaseItems.STEEL_PICKAXE, "Steel Pickaxe");
+                add(BaseItems.STEEL_SHOVEL, "Steel Shovel");
+                add(BaseItems.STEEL_HOE, "Steel Hoe");
+                add(BaseItems.STEEL_SWORD, "Steel Sword");
+                
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;
             case "fr_fr":
@@ -47,6 +53,12 @@ public class BaseLang extends LanguageProvider
                 add(BaseItems.STEEL_NUGGET, "Pepite d'acier");
                 add(BaseItems.STEEL_PLATE, "Plaque d'acier");
                 add(BaseItems.STEEL_ROD, "Barre d'acier");
+                
+                add(BaseItems.STEEL_AXE, "Hache en acier");
+                add(BaseItems.STEEL_PICKAXE, "Pioche en acier");
+                add(BaseItems.STEEL_SHOVEL, "Pelle en acier");
+                add(BaseItems.STEEL_HOE, "Houe en acier");
+                add(BaseItems.STEEL_SWORD, "Epee en acier");
                 
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;

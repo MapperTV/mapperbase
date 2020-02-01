@@ -65,6 +65,19 @@ public class BaseRecipes extends RecipeProvider
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.STEEL_INGOT, 9).addIngredient(BaseBlocks.STEEL_BLOCK).addCriterion("has_steel_block", this.hasItem(BaseBlocks.STEEL_BLOCK)).setGroup(
             "steel_ingot").build(consumer, "mapperbase:steel_ingot_from_block");
 
+        // Tools
+
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_AXE).key('#', Items.STICK).key('X', BaseItems.STEEL_INGOT).patternLine("XX").patternLine("X#").patternLine(" #").addCriterion(
+            "has_steel_ingot", this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_PICKAXE).key('#', Items.STICK).key('X', BaseItems.STEEL_INGOT).patternLine("XXX").patternLine(" # ").patternLine(" # ").addCriterion(
+            "has_steel_ingot", this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_SHOVEL).key('#', Items.STICK).key('X', BaseItems.STEEL_INGOT).patternLine("X").patternLine("#").patternLine("#").addCriterion(
+            "has_steel_ingot", this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_SWORD).key('#', Items.STICK).key('X', BaseItems.STEEL_INGOT).patternLine("X").patternLine("X").patternLine("#").addCriterion("has_steel_ingot",
+            this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_HOE).key('#', Items.STICK).key('X', BaseItems.STEEL_INGOT).patternLine("XX").patternLine(" #").patternLine(" #").addCriterion(
+            "has_steel_ingot", this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
+
     }
 
 }
