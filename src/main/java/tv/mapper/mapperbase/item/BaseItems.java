@@ -4,10 +4,12 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
+import net.minecraft.item.HorseArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -42,6 +44,8 @@ public class BaseItems
     public static final Item STEEL_LEGGINGS = null;
     public static final Item STEEL_BOOTS = null;
 
+    public static final Item STEEL_HORSE_ARMOR = null;
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
@@ -67,5 +71,9 @@ public class BaseItems
         event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.CHEST, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_chestplate"));
         event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.LEGS, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_leggings"));
         event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.FEET, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_boots"));
+
+        event.getRegistry().register(new HorseArmorItem(9, new ResourceLocation(MapperBase.MODID, "textures/entity/horse/armor/horse_armor_steel.png"), (new Item.Properties()).maxStackSize(1).group(
+            BaseGroups.MAPPERBASE)).setRegistryName("steel_horse_armor"));
+
     }
 }

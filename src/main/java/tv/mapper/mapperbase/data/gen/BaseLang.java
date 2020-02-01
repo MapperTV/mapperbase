@@ -44,6 +44,8 @@ public class BaseLang extends LanguageProvider
                 add(BaseItems.STEEL_CHESTPLATE, "Steel Chestplate");
                 add(BaseItems.STEEL_LEGGINGS, "Steel Leggings");
                 add(BaseItems.STEEL_BOOTS, "Steel Boots");
+                
+                add(BaseItems.STEEL_HORSE_ARMOR, "Steel Horse Armor");
 
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;
@@ -67,8 +69,10 @@ public class BaseLang extends LanguageProvider
 
                 add(BaseItems.STEEL_HELMET, "Casque en acier");
                 add(BaseItems.STEEL_CHESTPLATE, "Plastron en acier");
-                add(BaseItems.STEEL_LEGGINGS, "Pantalon en acier");
+                add(BaseItems.STEEL_LEGGINGS, "Jambieres en acier");
                 add(BaseItems.STEEL_BOOTS, "Bottes en acier");
+
+                add(BaseItems.STEEL_HORSE_ARMOR, "Armure en acier pour cheval");
 
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;

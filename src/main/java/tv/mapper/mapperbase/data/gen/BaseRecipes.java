@@ -40,8 +40,9 @@ public class BaseRecipes extends RecipeProvider
             "mapperbase:steel_ingot_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_BLOCK), BaseBlocks.STEEL_BLOCK, 2.0f, 960).addCriterion("has_iron_block", this.hasItem(Items.IRON_BLOCK)).build(consumer,
             "mapperbase:steel_block_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_NUGGET), BaseItems.STEEL_NUGGET, 0.1f, 20).addCriterion("has_iron_nugget", this.hasItem(Items.IRON_NUGGET)).build(consumer,
-            "mapperbase:steel_nugget_from_blasting");
+        // CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_NUGGET), BaseItems.STEEL_NUGGET, 0.1f, 20).addCriterion("has_iron_nugget",
+        // this.hasItem(Items.IRON_NUGGET)).build(consumer,
+        // "mapperbase:steel_nugget_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.IRON_PLATE), BaseItems.STEEL_PLATE, 1.0f, 120).addCriterion("has_iron_plate", this.hasItem(BaseItems.IRON_PLATE)).build(
             consumer, "mapperbase:steel_plate_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.IRON_ROD), BaseItems.STEEL_ROD, 1.0f, 120).addCriterion("has_iron_rod", this.hasItem(BaseItems.IRON_ROD)).build(consumer,
@@ -87,13 +88,14 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_LEGGINGS).key('X', BaseItems.STEEL_INGOT).patternLine("XXX").patternLine("X X").patternLine("X X").addCriterion("has_steel",
             this.hasItem(BaseItems.STEEL_INGOT)).build(consumer);
 
-//        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.STEEL_PICKAXE, BaseItems.STEEL_SHOVEL, BaseItems.STEEL_AXE, BaseItems.STEEL_HOE, BaseItems.STEEL_SWORD,
-//            BaseItems.STEEL_HELMET, BaseItems.STEEL_CHESTPLATE, BaseItems.STEEL_LEGGINGS, BaseItems.STEEL_BOOTS, BaseItems.STEEL_HORSE_ARMOR), BaseItems.STEEL_NUGGET, 0.1F, 100).addCriterion(
-//                "has_golden_pickaxe", this.hasItem(BaseItems.STEEL_PICKAXE)).addCriterion("has_golden_shovel", this.hasItem(BaseItems.STEEL_SHOVEL)).addCriterion("has_golden_axe",
-//                    this.hasItem(BaseItems.STEEL_AXE)).addCriterion("has_golden_hoe", this.hasItem(BaseItems.STEEL_HOE)).addCriterion("has_golden_sword",
-//                        this.hasItem(BaseItems.STEEL_SWORD)).addCriterion("has_golden_helmet", this.hasItem(BaseItems.STEEL_HELMET)).addCriterion("has_golden_chestplate",
-//                            this.hasItem(BaseItems.STEEL_CHESTPLATE)).addCriterion("has_golden_leggings", this.hasItem(BaseItems.STEEL_LEGGINGS)).addCriterion("has_golden_boots",
-//                                this.hasItem(BaseItems.STEEL_BOOTS)).addCriterion("has_golden_horse_armor", this.hasItem(BaseItems.STEEL_HORSE_ARMOR)).build(consumer, "gold_nugget_from_blasting");
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_NUGGET, BaseItems.STEEL_PICKAXE, BaseItems.STEEL_SHOVEL, BaseItems.STEEL_AXE, BaseItems.STEEL_HOE, BaseItems.STEEL_SWORD,
+            BaseItems.STEEL_HELMET, BaseItems.STEEL_CHESTPLATE, BaseItems.STEEL_LEGGINGS, BaseItems.STEEL_BOOTS, BaseItems.STEEL_HORSE_ARMOR), BaseItems.STEEL_NUGGET, 0.1F, 100).addCriterion(
+                "has_iron_nugget", this.hasItem(Items.IRON_NUGGET)).addCriterion("has_steel_pickaxe", this.hasItem(BaseItems.STEEL_PICKAXE)).addCriterion("has_steel_shovel",
+                    this.hasItem(BaseItems.STEEL_SHOVEL)).addCriterion("has_steel_axe", this.hasItem(BaseItems.STEEL_AXE)).addCriterion("has_steel_hoe",
+                        this.hasItem(BaseItems.STEEL_HOE)).addCriterion("has_steel_sword", this.hasItem(BaseItems.STEEL_SWORD)).addCriterion("has_steel_helmet",
+                            this.hasItem(BaseItems.STEEL_HELMET)).addCriterion("has_steel_chestplate", this.hasItem(BaseItems.STEEL_CHESTPLATE)).addCriterion("has_steel_leggings",
+                                this.hasItem(BaseItems.STEEL_LEGGINGS)).addCriterion("has_steel_boots", this.hasItem(BaseItems.STEEL_BOOTS)).addCriterion("has_steel_horse_armor",
+                                    this.hasItem(BaseItems.STEEL_HORSE_ARMOR)).build(consumer, "steel_nugget_from_blasting");
 
     }
 
