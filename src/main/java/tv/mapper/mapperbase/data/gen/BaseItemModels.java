@@ -40,6 +40,12 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_shovel").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_shovel"));
         getBuilder("steel_hoe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_hoe"));
         getBuilder("steel_sword").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_sword"));
+        
+        getBuilder("steel_helmet").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_helmet"));
+        getBuilder("steel_chestplate").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_chestplate"));
+        getBuilder("steel_leggings").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_leggings"));
+        getBuilder("steel_boots").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_boots"));
+
 
     }
 

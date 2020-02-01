@@ -1,5 +1,7 @@
 package tv.mapper.mapperbase.item;
 
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -35,6 +37,11 @@ public class BaseItems
     public static final Item STEEL_HOE = null;
     public static final Item STEEL_SWORD = null;
 
+    public static final Item STEEL_HELMET = null;
+    public static final Item STEEL_CHESTPLATE = null;
+    public static final Item STEEL_LEGGINGS = null;
+    public static final Item STEEL_BOOTS = null;
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
@@ -55,5 +62,10 @@ public class BaseItems
         event.getRegistry().register(new ShovelItem(BaseItemTier.STEEL, 1.5F, -3.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_shovel"));
         event.getRegistry().register(new HoeItem(BaseItemTier.STEEL, 0.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_hoe"));
         event.getRegistry().register(new SwordItem(BaseItemTier.STEEL, 3, -2.4F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_sword"));
+
+        event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.HEAD, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_helmet"));
+        event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.CHEST, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_chestplate"));
+        event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.LEGS, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_leggings"));
+        event.getRegistry().register(new ArmorItem(BaseArmorMaterial.STEEL, EquipmentSlotType.FEET, (new Item.Properties()).group(BaseGroups.MAPPERBASE)).setRegistryName("steel_boots"));
     }
 }
