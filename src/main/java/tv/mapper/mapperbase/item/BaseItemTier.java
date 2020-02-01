@@ -9,7 +9,7 @@ import net.minecraft.util.LazyValue;
 
 public enum BaseItemTier implements IItemTier
 {
-    STEEL(3, 784, 7.0F, 2.5F, 12, () ->
+    STEEL(3, 1024, 7.0F, 3.0F, 12, () ->
     {
         return Ingredient.fromTag(ItemTags.PLANKS);
     });
