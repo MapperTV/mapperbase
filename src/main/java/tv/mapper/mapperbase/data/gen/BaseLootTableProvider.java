@@ -5,17 +5,18 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.block.BedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IDataProvider;
 import net.minecraft.data.LootTableProvider;
+import net.minecraft.state.properties.BedPart;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.ConstantRange;
 import net.minecraft.world.storage.loot.ItemLootEntry;
@@ -23,15 +24,17 @@ import net.minecraft.world.storage.loot.LootParameterSets;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableManager;
+import net.minecraft.world.storage.loot.conditions.BlockStateProperty;
 import net.minecraft.world.storage.loot.conditions.SurvivesExplosion;
+import net.minecraft.world.storage.loot.functions.CopyName;
+import tv.mapper.mapperbase.MapperBase;
+import tv.mapper.mapperbase.block.CustomDoorBlock;
 
 public abstract class BaseLootTableProvider extends LootTableProvider
 {
 
-    private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
-    // Filled by subclasses
     protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
 
     private final DataGenerator generator;
@@ -42,18 +45,48 @@ public abstract class BaseLootTableProvider extends LootTableProvider
         this.generator = dataGeneratorIn;
     }
 
-    // Subclasses can override this to fill the 'lootTables' map.
     protected abstract void addTables();
 
-    // Subclasses can call this if they want a standard loot table. Modify this for your own needs
+    // protected LootTable.Builder createStandardTable(String name, Block block)
+    // {
+    // LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block)).acceptCondition(SurvivesExplosion.builder());
+    // return LootTable.builder().addLootPool(builder);
+    // }
+
     protected LootTable.Builder createStandardTable(String name, Block block)
     {
+
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block)).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
+    protected LootTable.Builder createDoorTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
+            BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER)))).acceptCondition(
+                SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
+    }
+
+    protected LootTable.Builder createBedTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
+            BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(BedBlock.PART, BedPart.HEAD)))).acceptCondition(SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
+    }
+
+    protected LootTable.Builder createChestTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
+    }
+
     @Override
-    // Entry point
     public void act(DirectoryCache cache)
     {
         addTables();
@@ -66,7 +99,6 @@ public abstract class BaseLootTableProvider extends LootTableProvider
         writeTables(cache, tables);
     }
 
-    // Actually write out the tables in the output folder
     private void writeTables(DirectoryCache cache, Map<ResourceLocation, LootTable> tables)
     {
         Path outputFolder = this.generator.getOutputFolder();
@@ -79,7 +111,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider
             }
             catch(IOException e)
             {
-                LOGGER.error("Couldn't write loot table {}", path, e);
+                MapperBase.LOGGER.error("Couldn't write loot table {}", path, e);
             }
         });
     }
@@ -87,6 +119,6 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     @Override
     public String getName()
     {
-        return "MyTutorial LootTables";
+        return "MapperBase LootTables";
     }
 }
