@@ -47,40 +47,33 @@ public abstract class BaseLootTableProvider extends LootTableProvider
 
     protected abstract void addTables();
 
-    // protected LootTable.Builder createStandardTable(String name, Block block)
-    // {
-    // LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block)).acceptCondition(SurvivesExplosion.builder());
-    // return LootTable.builder().addLootPool(builder);
-    // }
-
-    protected LootTable.Builder createStandardTable(String name, Block block)
+    protected LootTable.Builder createStandardTable(String modid, Block block)
     {
-
-        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block)).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
-    protected LootTable.Builder createDoorTable(String name, Block block)
+    protected LootTable.Builder createDoorTable(String modid, Block block)
     {
-        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
             BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER)))).acceptCondition(
                 SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
-    protected LootTable.Builder createBedTable(String name, Block block)
+    protected LootTable.Builder createBedTable(String modid, Block block)
     {
-        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
             BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(BedBlock.PART, BedPart.HEAD)))).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
-    protected LootTable.Builder createChestTable(String name, Block block)
+    protected LootTable.Builder createChestTable(String modid, Block block)
     {
-        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
             ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
