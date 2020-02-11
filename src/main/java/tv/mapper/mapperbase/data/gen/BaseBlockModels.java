@@ -22,7 +22,7 @@ public class BaseBlockModels extends BlockModelProvider
     @Override
     protected void registerModels()
     {
-
+        getBuilder("steel_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/steel_block"));
     }
 
 }

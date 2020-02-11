@@ -18,6 +18,9 @@ public class BaseGenerators
         generator.addProvider(new BaseBlockModels(generator, event.getExistingFileHelper()));
         generator.addProvider(new BaseItemModels(generator, event.getExistingFileHelper()));
 
+        generator.addProvider(new BaseBlockTags(generator));
+        generator.addProvider(new BaseItemTags(generator));
+
         generator.addProvider(new BaseLang(generator, "en_us"));
         generator.addProvider(new BaseLang(generator, "fr_fr"));
     }
