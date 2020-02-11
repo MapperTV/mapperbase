@@ -27,6 +27,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_SLAB, "Steel Slab");
                 add(BaseBlocks.STEEL_STAIRS, "Steel Stairs");
                 add(BaseBlocks.STEEL_WALL, "Steel Wall");
+                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Steel Pressure Plate");
 
                 add(BaseItems.BOLT, "Bolt");
                 add(BaseItems.FLATTER_HAMMER, "Flatter Hammer");
@@ -57,6 +58,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_SLAB, "Dalle d'acier");
                 add(BaseBlocks.STEEL_STAIRS, "Escalier d'acier");
                 add(BaseBlocks.STEEL_WALL, "Mur d'acier");
+                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression d'acier");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");

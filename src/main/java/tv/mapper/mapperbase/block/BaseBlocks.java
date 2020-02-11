@@ -1,6 +1,7 @@
 package tv.mapper.mapperbase.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -23,6 +24,7 @@ public class BaseBlocks
     public static final Block STEEL_SLAB = null;
     public static final Block STEEL_STAIRS = null;
     public static final Block STEEL_WALL = null;
+    public static final Block STEEL_PRESSURE_PLATE = null;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -38,7 +40,9 @@ public class BaseBlocks
         event.getRegistry().register(
             new CustomWallBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE).setRegistryName(
                 "steel_wall"));
-
+        event.getRegistry().register(
+            new CustomPressurePlateBlock(Sensitivity.MOBS, Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)).setRegistryName(
+                "steel_pressure_plate"));
     }
 
     @SubscribeEvent
@@ -48,5 +52,6 @@ public class BaseBlocks
         event.getRegistry().register(new BlockItem(STEEL_SLAB, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_SLAB.getRegistryName()));
         event.getRegistry().register(new BlockItem(STEEL_STAIRS, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_STAIRS.getRegistryName()));
         event.getRegistry().register(new BlockItem(STEEL_WALL, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_WALL.getRegistryName()));
+        event.getRegistry().register(new BlockItem(STEEL_PRESSURE_PLATE, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_PRESSURE_PLATE.getRegistryName()));
     }
 }
