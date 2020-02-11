@@ -19,7 +19,7 @@ public class BaseBlockStates extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         simpleBlock(BaseBlocks.STEEL_BLOCK);
-        slabBlock((SlabBlock)BaseBlocks.STEEL_SLAB, modLoc("block/steel_block"), modLoc("block/steel_block"));
+        slabBlock((SlabBlock)BaseBlocks.STEEL_SLAB, modLoc("block/steel_block"), modLoc("block/steel_slab_side"), modLoc("block/steel_block"), modLoc("block/steel_block"));
     }
 
 }

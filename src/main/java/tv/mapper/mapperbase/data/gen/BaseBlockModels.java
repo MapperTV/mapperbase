@@ -22,9 +22,7 @@ public class BaseBlockModels extends BlockModelProvider
     @Override
     protected void registerModels()
     {
-        getBuilder("steel_block").parent(getExistingFile(mcLoc("block/cube_all"))).texture("all", modLoc("block/steel_block"));
-        getBuilder("steel_slab").parent(getExistingFile(mcLoc("block/slab"))).texture("bottom", modLoc("block/steel_block")).texture("top", modLoc("block/steel_block")).texture("side",
-            modLoc("block/steel_block"));
+
     }
 
 }
