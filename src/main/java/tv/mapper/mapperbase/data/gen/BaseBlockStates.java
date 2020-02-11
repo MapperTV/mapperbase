@@ -1,5 +1,6 @@
 package tv.mapper.mapperbase.data.gen;
 
+import net.minecraft.block.SlabBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
@@ -18,6 +19,7 @@ public class BaseBlockStates extends BlockStateProvider
     protected void registerStatesAndModels()
     {
         simpleBlock(BaseBlocks.STEEL_BLOCK);
+        slabBlock((SlabBlock)BaseBlocks.STEEL_SLAB, modLoc("block/steel_block"), modLoc("block/steel_block"));
     }
 
 }

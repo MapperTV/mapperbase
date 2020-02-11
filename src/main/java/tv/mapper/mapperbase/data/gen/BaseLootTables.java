@@ -16,5 +16,6 @@ public class BaseLootTables extends BaseLootTableProvider
     protected void addTables()
     {
         lootTables.put(BaseBlocks.STEEL_BLOCK, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_BLOCK));
+        lootTables.put(BaseBlocks.STEEL_SLAB, createSlabTable(MapperBase.MODID, BaseBlocks.STEEL_SLAB));
     }
 }

@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -19,16 +20,21 @@ import tv.mapper.mapperbase.item.BaseGroups;
 public class BaseBlocks
 {
     public static final Block STEEL_BLOCK = null;
+    public static final Block STEEL_SLAB = null;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
         event.getRegistry().register(new Block(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)).setRegistryName("steel_block"));
+        event.getRegistry().register(
+            new CustomSlabBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE).setRegistryName(
+                "steel_slab"));
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event)
     {
         event.getRegistry().register(new BlockItem(STEEL_BLOCK, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_BLOCK.getRegistryName()));
+        event.getRegistry().register(new BlockItem(STEEL_SLAB, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_SLAB.getRegistryName()));
     }
 }

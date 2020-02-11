@@ -34,6 +34,7 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("bolt").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/bolt"));
 
         getBuilder("steel_block").parent(new UncheckedModelFile(modid + ":block/steel_block"));
+        getBuilder("steel_slab").parent(new UncheckedModelFile(modid + ":block/steel_slab"));
 
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));
         getBuilder("steel_pickaxe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_pickaxe"));

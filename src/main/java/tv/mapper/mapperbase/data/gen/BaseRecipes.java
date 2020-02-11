@@ -29,6 +29,11 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseItems.FLATTER_HAMMER).patternLine("i").patternLine("/").key('i', BaseItems.STEEL_INGOT).key('/', Items.STICK).addCriterion("has_steel_ingot",
             InventoryChangeTrigger.Instance.forItems(BaseItems.STEEL_INGOT)).addCriterion("has_stick", InventoryChangeTrigger.Instance.forItems(Items.STICK)).build(consumer);
 
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_SLAB, 6).patternLine("iii").key('i', BaseBlocks.STEEL_BLOCK).addCriterion("has_steel_block",
+            InventoryChangeTrigger.Instance.forItems(BaseBlocks.STEEL_BLOCK)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("i").patternLine("i").key('i', BaseBlocks.STEEL_SLAB).addCriterion("has_steel_slab",
+            InventoryChangeTrigger.Instance.forItems(BaseBlocks.STEEL_SLAB)).build(consumer, "mapperbase:steel_block_from_slabs");
+
         // Rods
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD, 4).patternLine("x").patternLine("x").key('x', Items.IRON_INGOT).addCriterion("has_iron_ingot",
             InventoryChangeTrigger.Instance.forItems(Items.IRON_INGOT)).build(consumer);
@@ -40,9 +45,6 @@ public class BaseRecipes extends RecipeProvider
             "mapperbase:steel_ingot_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_BLOCK), BaseBlocks.STEEL_BLOCK, 2.0f, 960).addCriterion("has_iron_block", this.hasItem(Items.IRON_BLOCK)).build(consumer,
             "mapperbase:steel_block_from_blasting");
-        // CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(Items.IRON_NUGGET), BaseItems.STEEL_NUGGET, 0.1f, 20).addCriterion("has_iron_nugget",
-        // this.hasItem(Items.IRON_NUGGET)).build(consumer,
-        // "mapperbase:steel_nugget_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.IRON_PLATE), BaseItems.STEEL_PLATE, 1.0f, 120).addCriterion("has_iron_plate", this.hasItem(BaseItems.IRON_PLATE)).build(
             consumer, "mapperbase:steel_plate_from_blasting");
         CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.IRON_ROD), BaseItems.STEEL_ROD, 1.0f, 120).addCriterion("has_iron_rod", this.hasItem(BaseItems.IRON_ROD)).build(consumer,

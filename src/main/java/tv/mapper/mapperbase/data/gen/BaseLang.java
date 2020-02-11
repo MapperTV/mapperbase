@@ -24,6 +24,7 @@ public class BaseLang extends LanguageProvider
             default:
             case "en_us":
                 add(BaseBlocks.STEEL_BLOCK, "Steel Block");
+                add(BaseBlocks.STEEL_SLAB, "Steel Slab");
 
                 add(BaseItems.BOLT, "Bolt");
                 add(BaseItems.FLATTER_HAMMER, "Flatter Hammer");
@@ -51,6 +52,7 @@ public class BaseLang extends LanguageProvider
                 break;
             case "fr_fr":
                 add(BaseBlocks.STEEL_BLOCK, "Bloc d'acier");
+                add(BaseBlocks.STEEL_SLAB, "Dalle d'acier");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");
