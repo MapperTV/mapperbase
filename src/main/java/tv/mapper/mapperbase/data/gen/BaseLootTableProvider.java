@@ -84,7 +84,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider
                 BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(SlabBlock.TYPE, SlabType.DOUBLE))))));
         return LootTable.builder().addLootPool(builder);
     }
-
+    
     protected LootTable.Builder createDoorTable(String modid, Block block)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");

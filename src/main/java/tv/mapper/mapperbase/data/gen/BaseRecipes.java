@@ -34,6 +34,9 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("i").patternLine("i").key('i', BaseBlocks.STEEL_SLAB).addCriterion("has_steel_slab",
             InventoryChangeTrigger.Instance.forItems(BaseBlocks.STEEL_SLAB)).build(consumer, "mapperbase:steel_block_from_slabs");
 
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_STAIRS, 4).key('#', BaseBlocks.STEEL_BLOCK).patternLine("#  ").patternLine("## ").patternLine("###").addCriterion("has_steel_block",
+            this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer);
+
         // Rods
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD, 4).patternLine("x").patternLine("x").key('x', Items.IRON_INGOT).addCriterion("has_iron_ingot",
             InventoryChangeTrigger.Instance.forItems(Items.IRON_INGOT)).build(consumer);
