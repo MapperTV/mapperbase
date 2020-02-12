@@ -11,6 +11,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import net.minecraft.advancements.criterion.EnchantmentPredicate;
+import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.Block;
@@ -20,6 +23,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IDataProvider;
 import net.minecraft.data.LootTableProvider;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -27,13 +31,17 @@ import net.minecraft.state.properties.SlabType;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.ConstantRange;
+import net.minecraft.world.storage.loot.ILootConditionConsumer;
 import net.minecraft.world.storage.loot.ILootFunctionConsumer;
 import net.minecraft.world.storage.loot.ItemLootEntry;
 import net.minecraft.world.storage.loot.LootParameterSets;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableManager;
+import net.minecraft.world.storage.loot.StandaloneLootEntry;
 import net.minecraft.world.storage.loot.conditions.BlockStateProperty;
+import net.minecraft.world.storage.loot.conditions.ILootCondition;
+import net.minecraft.world.storage.loot.conditions.MatchTool;
 import net.minecraft.world.storage.loot.conditions.SurvivesExplosion;
 import net.minecraft.world.storage.loot.functions.CopyName;
 import net.minecraft.world.storage.loot.functions.ExplosionDecay;
@@ -54,6 +62,9 @@ public abstract class BaseLootTableProvider extends LootTableProvider
         Blocks.PINK_SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX, Blocks.RED_SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX).map(IItemProvider::asItem).collect(
             ImmutableSet.toImmutableSet());
 
+    private static final ILootCondition.IBuilder SILK_TOUCH = MatchTool.builder(
+        ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))));
+
     private final DataGenerator generator;
 
     public BaseLootTableProvider(DataGenerator dataGeneratorIn)
@@ -67,6 +78,11 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     protected static <T> T withExplosionDecay(IItemProvider p_218552_0_, ILootFunctionConsumer<T> p_218552_1_)
     {
         return (T)(!IMMUNE_TO_EXPLOSIONS.contains(p_218552_0_.asItem()) ? p_218552_1_.acceptFunction(ExplosionDecay.builder()) : p_218552_1_.cast());
+    }
+
+    protected static <T> T withSurvivesExplosion(IItemProvider p_218560_0_, ILootConditionConsumer<T> p_218560_1_)
+    {
+        return (T)(!IMMUNE_TO_EXPLOSIONS.contains(p_218560_0_.asItem()) ? p_218560_1_.acceptCondition(SurvivesExplosion.builder()) : p_218560_1_.cast());
     }
 
     protected LootTable.Builder createStandardTable(String modid, Block block)
@@ -84,7 +100,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider
                 BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(SlabBlock.TYPE, SlabType.DOUBLE))))));
         return LootTable.builder().addLootPool(builder);
     }
-    
+
     protected LootTable.Builder createDoorTable(String modid, Block block)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
@@ -107,6 +123,15 @@ public abstract class BaseLootTableProvider extends LootTableProvider
         String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
             ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected LootTable.Builder createSilkTable(String modid, Block block, Block loot)
+    {
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block, ItemLootEntry.builder(loot))));
         return LootTable.builder().addLootPool(builder);
     }
 
