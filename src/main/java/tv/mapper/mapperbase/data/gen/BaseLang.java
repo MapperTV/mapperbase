@@ -29,6 +29,12 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_WALL, "Steel Wall");
                 add(BaseBlocks.STEEL_PRESSURE_PLATE, "Steel Pressure Plate");
 
+                add(BaseBlocks.CONCRETE, "Concrete");
+                add(BaseBlocks.CONCRETE_SLAB, "Concrete Slab");
+                add(BaseBlocks.CONCRETE_STAIRS, "Concrete Stairs");
+                add(BaseBlocks.CONCRETE_WALL, "Concrete Wall");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Concrete Pressure Plate");
+
                 add(BaseItems.BOLT, "Bolt");
                 add(BaseItems.FLATTER_HAMMER, "Flatter Hammer");
                 add(BaseItems.IRON_PLATE, "Iron Plate");
@@ -48,7 +54,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseItems.STEEL_CHESTPLATE, "Steel Chestplate");
                 add(BaseItems.STEEL_LEGGINGS, "Steel Leggings");
                 add(BaseItems.STEEL_BOOTS, "Steel Boots");
-                
+
                 add(BaseItems.STEEL_HORSE_ARMOR, "Steel Horse Armor");
 
                 add("itemGroup.mapperbase_group", "Mapper Base");
@@ -59,6 +65,12 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_STAIRS, "Escalier d'acier");
                 add(BaseBlocks.STEEL_WALL, "Mur d'acier");
                 add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression d'acier");
+
+                add(BaseBlocks.CONCRETE, "Bloc de beton");
+                add(BaseBlocks.CONCRETE_SLAB, "Dalle de beton");
+                add(BaseBlocks.CONCRETE_STAIRS, "Escalier de beton");
+                add(BaseBlocks.CONCRETE_WALL, "Mur de beton");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression de beton");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");

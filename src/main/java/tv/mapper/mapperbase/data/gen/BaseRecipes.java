@@ -29,19 +29,29 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseItems.FLATTER_HAMMER).patternLine("i").patternLine("/").key('i', BaseItems.STEEL_INGOT).key('/', Items.STICK).addCriterion("has_steel_ingot",
             InventoryChangeTrigger.Instance.forItems(BaseItems.STEEL_INGOT)).addCriterion("has_stick", InventoryChangeTrigger.Instance.forItems(Items.STICK)).build(consumer);
 
+        // Steel blocks
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_SLAB, 6).patternLine("iii").key('i', BaseBlocks.STEEL_BLOCK).addCriterion("has_steel_block",
             InventoryChangeTrigger.Instance.forItems(BaseBlocks.STEEL_BLOCK)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_BLOCK).patternLine("i").patternLine("i").key('i', BaseBlocks.STEEL_SLAB).addCriterion("has_steel_slab",
             InventoryChangeTrigger.Instance.forItems(BaseBlocks.STEEL_SLAB)).build(consumer, "mapperbase:steel_block_from_slabs");
-
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_STAIRS, 4).key('#', BaseBlocks.STEEL_BLOCK).patternLine("#  ").patternLine("## ").patternLine("###").addCriterion("has_steel_block",
             this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer);
-
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_WALL, 6).key('#', BaseBlocks.STEEL_BLOCK).patternLine("###").patternLine("###").addCriterion("has_steel_block",
             this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_PRESSURE_PLATE).key('#', BaseBlocks.STEEL_BLOCK).patternLine("##").addCriterion("has_steel_block",
+            this.hasItem(BaseBlocks.STEEL_BLOCK)).build(consumer);
 
-        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_PRESSURE_PLATE).key('#', BaseBlocks.STEEL_BLOCK).patternLine("##").addCriterion("has_steel_block", this.hasItem(BaseBlocks.STEEL_BLOCK)).build(
-            consumer);
+        // Concrete blocks
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_SLAB, 6).patternLine("iii").key('i', BaseBlocks.CONCRETE).addCriterion("has_concrete_block",
+            InventoryChangeTrigger.Instance.forItems(BaseBlocks.CONCRETE)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE).patternLine("i").patternLine("i").key('i', BaseBlocks.CONCRETE_SLAB).addCriterion("has_concrete_slab",
+            InventoryChangeTrigger.Instance.forItems(BaseBlocks.CONCRETE_SLAB)).build(consumer, "mapperbase:concrete_block_from_slabs");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_STAIRS, 4).key('#', BaseBlocks.CONCRETE).patternLine("#  ").patternLine("## ").patternLine("###").addCriterion("has_concrete_block",
+            this.hasItem(BaseBlocks.CONCRETE)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_WALL, 6).key('#', BaseBlocks.CONCRETE).patternLine("###").patternLine("###").addCriterion("has_concrete_block",
+            this.hasItem(BaseBlocks.CONCRETE)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_PRESSURE_PLATE).key('#', BaseBlocks.CONCRETE).patternLine("##").addCriterion("has_concrete_block",
+            this.hasItem(BaseBlocks.CONCRETE)).build(consumer);
 
         // Rods
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD, 4).patternLine("x").patternLine("x").key('x', Items.IRON_INGOT).addCriterion("has_iron_ingot",

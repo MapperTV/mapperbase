@@ -30,6 +30,13 @@ public class BaseBlockStates extends BlockStateProvider
         wallBlock((WallBlock)BaseBlocks.STEEL_WALL, modLoc("block/steel_block"));
         pressurePlateBlock(BaseBlocks.STEEL_PRESSURE_PLATE, new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate"),
             new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate_down"));
+
+        simpleBlock(BaseBlocks.CONCRETE);
+        slabBlock((SlabBlock)BaseBlocks.CONCRETE_SLAB, modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
+        stairsBlock((StairsBlock)BaseBlocks.CONCRETE_STAIRS, modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
+        wallBlock((WallBlock)BaseBlocks.CONCRETE_WALL, modLoc("block/concrete"));
+        pressurePlateBlock(BaseBlocks.CONCRETE_PRESSURE_PLATE, new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate"),
+            new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate_down"));
     }
 
     public void pressurePlateBlock(Block block, ModelFile plate, ModelFile plate_down)

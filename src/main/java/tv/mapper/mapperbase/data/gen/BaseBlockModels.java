@@ -25,6 +25,10 @@ public class BaseBlockModels extends BlockModelProvider
         getBuilder("steel_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/steel_block"));
         getBuilder("steel_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/steel_block"));
         getBuilder("steel_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/steel_block"));
+        
+        getBuilder("concrete_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/concrete"));
+        getBuilder("concrete_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/concrete"));
+        getBuilder("concrete_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/concrete"));
     }
 
 }
