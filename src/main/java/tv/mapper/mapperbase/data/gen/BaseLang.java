@@ -66,18 +66,18 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_WALL, "Muret d'acier");
                 add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression d'acier");
 
-                add(BaseBlocks.CONCRETE, "Bloc de beton");
-                add(BaseBlocks.CONCRETE_SLAB, "Dalle de beton");
-                add(BaseBlocks.CONCRETE_STAIRS, "Escalier de beton");
-                add(BaseBlocks.CONCRETE_WALL, "Muret de beton");
-                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression de beton");
+                add(BaseBlocks.CONCRETE, "Bloc de béton");
+                add(BaseBlocks.CONCRETE_SLAB, "Dalle de béton");
+                add(BaseBlocks.CONCRETE_STAIRS, "Escalier de béton");
+                add(BaseBlocks.CONCRETE_WALL, "Muret de béton");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression de béton");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");
                 add(BaseItems.IRON_PLATE, "Plaque de fer");
                 add(BaseItems.IRON_ROD, "Barre de fer");
                 add(BaseItems.STEEL_INGOT, "Lingot d'acier");
-                add(BaseItems.STEEL_NUGGET, "Pepite d'acier");
+                add(BaseItems.STEEL_NUGGET, "Pépite d'acier");
                 add(BaseItems.STEEL_PLATE, "Plaque d'acier");
                 add(BaseItems.STEEL_ROD, "Barre d'acier");
 
@@ -89,7 +89,7 @@ public class BaseLang extends LanguageProvider
 
                 add(BaseItems.STEEL_HELMET, "Casque en acier");
                 add(BaseItems.STEEL_CHESTPLATE, "Plastron en acier");
-                add(BaseItems.STEEL_LEGGINGS, "Jambieres en acier");
+                add(BaseItems.STEEL_LEGGINGS, "Jambières en acier");
                 add(BaseItems.STEEL_BOOTS, "Bottes en acier");
 
                 add(BaseItems.STEEL_HORSE_ARMOR, "Armure en acier pour cheval");
