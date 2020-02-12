@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "side": "mapperbase:block/steel_block",
+    "bottom": "mapperbase:block/steel_block",
+    "top": "mapperbase:block/steel_block"
+  }
+}

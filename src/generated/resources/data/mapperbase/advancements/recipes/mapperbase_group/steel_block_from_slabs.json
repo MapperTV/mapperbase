@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mapperbase:steel_block_from_slabs"
+    ]
+  },
+  "criteria": {
+    "has_steel_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mapperbase:steel_slab"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mapperbase:steel_block_from_slabs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_steel_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

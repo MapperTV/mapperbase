@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mapperbase:block/steel_block"
+    }
+  }
+}

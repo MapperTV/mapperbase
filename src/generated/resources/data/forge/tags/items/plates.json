@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "mapperbase:iron_plate",
+    "mapperbase:steel_plate"
+  ]
+}

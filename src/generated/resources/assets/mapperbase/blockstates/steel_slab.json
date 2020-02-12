@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mapperbase:block/steel_slab_top"
+    },
+    "type=bottom": {
+      "model": "mapperbase:block/steel_slab"
+    },
+    "type=double": {
+      "model": "mapperbase:block/steel_block"
+    }
+  }
+}

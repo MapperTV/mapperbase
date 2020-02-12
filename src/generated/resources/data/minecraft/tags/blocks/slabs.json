@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "mapperbase:steel_slab",
+    "mapperbase:concrete_slab"
+  ]
+}
