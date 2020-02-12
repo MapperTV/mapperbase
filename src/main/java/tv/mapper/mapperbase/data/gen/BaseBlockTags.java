@@ -23,6 +23,7 @@ public class BaseBlockTags extends BlockTagsProvider
         this.getBuilder(Tags.Blocks.STORAGE_BLOCKS).add(BaseBlocks.STEEL_BLOCK);
         this.getBuilder(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL).add(BaseBlocks.STEEL_BLOCK);
         this.getBuilder(BaseTags.ForgeBlocks.PRESSURE_PLATES).add(BaseBlocks.STEEL_PRESSURE_PLATE, BaseBlocks.CONCRETE_PRESSURE_PLATE);
+        this.getBuilder(BaseTags.Blocks.CONCRETE).add(BaseBlocks.CONCRETE);
     }
 
 }

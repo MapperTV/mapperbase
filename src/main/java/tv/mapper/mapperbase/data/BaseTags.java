@@ -6,9 +6,30 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
+import tv.mapper.mapperbase.MapperBase;
 
 public class BaseTags
 {
+    public static class Blocks
+    {
+        public static final Tag<Block> CONCRETE = tag("concrete");
+
+        private static Tag<Block> tag(String name)
+        {
+            return new BlockTags.Wrapper(new ResourceLocation(MapperBase.MODID, name));
+        }
+    }
+
+    public static class Items
+    {
+        public static final Tag<Item> CONCRETE = tag("concrete");
+
+        private static Tag<Item> tag(String name)
+        {
+            return new ItemTags.Wrapper(new ResourceLocation(MapperBase.MODID, name));
+        }
+    }
+
     public static class ForgeBlocks
     {
         public static final Tag<Block> PRESSURE_PLATES = tag("pressure_plates");
