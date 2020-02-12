@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import tv.mapper.mapperbase.config.BaseConfig.ClientConfig;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class TagViewer
@@ -22,8 +23,12 @@ public class TagViewer
     @SubscribeEvent
     public static void onTooltip(ItemTooltipEvent e)
     {
+        if(!ClientConfig.ENABLE_TAG_VIEWER.get())
+            return;
+
         if(!Screen.hasControlDown())
             return;
+
         List<ITextComponent> tooltips = e.getToolTip();
         Item item = e.getItemStack().getItem();
         Map<ResourceLocation, Tag<Item>> tagmap = ItemTags.getCollection().getTagMap();
