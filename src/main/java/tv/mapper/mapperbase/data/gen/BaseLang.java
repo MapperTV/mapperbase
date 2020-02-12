@@ -63,13 +63,13 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_BLOCK, "Bloc d'acier");
                 add(BaseBlocks.STEEL_SLAB, "Dalle d'acier");
                 add(BaseBlocks.STEEL_STAIRS, "Escalier d'acier");
-                add(BaseBlocks.STEEL_WALL, "Mur d'acier");
+                add(BaseBlocks.STEEL_WALL, "Muret d'acier");
                 add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression d'acier");
 
                 add(BaseBlocks.CONCRETE, "Bloc de beton");
                 add(BaseBlocks.CONCRETE_SLAB, "Dalle de beton");
                 add(BaseBlocks.CONCRETE_STAIRS, "Escalier de beton");
-                add(BaseBlocks.CONCRETE_WALL, "Mur de beton");
+                add(BaseBlocks.CONCRETE_WALL, "Muret de beton");
                 add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression de beton");
 
                 add(BaseItems.BOLT, "Boulon");
