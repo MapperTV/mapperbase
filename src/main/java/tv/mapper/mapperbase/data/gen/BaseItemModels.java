@@ -38,6 +38,7 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_stairs").parent(new UncheckedModelFile(modid + ":block/steel_stairs"));
         getBuilder("steel_wall").parent(new UncheckedModelFile(modid + ":block/steel_wall_inventory"));
         getBuilder("steel_pressure_plate").parent(new UncheckedModelFile(modid + ":block/steel_pressure_plate"));
+        getBuilder("steel_fence").parent(new UncheckedModelFile(modid + ":block/steel_fence_inventory"));
         
         getBuilder("concrete").parent(new UncheckedModelFile(modid + ":block/concrete"));
         getBuilder("concrete_slab").parent(new UncheckedModelFile(modid + ":block/concrete_slab"));

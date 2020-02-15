@@ -1,6 +1,7 @@
 package tv.mapper.mapperbase.data.gen;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.FenceBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
@@ -32,6 +33,7 @@ public class BaseBlockStates extends BlockStateProvider
         wallBlock((WallBlock)BaseBlocks.STEEL_WALL, modLoc("block/steel_block"));
         pressurePlateBlock(BaseBlocks.STEEL_PRESSURE_PLATE, new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate"),
             new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate_down"));
+        fenceBlock((FenceBlock)BaseBlocks.STEEL_FENCE, modLoc("block/steel_block"));
 
         simpleBlock(BaseBlocks.CONCRETE);
         slabBlock((SlabBlock)BaseBlocks.CONCRETE_SLAB, modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));

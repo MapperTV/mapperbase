@@ -42,6 +42,9 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_PRESSURE_PLATE).key('#', BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL).patternLine("##").addCriterion("has_steel_block",
             this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.STEEL_FENCE, 3).patternLine("isi").patternLine("isi").key('i', BaseTags.ForgeItems.INGOTS_STEEL).key('s',
+            BaseTags.ForgeItems.RODS_STEEL).addCriterion("has_steel_ingot", this.hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).addCriterion("has_steel_rod",
+                this.hasItem(BaseTags.ForgeItems.RODS_STEEL)).build(consumer);
 
         // Concrete blocks
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE, 4).key('G', Tags.Items.GRAVEL).key('S', Tags.Items.SAND).patternLine("GS").patternLine("SG").addCriterion("has_sand",
