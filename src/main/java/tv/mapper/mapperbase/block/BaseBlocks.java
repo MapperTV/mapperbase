@@ -41,7 +41,6 @@ public class BaseBlocks
         event.getRegistry().register(
             new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE).setRegistryName("concrete"));
         RegistryUtils.createOnlyVariants(event, "concrete", true, true, true, true, Material.ROCK, MaterialColor.STONE, SoundType.STONE, ToolType.PICKAXE, 1.5F, 6.0F);
-
     }
 
     @SubscribeEvent
