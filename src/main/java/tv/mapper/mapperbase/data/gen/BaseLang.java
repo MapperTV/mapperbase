@@ -62,17 +62,17 @@ public class BaseLang extends LanguageProvider
                 break;
             case "fr_fr":
                 add(BaseBlocks.STEEL_BLOCK, "Bloc d'acier");
-                add(BaseBlocks.STEEL_SLAB, "Dalle d'acier");
-                add(BaseBlocks.STEEL_STAIRS, "Escalier d'acier");
-                add(BaseBlocks.STEEL_WALL, "Muret d'acier");
-                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression d'acier");
-                add(BaseBlocks.STEEL_FENCE, "Barrière d'acier");
+                add(BaseBlocks.STEEL_SLAB, "Dalle en acier");
+                add(BaseBlocks.STEEL_STAIRS, "Escalier en acier");
+                add(BaseBlocks.STEEL_WALL, "Muret en acier");
+                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression en acier");
+                add(BaseBlocks.STEEL_FENCE, "Barrière en acier");
 
                 add(BaseBlocks.CONCRETE, "Bloc de béton");
-                add(BaseBlocks.CONCRETE_SLAB, "Dalle de béton");
-                add(BaseBlocks.CONCRETE_STAIRS, "Escalier de béton");
-                add(BaseBlocks.CONCRETE_WALL, "Muret de béton");
-                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression de béton");
+                add(BaseBlocks.CONCRETE_SLAB, "Dalle en béton");
+                add(BaseBlocks.CONCRETE_STAIRS, "Escalier en béton");
+                add(BaseBlocks.CONCRETE_WALL, "Muret en béton");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression en béton");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");
