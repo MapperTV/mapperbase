@@ -26,5 +26,6 @@ public class BaseLootTables extends BaseLootTableProvider
         lootTables.put(BaseBlocks.CONCRETE_STAIRS, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_STAIRS));
         lootTables.put(BaseBlocks.CONCRETE_WALL, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_WALL));
         lootTables.put(BaseBlocks.CONCRETE_PRESSURE_PLATE, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_PRESSURE_PLATE));
+        lootTables.put(BaseBlocks.CONCRETE_FENCE, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_FENCE));
     }
 }

@@ -1,5 +1,6 @@
 {
   "block.mapperbase.concrete": "Concrete",
+  "block.mapperbase.concrete_fence": "Concrete Fence",
   "block.mapperbase.concrete_pressure_plate": "Concrete Pressure Plate",
   "block.mapperbase.concrete_slab": "Concrete Slab",
   "block.mapperbase.concrete_stairs": "Concrete Stairs",

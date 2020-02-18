@@ -34,6 +34,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.CONCRETE_STAIRS, "Concrete Stairs");
                 add(BaseBlocks.CONCRETE_WALL, "Concrete Wall");
                 add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Concrete Pressure Plate");
+                add(BaseBlocks.CONCRETE_FENCE, "Concrete Fence");
 
                 add(BaseItems.BOLT, "Bolt");
                 add(BaseItems.FLATTER_HAMMER, "Flatter Hammer");
@@ -72,6 +73,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.CONCRETE_STAIRS, "Escalier en béton");
                 add(BaseBlocks.CONCRETE_WALL, "Muret en béton");
                 add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression en béton");
+                add(BaseBlocks.CONCRETE_FENCE, "Barrière en béton");
 
                 add(BaseItems.BOLT, "Boulon");
                 add(BaseItems.FLATTER_HAMMER, "Masse");

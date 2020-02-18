@@ -61,6 +61,8 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseTags.Items.CONCRETE)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_PRESSURE_PLATE).key('#', BaseTags.Items.CONCRETE).patternLine("##").addCriterion("has_concrete_block",
             this.hasItem(BaseTags.Items.CONCRETE)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_FENCE, 3).patternLine("isi").patternLine("isi").key('i', BaseTags.Items.CONCRETE).key('s', BaseBlocks.CONCRETE_SLAB).addCriterion(
+            "has_concrete", this.hasItem(BaseTags.Items.CONCRETE)).addCriterion("has_concrete_slab", this.hasItem(BaseBlocks.CONCRETE_SLAB)).build(consumer);
 
         // Rods
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD, 4).patternLine("x").patternLine("x").key('x', Tags.Items.INGOTS_IRON).addCriterion("has_iron_ingot", this.hasItem(Items.IRON_INGOT)).build(
