@@ -33,17 +33,9 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("bolt").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/bolt"));
 
         getBuilder("steel_block").parent(new UncheckedModelFile(modid + ":block/steel_block"));
-        getBuilder("steel_slab").parent(new UncheckedModelFile(modid + ":block/steel_slab"));
-        getBuilder("steel_stairs").parent(new UncheckedModelFile(modid + ":block/steel_stairs"));
-        getBuilder("steel_wall").parent(new UncheckedModelFile(modid + ":block/steel_wall_inventory"));
-        getBuilder("steel_pressure_plate").parent(new UncheckedModelFile(modid + ":block/steel_pressure_plate"));
-        getBuilder("steel_fence").parent(new UncheckedModelFile(modid + ":block/steel_fence_inventory"));
 
-        getBuilder("concrete").parent(new UncheckedModelFile(modid + ":block/concrete"));
-        getBuilder("concrete_slab").parent(new UncheckedModelFile(modid + ":block/concrete_slab"));
-        getBuilder("concrete_stairs").parent(new UncheckedModelFile(modid + ":block/concrete_stairs"));
-        getBuilder("concrete_wall").parent(new UncheckedModelFile(modid + ":block/concrete_wall_inventory"));
-        getBuilder("concrete_pressure_plate").parent(new UncheckedModelFile(modid + ":block/concrete_pressure_plate"));
+        registerBlockBasics("steel", false, true, true, true, true, true);
+        registerBlockBasics("concrete", true, true, true, true, true, false);
 
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));
         getBuilder("steel_pickaxe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_pickaxe"));
@@ -57,6 +49,22 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_boots").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_boots"));
 
         getBuilder("steel_horse_armor").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_horse_armor"));
+    }
+
+    protected void registerBlockBasics(String name, boolean block, boolean slab, boolean stairs, boolean wall, boolean pressure, boolean fence)
+    {
+        if(block)
+            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
+        if(slab)
+            getBuilder(name + "_slab").parent(new UncheckedModelFile(modid + ":block/" + name + "_slab"));
+        if(stairs)
+            getBuilder(name + "_stairs").parent(new UncheckedModelFile(modid + ":block/" + name + "_stairs"));
+        if(wall)
+            getBuilder(name + "_wall").parent(new UncheckedModelFile(modid + ":block/" + name + "_wall_inventory"));
+        if(pressure)
+            getBuilder(name + "_pressure_plate").parent(new UncheckedModelFile(modid + ":block/" + name + "_pressure_plate"));
+        if(fence)
+            getBuilder(name + "_fence").parent(new UncheckedModelFile(modid + ":block/" + name + "_fence_inventory"));
     }
 
 }
