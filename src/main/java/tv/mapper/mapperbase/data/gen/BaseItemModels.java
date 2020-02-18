@@ -4,13 +4,12 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import tv.mapper.mapperbase.MapperBase;
 
 public class BaseItemModels extends ItemModelProvider
 {
-    public BaseItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper)
+    public BaseItemModels(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(generator, MapperBase.MODID, existingFileHelper);
+        super(generator, modid, existingFileHelper);
     }
 
     @Override
@@ -39,7 +38,7 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_wall").parent(new UncheckedModelFile(modid + ":block/steel_wall_inventory"));
         getBuilder("steel_pressure_plate").parent(new UncheckedModelFile(modid + ":block/steel_pressure_plate"));
         getBuilder("steel_fence").parent(new UncheckedModelFile(modid + ":block/steel_fence_inventory"));
-        
+
         getBuilder("concrete").parent(new UncheckedModelFile(modid + ":block/concrete"));
         getBuilder("concrete_slab").parent(new UncheckedModelFile(modid + ":block/concrete_slab"));
         getBuilder("concrete_stairs").parent(new UncheckedModelFile(modid + ":block/concrete_stairs"));

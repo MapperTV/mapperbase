@@ -2,7 +2,6 @@ package tv.mapper.mapperbase.data.gen;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
-import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.item.BaseItems;
 
@@ -10,9 +9,9 @@ public class BaseLang extends LanguageProvider
 {
     private String lang;
 
-    public BaseLang(DataGenerator generator, String lang)
+    public BaseLang(DataGenerator generator, String modid, String lang)
     {
-        super(generator, MapperBase.MODID, lang);
+        super(generator, modid, lang);
         this.lang = lang;
     }
 

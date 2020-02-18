@@ -18,10 +18,9 @@ import tv.mapper.mapperbase.block.UpDownBlock;
 
 public class BaseBlockStates extends BlockStateProvider
 {
-
-    public BaseBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper)
+    public BaseBlockStates(DataGenerator gen, String modid, ExistingFileHelper exFileHelper)
     {
-        super(gen, MapperBase.MODID, exFileHelper);
+        super(gen, modid, exFileHelper);
     }
 
     @Override
