@@ -6,9 +6,11 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.Direction;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
@@ -60,7 +62,20 @@ public class BaseBlockStates extends BlockStateProvider
         getVariantBuilder(block).partialState().with(BlockStateProperties.FACING, Direction.UP).modelForState().modelFile(model).rotationX(270).uvLock(true).addModel().partialState().with(
             BlockStateProperties.FACING, Direction.DOWN).modelForState().modelFile(model).rotationX(90).uvLock(true).addModel().partialState().with(BlockStateProperties.FACING,
                 Direction.NORTH).modelForState().modelFile(model).uvLock(true).addModel().partialState().with(BlockStateProperties.FACING, Direction.SOUTH).modelForState().modelFile(model).rotationY(
-                    180).uvLock(true).addModel().partialState().with(BlockStateProperties.FACING, Direction.EAST).modelForState().modelFile(model).rotationY(90).uvLock(
-                        true).addModel().partialState().with(BlockStateProperties.FACING, Direction.WEST).modelForState().modelFile(model).rotationY(270).uvLock(true).addModel();
+                    180).uvLock(true).addModel().partialState().with(BlockStateProperties.FACING, Direction.EAST).modelForState().modelFile(model).rotationY(90).uvLock(true).addModel().partialState().with(
+                        BlockStateProperties.FACING, Direction.WEST).modelForState().modelFile(model).rotationY(270).uvLock(true).addModel();
+    }
+
+    public void buttonBlock(Block block, ModelFile model, ModelFile pressed, int angleOffset)
+    {
+        getVariantBuilder(block).forAllStates(state ->
+        {
+            AttachFace face = state.get(BlockStateProperties.FACE);
+            Direction dir = state.get(BlockStateProperties.HORIZONTAL_FACING);
+            Boolean powered = state.get(BlockStateProperties.POWERED);
+
+            return ConfiguredModel.builder().modelFile(powered ? pressed : model).rotationX(face == AttachFace.WALL ? 90 : face == AttachFace.CEILING ? 180 : 0).rotationY(
+                (((int)dir.getHorizontalAngle()) + angleOffset) % 360).uvLock(face == AttachFace.WALL ? true : false).build();
+        });
     }
 }
