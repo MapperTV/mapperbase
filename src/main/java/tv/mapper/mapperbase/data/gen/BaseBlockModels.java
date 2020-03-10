@@ -1,6 +1,7 @@
 package tv.mapper.mapperbase.data.gen;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 
@@ -31,4 +32,26 @@ public class BaseBlockModels extends BlockModelProvider
         getBuilder("concrete_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/concrete"));
     }
 
+    private void buildWall(String name, ResourceLocation texture)
+    {
+        getBuilder(name + "_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", texture);
+    }
+
+    private void buildFence(String name, ResourceLocation texture)
+    {
+        getBuilder(name + "_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", texture);
+    }
+
+    private void buildPressure(String name, ResourceLocation texture)
+    {
+        getBuilder(name + "_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", texture);
+        getBuilder(name + "_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", texture);
+    }
+
+    private void buildButton(String name, ResourceLocation texture)
+    {
+        getBuilder(name + "_button_inventory").parent(getExistingFile(mcLoc("block/button_inventory"))).texture("texture", texture);
+        getBuilder(name + "_button_pressed").parent(getExistingFile(mcLoc("block/button_pressed"))).texture("texture", texture);
+        getBuilder(name + "_button").parent(getExistingFile(mcLoc("block/button"))).texture("texture", texture);
+    }
 }

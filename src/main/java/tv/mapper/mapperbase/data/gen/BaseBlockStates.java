@@ -1,6 +1,9 @@
 package tv.mapper.mapperbase.data.gen;
 
+import java.util.function.Function;
+
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
@@ -77,5 +80,20 @@ public class BaseBlockStates extends BlockStateProvider
             return ConfiguredModel.builder().modelFile(powered ? pressed : model).rotationX(face == AttachFace.WALL ? 90 : face == AttachFace.CEILING ? 180 : 0).rotationY(
                 (((int)dir.getHorizontalAngle()) + angleOffset) % 360).uvLock(face == AttachFace.WALL ? true : false).build();
         });
+    }
+
+    /**
+     * Creates a blockstate file for blocks that have 4 orientations depeding of cardinal (north, south etc). e.g. chairs, suspended stairs...
+     */
+    protected void orientableBlock(Block block, ModelFile model, int angleOffset)
+    {
+        orientableBlock(block, $ -> model, angleOffset);
+    }
+
+    protected void orientableBlock(Block block, Function<BlockState, ModelFile> modelFunc, int angleOffset)
+    {
+        getVariantBuilder(block).forAllStatesExcept(
+            state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY(((int)state.get(BlockStateProperties.HORIZONTAL_FACING).getHorizontalAngle() + angleOffset) % 360).build(),
+            BlockStateProperties.WATERLOGGED);
     }
 }
