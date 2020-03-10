@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "mapperbase:steel_fence_gate",
+    "mapperbase:concrete_fence_gate"
+  ]
+}

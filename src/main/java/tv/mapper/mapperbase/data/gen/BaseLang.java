@@ -22,80 +22,84 @@ public class BaseLang extends LanguageProvider
         {
             default:
             case "en_us":
-                add(BaseBlocks.STEEL_BLOCK, "Steel Block");
-                add(BaseBlocks.STEEL_SLAB, "Steel Slab");
-                add(BaseBlocks.STEEL_STAIRS, "Steel Stairs");
-                add(BaseBlocks.STEEL_WALL, "Steel Wall");
-                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Steel Pressure Plate");
-                add(BaseBlocks.STEEL_FENCE, "Steel Fence");
+                add(BaseBlocks.STEEL_BLOCK.get(), "Steel Block");
+                add(BaseBlocks.STEEL_SLAB.get(), "Steel Slab");
+                add(BaseBlocks.STEEL_STAIRS.get(), "Steel Stairs");
+                add(BaseBlocks.STEEL_WALL.get(), "Steel Wall");
+                add(BaseBlocks.STEEL_PRESSURE_PLATE.get(), "Steel Pressure Plate");
+                add(BaseBlocks.STEEL_FENCE.get(), "Steel Fence");
+                add(BaseBlocks.STEEL_FENCE_GATE.get(), "Steel Fence Gate");
 
-                add(BaseBlocks.CONCRETE, "Concrete");
-                add(BaseBlocks.CONCRETE_SLAB, "Concrete Slab");
-                add(BaseBlocks.CONCRETE_STAIRS, "Concrete Stairs");
-                add(BaseBlocks.CONCRETE_WALL, "Concrete Wall");
-                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Concrete Pressure Plate");
-                add(BaseBlocks.CONCRETE_FENCE, "Concrete Fence");
+                add(BaseBlocks.CONCRETE.get(), "Concrete");
+                add(BaseBlocks.CONCRETE_SLAB.get(), "Concrete Slab");
+                add(BaseBlocks.CONCRETE_STAIRS.get(), "Concrete Stairs");
+                add(BaseBlocks.CONCRETE_WALL.get(), "Concrete Wall");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), "Concrete Pressure Plate");
+                add(BaseBlocks.CONCRETE_FENCE.get(), "Concrete Fence");
+                add(BaseBlocks.CONCRETE_FENCE_GATE.get(), "Concrete Fence Gate");
 
-                add(BaseItems.BOLT, "Bolt");
-                add(BaseItems.FLATTER_HAMMER, "Flatter Hammer");
-                add(BaseItems.IRON_PLATE, "Iron Plate");
-                add(BaseItems.IRON_ROD, "Iron Rod");
-                add(BaseItems.STEEL_INGOT, "Steel Ingot");
-                add(BaseItems.STEEL_NUGGET, "Steel Nugget");
-                add(BaseItems.STEEL_PLATE, "Steel Plate");
-                add(BaseItems.STEEL_ROD, "Steel Rod");
+                add(BaseItems.BOLT.get(), "Bolt");
+                add(BaseItems.FLATTER_HAMMER.get(), "Flatter Hammer");
+                add(BaseItems.IRON_PLATE.get(), "Iron Plate");
+                add(BaseItems.IRON_ROD.get(), "Iron Rod");
+                add(BaseItems.STEEL_INGOT.get(), "Steel Ingot");
+                add(BaseItems.STEEL_NUGGET.get(), "Steel Nugget");
+                add(BaseItems.STEEL_PLATE.get(), "Steel Plate");
+                add(BaseItems.STEEL_ROD.get(), "Steel Rod");
 
-                add(BaseItems.STEEL_AXE, "Steel Axe");
-                add(BaseItems.STEEL_PICKAXE, "Steel Pickaxe");
-                add(BaseItems.STEEL_SHOVEL, "Steel Shovel");
-                add(BaseItems.STEEL_HOE, "Steel Hoe");
-                add(BaseItems.STEEL_SWORD, "Steel Sword");
+                add(BaseItems.STEEL_AXE.get(), "Steel Axe");
+                add(BaseItems.STEEL_PICKAXE.get(), "Steel Pickaxe");
+                add(BaseItems.STEEL_SHOVEL.get(), "Steel Shovel");
+                add(BaseItems.STEEL_HOE.get(), "Steel Hoe");
+                add(BaseItems.STEEL_SWORD.get(), "Steel Sword");
 
-                add(BaseItems.STEEL_HELMET, "Steel Helmet");
-                add(BaseItems.STEEL_CHESTPLATE, "Steel Chestplate");
-                add(BaseItems.STEEL_LEGGINGS, "Steel Leggings");
-                add(BaseItems.STEEL_BOOTS, "Steel Boots");
+                add(BaseItems.STEEL_HELMET.get(), "Steel Helmet");
+                add(BaseItems.STEEL_CHESTPLATE.get(), "Steel Chestplate");
+                add(BaseItems.STEEL_LEGGINGS.get(), "Steel Leggings");
+                add(BaseItems.STEEL_BOOTS.get(), "Steel Boots");
 
-                add(BaseItems.STEEL_HORSE_ARMOR, "Steel Horse Armor");
+                add(BaseItems.STEEL_HORSE_ARMOR.get(), "Steel Horse Armor");
 
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;
             case "fr_fr":
-                add(BaseBlocks.STEEL_BLOCK, "Bloc d'acier");
-                add(BaseBlocks.STEEL_SLAB, "Dalle en acier");
-                add(BaseBlocks.STEEL_STAIRS, "Escalier en acier");
-                add(BaseBlocks.STEEL_WALL, "Muret en acier");
-                add(BaseBlocks.STEEL_PRESSURE_PLATE, "Plaque de pression en acier");
-                add(BaseBlocks.STEEL_FENCE, "Barrière en acier");
+                add(BaseBlocks.STEEL_BLOCK.get(), "Bloc d'acier");
+                add(BaseBlocks.STEEL_SLAB.get(), "Dalle en acier");
+                add(BaseBlocks.STEEL_STAIRS.get(), "Escalier en acier");
+                add(BaseBlocks.STEEL_WALL.get(), "Muret en acier");
+                add(BaseBlocks.STEEL_PRESSURE_PLATE.get(), "Plaque de pression en acier");
+                add(BaseBlocks.STEEL_FENCE.get(), "Barrière en acier");
+                add(BaseBlocks.STEEL_FENCE_GATE.get(), "Portillon en acier");
 
-                add(BaseBlocks.CONCRETE, "Bloc de béton");
-                add(BaseBlocks.CONCRETE_SLAB, "Dalle en béton");
-                add(BaseBlocks.CONCRETE_STAIRS, "Escalier en béton");
-                add(BaseBlocks.CONCRETE_WALL, "Muret en béton");
-                add(BaseBlocks.CONCRETE_PRESSURE_PLATE, "Plaque de pression en béton");
-                add(BaseBlocks.CONCRETE_FENCE, "Barrière en béton");
+                add(BaseBlocks.CONCRETE.get(), "Bloc de béton");
+                add(BaseBlocks.CONCRETE_SLAB.get(), "Dalle en béton");
+                add(BaseBlocks.CONCRETE_STAIRS.get(), "Escalier en béton");
+                add(BaseBlocks.CONCRETE_WALL.get(), "Muret en béton");
+                add(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), "Plaque de pression en béton");
+                add(BaseBlocks.CONCRETE_FENCE.get(), "Barrière en béton");
+                add(BaseBlocks.CONCRETE_FENCE_GATE.get(), "Portillon en béton");
 
-                add(BaseItems.BOLT, "Boulon");
-                add(BaseItems.FLATTER_HAMMER, "Masse");
-                add(BaseItems.IRON_PLATE, "Plaque de fer");
-                add(BaseItems.IRON_ROD, "Barre de fer");
-                add(BaseItems.STEEL_INGOT, "Lingot d'acier");
-                add(BaseItems.STEEL_NUGGET, "Pépite d'acier");
-                add(BaseItems.STEEL_PLATE, "Plaque d'acier");
-                add(BaseItems.STEEL_ROD, "Barre d'acier");
+                add(BaseItems.BOLT.get(), "Boulon");
+                add(BaseItems.FLATTER_HAMMER.get(), "Masse");
+                add(BaseItems.IRON_PLATE.get(), "Plaque de fer");
+                add(BaseItems.IRON_ROD.get(), "Barre de fer");
+                add(BaseItems.STEEL_INGOT.get(), "Lingot d'acier");
+                add(BaseItems.STEEL_NUGGET.get(), "Pépite d'acier");
+                add(BaseItems.STEEL_PLATE.get(), "Plaque d'acier");
+                add(BaseItems.STEEL_ROD.get(), "Barre d'acier");
 
-                add(BaseItems.STEEL_AXE, "Hache en acier");
-                add(BaseItems.STEEL_PICKAXE, "Pioche en acier");
-                add(BaseItems.STEEL_SHOVEL, "Pelle en acier");
-                add(BaseItems.STEEL_HOE, "Houe en acier");
-                add(BaseItems.STEEL_SWORD, "Epee en acier");
+                add(BaseItems.STEEL_AXE.get(), "Hache en acier");
+                add(BaseItems.STEEL_PICKAXE.get(), "Pioche en acier");
+                add(BaseItems.STEEL_SHOVEL.get(), "Pelle en acier");
+                add(BaseItems.STEEL_HOE.get(), "Houe en acier");
+                add(BaseItems.STEEL_SWORD.get(), "Epee en acier");
 
-                add(BaseItems.STEEL_HELMET, "Casque en acier");
-                add(BaseItems.STEEL_CHESTPLATE, "Plastron en acier");
-                add(BaseItems.STEEL_LEGGINGS, "Jambières en acier");
-                add(BaseItems.STEEL_BOOTS, "Bottes en acier");
+                add(BaseItems.STEEL_HELMET.get(), "Casque en acier");
+                add(BaseItems.STEEL_CHESTPLATE.get(), "Plastron en acier");
+                add(BaseItems.STEEL_LEGGINGS.get(), "Jambières en acier");
+                add(BaseItems.STEEL_BOOTS.get(), "Bottes en acier");
 
-                add(BaseItems.STEEL_HORSE_ARMOR, "Armure en acier pour cheval");
+                add(BaseItems.STEEL_HORSE_ARMOR.get(), "Armure en acier pour cheval");
 
                 add("itemGroup.mapperbase_group", "Mapper Base");
                 break;

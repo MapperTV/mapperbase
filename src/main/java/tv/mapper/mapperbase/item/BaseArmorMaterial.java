@@ -16,7 +16,7 @@ public enum BaseArmorMaterial implements IArmorMaterial
 {
     STEEL("steel", 25, new int[] {3, 6, 7, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F, () ->
     {
-        return Ingredient.fromItems(BaseItems.STEEL_INGOT);
+        return Ingredient.fromItems(BaseItems.STEEL_INGOT.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};

@@ -15,17 +15,17 @@ public class BaseLootTables extends BaseLootTableProvider
     @Override
     protected void addTables()
     {
-        lootTables.put(BaseBlocks.STEEL_BLOCK, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_BLOCK));
-        lootTables.put(BaseBlocks.STEEL_SLAB, createSlabTable(MapperBase.MODID, BaseBlocks.STEEL_SLAB));
-        lootTables.put(BaseBlocks.STEEL_STAIRS, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_STAIRS));
-        lootTables.put(BaseBlocks.STEEL_WALL, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_WALL));
-        lootTables.put(BaseBlocks.STEEL_PRESSURE_PLATE, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_PRESSURE_PLATE));
-        lootTables.put(BaseBlocks.STEEL_FENCE, createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_FENCE));
-        lootTables.put(BaseBlocks.CONCRETE, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE));
-        lootTables.put(BaseBlocks.CONCRETE_SLAB, createSlabTable(MapperBase.MODID, BaseBlocks.CONCRETE_SLAB));
-        lootTables.put(BaseBlocks.CONCRETE_STAIRS, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_STAIRS));
-        lootTables.put(BaseBlocks.CONCRETE_WALL, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_WALL));
-        lootTables.put(BaseBlocks.CONCRETE_PRESSURE_PLATE, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_PRESSURE_PLATE));
-        lootTables.put(BaseBlocks.CONCRETE_FENCE, createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_FENCE));
+        lootTables.put(BaseBlocks.STEEL_BLOCK.get(), createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_BLOCK.get()));
+        lootTables.put(BaseBlocks.STEEL_SLAB.get(), createSlabTable(MapperBase.MODID, BaseBlocks.STEEL_SLAB.get()));
+        lootTables.put(BaseBlocks.STEEL_STAIRS.get(), createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_STAIRS.get()));
+        lootTables.put(BaseBlocks.STEEL_WALL.get(), createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_WALL.get()));
+        lootTables.put(BaseBlocks.STEEL_PRESSURE_PLATE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_PRESSURE_PLATE.get()));
+        lootTables.put(BaseBlocks.STEEL_FENCE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.STEEL_FENCE.get()));
+        lootTables.put(BaseBlocks.CONCRETE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE.get()));
+        lootTables.put(BaseBlocks.CONCRETE_SLAB.get(), createSlabTable(MapperBase.MODID, BaseBlocks.CONCRETE_SLAB.get()));
+        lootTables.put(BaseBlocks.CONCRETE_STAIRS.get(), createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_STAIRS.get()));
+        lootTables.put(BaseBlocks.CONCRETE_WALL.get(), createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_WALL.get()));
+        lootTables.put(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_PRESSURE_PLATE.get()));
+        lootTables.put(BaseBlocks.CONCRETE_FENCE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.CONCRETE_FENCE.get()));
     }
 }

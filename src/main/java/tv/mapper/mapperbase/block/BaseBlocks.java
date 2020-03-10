@@ -2,61 +2,58 @@ package tv.mapper.mapperbase.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.item.BaseGroups;
-import tv.mapper.mapperbase.util.RegistryUtils;
 
-@ObjectHolder(MapperBase.MODID)
-@EventBusSubscriber(bus = Bus.MOD)
 public class BaseBlocks
 {
-    public static final Block STEEL_BLOCK = null;
-    public static final Block STEEL_SLAB = null;
-    public static final Block STEEL_STAIRS = null;
-    public static final Block STEEL_WALL = null;
-    public static final Block STEEL_PRESSURE_PLATE = null;
-    public static final Block STEEL_FENCE = null;
+    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MapperBase.MODID);
 
-    public static final Block CONCRETE = null;
-    public static final Block CONCRETE_STAIRS = null;
-    public static final Block CONCRETE_SLAB = null;
-    public static final Block CONCRETE_WALL = null;
-    public static final Block CONCRETE_PRESSURE_PLATE = null;
-    public static final Block CONCRETE_FENCE = null;
+    public static final RegistryObject<CustomBlock> STEEL_BLOCK = BLOCKS.register("steel_block",
+        () -> new CustomBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE));
+    public static final RegistryObject<CustomStairsBlock> STEEL_STAIRS = BLOCKS.register("steel_stairs",
+        () -> new CustomStairsBlock(() -> STEEL_BLOCK.get().getDefaultState(), Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(
+            SoundType.LANTERN), ToolType.PICKAXE));
+    public static final RegistryObject<CustomSlabBlock> STEEL_SLAB = BLOCKS.register("steel_slab",
+        () -> new CustomSlabBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE));
+    public static final RegistryObject<CustomWallBlock> STEEL_WALL = BLOCKS.register("steel_wall",
+        () -> new CustomWallBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE));
+    public static final RegistryObject<CustomPressurePlateBlock> STEEL_PRESSURE_PLATE = BLOCKS.register("steel_pressure_plate",
+        () -> new CustomPressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, Block.Properties.create(Material.IRON, MaterialColor.STONE).doesNotBlockMovement().hardnessAndResistance(5.0F, 6.0F).sound(
+            SoundType.LANTERN), ToolType.PICKAXE));
+    public static final RegistryObject<FenceBlock> STEEL_FENCE = BLOCKS.register("steel_fence",
+        () -> new FenceBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)));
+    public static final RegistryObject<FenceGateBlock> STEEL_FENCE_GATE = BLOCKS.register("steel_fence_gate",
+        () -> new FenceGateBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)));
 
-    @SubscribeEvent
-    public static void registerBlocks(RegistryEvent.Register<Block> event)
+    public static final RegistryObject<CustomBlock> CONCRETE = BLOCKS.register("concrete",
+        () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomStairsBlock> CONCRETE_STAIRS = BLOCKS.register("concrete_stairs",
+        () -> new CustomStairsBlock(() -> CONCRETE.get().getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(
+            SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomSlabBlock> CONCRETE_SLAB = BLOCKS.register("concrete_slab",
+        () -> new CustomSlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomWallBlock> CONCRETE_WALL = BLOCKS.register("concrete_wall",
+        () -> new CustomWallBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomPressurePlateBlock> CONCRETE_PRESSURE_PLATE = BLOCKS.register("concrete_pressure_plate",
+        () -> new CustomPressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, Block.Properties.create(Material.ROCK, MaterialColor.STONE).doesNotBlockMovement().hardnessAndResistance(1.5F, 6.0F).sound(
+            SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<FenceBlock> CONCRETE_FENCE = BLOCKS.register("concrete_fence",
+        () -> new FenceBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<FenceGateBlock> CONCRETE_FENCE_GATE = BLOCKS.register("concrete_fence_gate",
+        () -> new FenceGateBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)));
+
+    public static void init()
     {
-        event.getRegistry().register(
-            new CustomBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE).setRegistryName("steel_block"));
-        RegistryUtils.createOnlyVariants(event, "steel", true, true, true, true, Material.IRON, MaterialColor.STONE, SoundType.LANTERN, ToolType.PICKAXE, 5.0F, 6.0F);
-        event.getRegistry().register(
-            new FenceBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)).setRegistryName("steel_fence"));
-
-        event.getRegistry().register(
-            new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE).setRegistryName("concrete"));
-        RegistryUtils.createOnlyVariants(event, "concrete", true, true, true, true, Material.ROCK, MaterialColor.STONE, SoundType.STONE, ToolType.PICKAXE, 1.5F, 6.0F);
-        event.getRegistry().register(
-            new FenceBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)).setRegistryName("concrete_fence"));
-    }
-
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event)
-    {
-        RegistryUtils.createItemBlockWithVariants(event, BaseGroups.MAPPERBASE, STEEL_BLOCK, STEEL_STAIRS, STEEL_SLAB, STEEL_WALL, STEEL_PRESSURE_PLATE);
-        event.getRegistry().register(new BlockItem(STEEL_FENCE, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(STEEL_FENCE.getRegistryName()));
-        RegistryUtils.createItemBlockWithVariants(event, BaseGroups.MAPPERBASE, CONCRETE, CONCRETE_STAIRS, CONCRETE_SLAB, CONCRETE_WALL, CONCRETE_PRESSURE_PLATE);
-        event.getRegistry().register(new BlockItem(CONCRETE_FENCE, new Item.Properties().group(BaseGroups.MAPPERBASE)).setRegistryName(CONCRETE_FENCE.getRegistryName()));
+        BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 }

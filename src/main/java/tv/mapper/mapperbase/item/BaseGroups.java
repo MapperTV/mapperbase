@@ -10,7 +10,7 @@ public class BaseGroups
         @Override
         public ItemStack createIcon()
         {
-            return new ItemStack(BaseItems.STEEL_INGOT);
+            return new ItemStack(BaseItems.STEEL_INGOT.get());
         }
     };
 }

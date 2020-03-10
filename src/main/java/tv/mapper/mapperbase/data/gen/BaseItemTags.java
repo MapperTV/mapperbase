@@ -23,24 +23,25 @@ public class BaseItemTags extends ItemTagsProvider
         copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(BlockTags.FENCES, ItemTags.FENCES);
         copy(Tags.Blocks.FENCES, Tags.Items.FENCES);
+        copy(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
         copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL, BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL);
         copy(BaseTags.ForgeBlocks.PRESSURE_PLATES, BaseTags.ForgeItems.PRESSURE_PLATES);
         copy(BaseTags.Blocks.CONCRETE, BaseTags.Items.CONCRETE);
 
-        getBuilder(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT);
-        getBuilder(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET);
-        getBuilder(BaseTags.ForgeItems.PLATES_STEEL).add(BaseItems.STEEL_PLATE);
-        getBuilder(BaseTags.ForgeItems.RODS_STEEL).add(BaseItems.STEEL_ROD);
+        getBuilder(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT.get());
+        getBuilder(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET.get());
+        getBuilder(BaseTags.ForgeItems.PLATES_STEEL).add(BaseItems.STEEL_PLATE.get());
+        getBuilder(BaseTags.ForgeItems.RODS_STEEL).add(BaseItems.STEEL_ROD.get());
 
-        getBuilder(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET);
-        getBuilder(Tags.Items.RODS).add(BaseItems.STEEL_ROD);
-        getBuilder(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT);
+        getBuilder(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
+        getBuilder(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
+        getBuilder(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
 
-        getBuilder(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE);
-        getBuilder(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD);
+        getBuilder(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
+        getBuilder(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
 
-        getBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE);
-        getBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE);
+        getBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE.get());
+        getBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
     }
 }

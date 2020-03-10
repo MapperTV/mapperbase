@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sis",
+    "sis"
+  ],
+  "key": {
+    "i": {
+      "tag": "mapperbase:concrete"
+    },
+    "s": {
+      "item": "mapperbase:concrete_slab"
+    }
+  },
+  "result": {
+    "item": "mapperbase:concrete_fence_gate"
+  }
+}
