@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mapperbase:asphalt2"
+    ]
+  },
+  "criteria": {
+    "has_raw_bitumen": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mapperbase:raw_bitumen"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mapperbase:asphalt2"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_bitumen",
+      "has_the_recipe"
+    ]
+  ]
+}

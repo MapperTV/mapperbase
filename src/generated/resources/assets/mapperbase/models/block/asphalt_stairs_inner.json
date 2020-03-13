@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "side": "mapperbase:block/asphalt",
+    "bottom": "mapperbase:block/asphalt",
+    "top": "mapperbase:block/asphalt"
+  }
+}

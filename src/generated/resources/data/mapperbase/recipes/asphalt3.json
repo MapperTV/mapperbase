@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "asphalt",
+  "pattern": [
+    "GB",
+    "BS"
+  ],
+  "key": {
+    "G": {
+      "tag": "forge:gravel"
+    },
+    "B": {
+      "item": "mapperbase:raw_bitumen"
+    },
+    "S": {
+      "tag": "forge:sand"
+    }
+  },
+  "result": {
+    "item": "mapperbase:asphalt"
+  }
+}

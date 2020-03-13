@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "mapperbase:raw_bitumen"
+    }
+  },
+  "result": {
+    "item": "mapperbase:bitumen_block"
+  }
+}

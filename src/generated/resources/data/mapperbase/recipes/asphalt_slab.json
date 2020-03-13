@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "tag": "mapperbase:asphalt"
+    }
+  },
+  "result": {
+    "item": "mapperbase:asphalt_slab",
+    "count": 6
+  }
+}

@@ -1,4 +1,9 @@
 {
+  "block.mapperbase.asphalt": "Asphalt",
+  "block.mapperbase.asphalt_pressure_plate": "Asphalt Pressure Plate",
+  "block.mapperbase.asphalt_slab": "Asphalt Slab",
+  "block.mapperbase.asphalt_stairs": "Asphalt Stairs",
+  "block.mapperbase.bitumen_block": "Bitumen Block",
   "block.mapperbase.concrete": "Concrete",
   "block.mapperbase.concrete_fence": "Concrete Fence",
   "block.mapperbase.concrete_fence_gate": "Concrete Fence Gate",
@@ -17,6 +22,7 @@
   "item.mapperbase.flatter_hammer": "Flatter Hammer",
   "item.mapperbase.iron_plate": "Iron Plate",
   "item.mapperbase.iron_rod": "Iron Rod",
+  "item.mapperbase.raw_bitumen": "Raw Asphalt",
   "item.mapperbase.steel_axe": "Steel Axe",
   "item.mapperbase.steel_boots": "Steel Boots",
   "item.mapperbase.steel_chestplate": "Steel Chestplate",

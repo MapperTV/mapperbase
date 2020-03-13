@@ -1,4 +1,9 @@
 {
+  "block.mapperbase.asphalt": "Asphalte",
+  "block.mapperbase.asphalt_pressure_plate": "Plaque de pression d'asphalte",
+  "block.mapperbase.asphalt_slab": "Dalle d'asphalte",
+  "block.mapperbase.asphalt_stairs": "Escaliers d'asphalte",
+  "block.mapperbase.bitumen_block": "Bloc de bitume",
   "block.mapperbase.concrete": "Bloc de b\u00E9ton",
   "block.mapperbase.concrete_fence": "Barri\u00E8re en b\u00E9ton",
   "block.mapperbase.concrete_fence_gate": "Portillon en b\u00E9ton",
@@ -17,6 +22,7 @@
   "item.mapperbase.flatter_hammer": "Masse",
   "item.mapperbase.iron_plate": "Plaque de fer",
   "item.mapperbase.iron_rod": "Barre de fer",
+  "item.mapperbase.raw_bitumen": "Bitume brut",
   "item.mapperbase.steel_axe": "Hache en acier",
   "item.mapperbase.steel_boots": "Bottes en acier",
   "item.mapperbase.steel_chestplate": "Plastron en acier",

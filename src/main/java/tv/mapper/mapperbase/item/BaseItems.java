@@ -42,6 +42,15 @@ public class BaseItems
     public static final RegistryObject<Item> CONCRETE_FENCE_GATE_ITEM = ITEMS.register("concrete_fence_gate",
         () -> new BlockItem(BaseBlocks.CONCRETE_FENCE_GATE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
 
+    public static final RegistryObject<Item> RAW_BITUMEN = ITEMS.register("raw_bitumen", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> BITUMEN_ITEM = ITEMS.register("bitumen_block", () -> new BlockItem(BaseBlocks.BITUMEN_BLOCK.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+
+    public static final RegistryObject<Item> ASPHALT_ITEM = ITEMS.register("asphalt", () -> new BlockItem(BaseBlocks.ASPHALT.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> ASPHALT_STAIRS_ITEM = ITEMS.register("asphalt_stairs", () -> new BlockItem(BaseBlocks.ASPHALT_STAIRS.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> ASPHALT_SLAB_ITEM = ITEMS.register("asphalt_slab", () -> new BlockItem(BaseBlocks.ASPHALT_SLAB.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> ASPHALT_PRESSURE_PLATE_ITEM = ITEMS.register("asphalt_pressure_plate",
+        () -> new BlockItem(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+
     public static final RegistryObject<Item> STEEL_NUGGET = ITEMS.register("steel_nugget", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_PLATE = ITEMS.register("steel_plate", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));

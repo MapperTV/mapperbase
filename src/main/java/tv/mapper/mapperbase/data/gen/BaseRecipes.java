@@ -134,6 +134,29 @@ public class BaseRecipes extends RecipeProvider
                             this.hasItem(BaseItems.STEEL_LEGGINGS.get())).addCriterion("has_steel_boots", this.hasItem(BaseItems.STEEL_BOOTS.get())).addCriterion("has_steel_horse_armor",
                                 this.hasItem(BaseItems.STEEL_HORSE_ARMOR.get())).build(consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
 
+        // Asphalt
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get()).key('G', Tags.Items.GRAVEL).key('B', BaseItems.RAW_BITUMEN.get()).key('S', Tags.Items.SAND).patternLine("SB").patternLine("BG").addCriterion(
+            "has_raw_bitumen", this.hasItem(BaseItems.RAW_BITUMEN.get())).setGroup("asphalt").build(consumer, MapperBase.MODID + ":asphalt1");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get()).key('G', Tags.Items.GRAVEL).key('B', BaseItems.RAW_BITUMEN.get()).key('S', Tags.Items.SAND).patternLine("BS").patternLine("GB").addCriterion(
+            "has_raw_bitumen", this.hasItem(BaseItems.RAW_BITUMEN.get())).setGroup("asphalt").build(consumer, MapperBase.MODID + ":asphalt2");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get()).key('G', Tags.Items.GRAVEL).key('B', BaseItems.RAW_BITUMEN.get()).key('S', Tags.Items.SAND).patternLine("GB").patternLine("BS").addCriterion(
+            "has_raw_bitumen", this.hasItem(BaseItems.RAW_BITUMEN.get())).setGroup("asphalt").build(consumer, MapperBase.MODID + ":asphalt3");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get()).key('G', Tags.Items.GRAVEL).key('B', BaseItems.RAW_BITUMEN.get()).key('S', Tags.Items.SAND).patternLine("BG").patternLine("SB").addCriterion(
+            "has_raw_bitumen", this.hasItem(BaseItems.RAW_BITUMEN.get())).setGroup("asphalt").build(consumer, MapperBase.MODID + ":asphalt4");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get()).patternLine("i").patternLine("i").key('i', BaseBlocks.ASPHALT_SLAB.get()).addCriterion("has_asphalt_slab",
+            this.hasItem(BaseBlocks.ASPHALT_SLAB.get())).build(consumer, MapperBase.MODID + ":asphalt_block_from_slabs");
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT_SLAB.get(), 6).patternLine("iii").key('i', BaseTags.Items.ASPHALT).addCriterion("has_asphalt_block", this.hasItem(BaseTags.Items.ASPHALT)).build(
+            consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT_STAIRS.get(), 4).key('#', BaseTags.Items.ASPHALT).patternLine("#  ").patternLine("## ").patternLine("###").addCriterion("has_asphalt_block",
+            this.hasItem(BaseTags.Items.ASPHALT)).build(consumer);
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT_PRESSURE_PLATE.get()).key('#', BaseTags.Items.ASPHALT).patternLine("##").addCriterion("has_asphalt_block",
+            this.hasItem(BaseTags.Items.ASPHALT)).build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(BaseBlocks.BITUMEN_BLOCK.get()).patternLine("xxx").patternLine("xxx").patternLine("xxx").key('x', BaseItems.RAW_BITUMEN.get()).addCriterion("has_raw_bitumen",
+            this.hasItem(BaseItems.RAW_BITUMEN.get())).build(consumer);
+        ShapelessRecipeBuilder.shapelessRecipe(BaseItems.RAW_BITUMEN.get(), 9).addIngredient(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN).addCriterion("has_bitumen_block",
+            this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN)).build(consumer, MapperBase.MODID + ":raw_bitumen_from_block");
+
     }
 
 }

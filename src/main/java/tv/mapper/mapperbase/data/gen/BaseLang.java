@@ -38,6 +38,14 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.CONCRETE_FENCE.get(), "Concrete Fence");
                 add(BaseBlocks.CONCRETE_FENCE_GATE.get(), "Concrete Fence Gate");
 
+                add(BaseBlocks.ASPHALT.get(), "Asphalt");
+                add(BaseBlocks.ASPHALT_SLAB.get(), "Asphalt Slab");
+                add(BaseBlocks.ASPHALT_STAIRS.get(), "Asphalt Stairs");
+                add(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), "Asphalt Pressure Plate");
+
+                add(BaseItems.RAW_BITUMEN.get(), "Raw Asphalt");
+                add(BaseBlocks.BITUMEN_BLOCK.get(), "Bitumen Block");
+
                 add(BaseItems.BOLT.get(), "Bolt");
                 add(BaseItems.FLATTER_HAMMER.get(), "Flatter Hammer");
                 add(BaseItems.IRON_PLATE.get(), "Iron Plate");
@@ -78,6 +86,14 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), "Plaque de pression en béton");
                 add(BaseBlocks.CONCRETE_FENCE.get(), "Barrière en béton");
                 add(BaseBlocks.CONCRETE_FENCE_GATE.get(), "Portillon en béton");
+
+                add(BaseBlocks.ASPHALT.get(), "Asphalte");
+                add(BaseBlocks.ASPHALT_SLAB.get(), "Dalle d'asphalte");
+                add(BaseBlocks.ASPHALT_STAIRS.get(), "Escaliers d'asphalte");
+                add(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), "Plaque de pression d'asphalte");
+
+                add(BaseItems.RAW_BITUMEN.get(), "Bitume brut");
+                add(BaseBlocks.BITUMEN_BLOCK.get(), "Bloc de bitume");
 
                 add(BaseItems.BOLT.get(), "Boulon");
                 add(BaseItems.FLATTER_HAMMER.get(), "Masse");

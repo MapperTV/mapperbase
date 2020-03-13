@@ -48,6 +48,16 @@ public class BaseBlockStates extends BlockStateProvider
             new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate_down"));
         fenceBlock((FenceBlock)BaseBlocks.CONCRETE_FENCE.get(), modLoc("block/concrete"));
         fenceGateBlock(BaseBlocks.CONCRETE_FENCE_GATE.get(), modLoc("block/concrete"));
+
+        simpleBlock(BaseBlocks.ASPHALT.get());
+        slabBlock((SlabBlock)BaseBlocks.ASPHALT_SLAB.get(), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"));
+        stairsBlock((StairsBlock)BaseBlocks.ASPHALT_STAIRS.get(), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"));
+        pressurePlateBlock(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/asphalt_pressure_plate"),
+            new UncheckedModelFile(MapperBase.MODID + ":block/asphalt_pressure_plate_down"));
+
+        simpleBlock(BaseBlocks.BITUMEN_ORE.get());
+        simpleBlock(BaseBlocks.BITUMEN_BLOCK.get());
+
     }
 
     public void pressurePlateBlock(Block block, ModelFile plate, ModelFile plate_down)

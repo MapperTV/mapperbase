@@ -134,6 +134,15 @@ public abstract class BaseLootTableProvider extends LootTableProvider
             ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block, ItemLootEntry.builder(loot))));
         return LootTable.builder().addLootPool(builder);
     }
+    
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected LootTable.Builder createSilkTable(String modid, Block block, Item loot)
+    {
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block, ItemLootEntry.builder(loot))));
+        return LootTable.builder().addLootPool(builder);
+    }
 
     @Override
     public void act(DirectoryCache cache)

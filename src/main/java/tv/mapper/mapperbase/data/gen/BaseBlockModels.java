@@ -30,6 +30,9 @@ public class BaseBlockModels extends BlockModelProvider
         getBuilder("concrete_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/concrete"));
         getBuilder("concrete_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/concrete"));
         getBuilder("concrete_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/concrete"));
+
+        getBuilder("asphalt_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/asphalt"));
+        getBuilder("asphalt_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/asphalt"));
     }
 
     protected void buildWall(String name, ResourceLocation texture) // Trump's favorite model generator

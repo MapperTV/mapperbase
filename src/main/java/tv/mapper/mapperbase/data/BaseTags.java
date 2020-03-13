@@ -13,6 +13,7 @@ public class BaseTags
     public static class Blocks
     {
         public static final Tag<Block> CONCRETE = tag("concrete");
+        public static final Tag<Block> ASPHALT = tag("asphalt");
 
         private static Tag<Block> tag(String name)
         {
@@ -23,6 +24,7 @@ public class BaseTags
     public static class Items
     {
         public static final Tag<Item> CONCRETE = tag("concrete");
+        public static final Tag<Item> ASPHALT = tag("asphalt");
 
         private static Tag<Item> tag(String name)
         {
@@ -35,6 +37,8 @@ public class BaseTags
         public static final Tag<Block> PRESSURE_PLATES = tag("pressure_plates");
 
         public static final Tag<Block> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
+
+        public static final Tag<Block> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
 
         private static Tag<Block> tag(String name)
         {
@@ -55,6 +59,8 @@ public class BaseTags
         public static final Tag<Item> INGOTS_STEEL = tag("ingots/steel");
         public static final Tag<Item> NUGGETS_STEEL = tag("nuggets/steel");
         public static final Tag<Item> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
+
+        public static final Tag<Item> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
 
         public static final Tag<Item> PRESSURE_PLATES = tag("pressure_plates");
 

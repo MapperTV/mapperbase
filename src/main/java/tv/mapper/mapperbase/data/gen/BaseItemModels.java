@@ -39,6 +39,11 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_fence_gate").parent(new UncheckedModelFile(modid + ":block/steel_fence_gate"));
         getBuilder("concrete_fence_gate").parent(new UncheckedModelFile(modid + ":block/concrete_fence_gate"));
 
+        registerBlockBasics("asphalt", true, true, true, false, true, false);
+        
+        getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
+        getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
+
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));
         getBuilder("steel_pickaxe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_pickaxe"));
         getBuilder("steel_shovel").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_shovel"));

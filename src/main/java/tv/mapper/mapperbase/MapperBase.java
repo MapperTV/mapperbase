@@ -12,7 +12,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig;
+import tv.mapper.mapperbase.config.BaseOreGenConfig;
 import tv.mapper.mapperbase.item.BaseItems;
+import tv.mapper.mapperbase.world.BaseOreGenerator;
 
 @Mod(MapperBase.MODID)
 public class MapperBase
@@ -23,10 +25,11 @@ public class MapperBase
     public MapperBase()
     {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BaseConfig.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseOreGenConfig.COMMON_CONFIG);
 
         BaseBlocks.init();
         BaseItems.init();
-        
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
@@ -35,6 +38,8 @@ public class MapperBase
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("Mapper Base setup started!");
+
+        BaseOreGenerator.setupOregen();
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

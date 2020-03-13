@@ -35,8 +35,8 @@ public class BaseBlocks
     public static final RegistryObject<FenceGateBlock> STEEL_FENCE_GATE = BLOCKS.register("steel_fence_gate",
         () -> new FenceGateBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN)));
 
-    public static final RegistryObject<CustomBlock> CONCRETE = BLOCKS.register("concrete",
-        () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<PaintableBlock> CONCRETE = BLOCKS.register("concrete",
+        () -> new PaintableBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE, 1));
     public static final RegistryObject<CustomStairsBlock> CONCRETE_STAIRS = BLOCKS.register("concrete_stairs",
         () -> new CustomStairsBlock(() -> CONCRETE.get().getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(
             SoundType.STONE), ToolType.PICKAXE));
@@ -51,6 +51,22 @@ public class BaseBlocks
         () -> new FenceBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final RegistryObject<FenceGateBlock> CONCRETE_FENCE_GATE = BLOCKS.register("concrete_fence_gate",
         () -> new FenceGateBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<PaintableBlock> ASPHALT = BLOCKS.register("asphalt",
+        () -> new PaintableBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE, 0));
+    public static final RegistryObject<CustomStairsBlock> ASPHALT_STAIRS = BLOCKS.register("asphalt_stairs",
+        () -> new CustomStairsBlock(() -> ASPHALT.get().getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(1.5F, 6.0F).sound(
+            SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomSlabBlock> ASPHALT_SLAB = BLOCKS.register("asphalt_slab",
+        () -> new CustomSlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(1.5F, 6.0F).sound(SoundType.STONE), ToolType.PICKAXE));
+    public static final RegistryObject<CustomPressurePlateBlock> ASPHALT_PRESSURE_PLATE = BLOCKS.register("asphalt_pressure_plate",
+        () -> new CustomPressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, Block.Properties.create(Material.ROCK, MaterialColor.BLACK).doesNotBlockMovement().hardnessAndResistance(1.5F, 6.0F).sound(
+            SoundType.STONE), ToolType.PICKAXE));
+
+    public static final RegistryObject<CustomBlock> BITUMEN_BLOCK = BLOCKS.register("bitumen_block",
+        () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(3.0F), ToolType.PICKAXE));
+    public static final RegistryObject<CustomBlock> BITUMEN_ORE = BLOCKS.register("bitumen_ore",
+        () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(3.0F), ToolType.PICKAXE));
 
     public static void init()
     {
