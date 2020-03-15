@@ -30,5 +30,4 @@ public class CustomLadderBlock extends LadderBlock
         else
             return super.getHarvestTool(state);
     }
-
 }

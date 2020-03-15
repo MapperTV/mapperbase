@@ -30,5 +30,4 @@ public class CustomDoorBlock extends DoorBlock
         else
             return super.getHarvestTool(state);
     }
-
 }

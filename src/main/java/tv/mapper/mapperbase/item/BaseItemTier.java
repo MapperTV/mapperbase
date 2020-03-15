@@ -4,14 +4,14 @@ import java.util.function.Supplier;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyValue;
+import tv.mapper.mapperbase.data.BaseTags;
 
 public enum BaseItemTier implements IItemTier
 {
     STEEL(3, 1024, 7.0F, 3.0F, 12, () ->
     {
-        return Ingredient.fromTag(ItemTags.PLANKS);
+        return Ingredient.fromTag(BaseTags.ForgeItems.INGOTS_STEEL);
     });
 
     private final int harvestLevel;

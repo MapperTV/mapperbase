@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 
 public class FlatterHammerItem extends Item
 {
-
     public FlatterHammerItem(Properties properties)
     {
         super(properties);

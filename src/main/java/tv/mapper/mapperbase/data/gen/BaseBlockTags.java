@@ -9,7 +9,6 @@ import tv.mapper.mapperbase.data.BaseTags;
 
 public class BaseBlockTags extends BlockTagsProvider
 {
-
     public BaseBlockTags(DataGenerator generatorIn)
     {
         super(generatorIn);
@@ -30,5 +29,4 @@ public class BaseBlockTags extends BlockTagsProvider
         this.getBuilder(BaseTags.Blocks.CONCRETE).add(BaseBlocks.CONCRETE.get());
         this.getBuilder(BaseTags.Blocks.ASPHALT).add(BaseBlocks.ASPHALT.get());
     }
-
 }

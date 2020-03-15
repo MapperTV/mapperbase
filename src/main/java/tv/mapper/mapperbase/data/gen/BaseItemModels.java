@@ -40,7 +40,7 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("concrete_fence_gate").parent(new UncheckedModelFile(modid + ":block/concrete_fence_gate"));
 
         registerBlockBasics("asphalt", true, true, true, false, true, false);
-        
+
         getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
         getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
 
@@ -73,5 +73,4 @@ public class BaseItemModels extends ItemModelProvider
         if(fence)
             getBuilder(name + "_fence").parent(new UncheckedModelFile(modid + ":block/" + name + "_fence_inventory"));
     }
-
 }

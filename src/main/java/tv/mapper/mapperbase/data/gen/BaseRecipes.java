@@ -156,7 +156,5 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseItems.RAW_BITUMEN.get())).build(consumer);
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.RAW_BITUMEN.get(), 9).addIngredient(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN).addCriterion("has_bitumen_block",
             this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN)).build(consumer, MapperBase.MODID + ":raw_bitumen_from_block");
-
     }
-
 }

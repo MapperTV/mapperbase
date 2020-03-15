@@ -32,5 +32,4 @@ public class CustomStairsBlock extends StairsBlock
         else
             return super.getHarvestTool(state);
     }
-
 }

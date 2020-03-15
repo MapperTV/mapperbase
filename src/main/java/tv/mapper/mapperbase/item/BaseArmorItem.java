@@ -11,10 +11,10 @@ public class BaseArmorItem extends ArmorItem
     {
         super(materialIn, slot, builder);
     }
-    
-    @Override
-    public IArmorMaterial getArmorMaterial() {
-        return this.material;
-     }
 
+    @Override
+    public IArmorMaterial getArmorMaterial()
+    {
+        return this.material;
+    }
 }

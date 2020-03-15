@@ -10,7 +10,6 @@ import tv.mapper.mapperbase.item.BaseItems;
 
 public class BaseItemTags extends ItemTagsProvider
 {
-
     public BaseItemTags(DataGenerator generatorIn)
     {
         super(generatorIn);

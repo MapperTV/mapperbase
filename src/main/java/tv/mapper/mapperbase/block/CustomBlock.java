@@ -30,5 +30,4 @@ public class CustomBlock extends Block
         else
             return super.getHarvestTool(state);
     }
-
 }

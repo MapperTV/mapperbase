@@ -30,5 +30,4 @@ public class CustomSlabBlock extends SlabBlock
         else
             return super.getHarvestTool(state);
     }
-
 }

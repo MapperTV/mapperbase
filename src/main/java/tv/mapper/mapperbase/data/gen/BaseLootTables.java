@@ -7,7 +7,6 @@ import tv.mapper.mapperbase.item.BaseItems;
 
 public class BaseLootTables extends BaseLootTableProvider
 {
-
     public BaseLootTables(DataGenerator dataGeneratorIn)
     {
         super(dataGeneratorIn);
@@ -37,6 +36,5 @@ public class BaseLootTables extends BaseLootTableProvider
 
         lootTables.put(BaseBlocks.BITUMEN_BLOCK.get(), createStandardTable(MapperBase.MODID, BaseBlocks.BITUMEN_BLOCK.get()));
         lootTables.put(BaseBlocks.BITUMEN_ORE.get(), createSilkTable(MapperBase.MODID, BaseBlocks.BITUMEN_ORE.get(), BaseItems.RAW_BITUMEN.get()));
-
     }
 }
