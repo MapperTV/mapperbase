@@ -35,6 +35,6 @@ public class BaseLootTables extends BaseLootTableProvider
         lootTables.put(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), createStandardTable(MapperBase.MODID, BaseBlocks.ASPHALT_PRESSURE_PLATE.get()));
 
         lootTables.put(BaseBlocks.BITUMEN_BLOCK.get(), createStandardTable(MapperBase.MODID, BaseBlocks.BITUMEN_BLOCK.get()));
-        lootTables.put(BaseBlocks.BITUMEN_ORE.get(), createSilkTable(MapperBase.MODID, BaseBlocks.BITUMEN_ORE.get(), BaseItems.RAW_BITUMEN.get()));
+        lootTables.put(BaseBlocks.BITUMEN_ORE.get(), createSilkTable(MapperBase.MODID, BaseBlocks.BITUMEN_ORE.get(), BaseItems.RAW_BITUMEN.get(), 6, 9, 2));
     }
 }

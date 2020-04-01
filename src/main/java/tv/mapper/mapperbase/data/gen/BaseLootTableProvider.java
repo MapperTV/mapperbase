@@ -38,11 +38,13 @@ import net.minecraft.world.storage.loot.LootParameterSets;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableManager;
+import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.StandaloneLootEntry;
 import net.minecraft.world.storage.loot.conditions.BlockStateProperty;
 import net.minecraft.world.storage.loot.conditions.ILootCondition;
 import net.minecraft.world.storage.loot.conditions.MatchTool;
 import net.minecraft.world.storage.loot.conditions.SurvivesExplosion;
+import net.minecraft.world.storage.loot.functions.ApplyBonus;
 import net.minecraft.world.storage.loot.functions.CopyName;
 import net.minecraft.world.storage.loot.functions.ExplosionDecay;
 import net.minecraft.world.storage.loot.functions.SetCount;
@@ -56,14 +58,12 @@ public abstract class BaseLootTableProvider extends LootTableProvider
 
     protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
 
-    private static final Set<Item> IMMUNE_TO_EXPLOSIONS = Stream.of(Blocks.DRAGON_EGG, Blocks.BEACON, Blocks.CONDUIT, Blocks.SKELETON_SKULL, Blocks.WITHER_SKELETON_SKULL, Blocks.PLAYER_HEAD,
-        Blocks.ZOMBIE_HEAD, Blocks.CREEPER_HEAD, Blocks.DRAGON_HEAD, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, Blocks.BLUE_SHULKER_BOX, Blocks.BROWN_SHULKER_BOX, Blocks.CYAN_SHULKER_BOX,
-        Blocks.GRAY_SHULKER_BOX, Blocks.GREEN_SHULKER_BOX, Blocks.LIGHT_BLUE_SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, Blocks.LIME_SHULKER_BOX, Blocks.MAGENTA_SHULKER_BOX, Blocks.ORANGE_SHULKER_BOX,
-        Blocks.PINK_SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX, Blocks.RED_SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX).map(IItemProvider::asItem).collect(
-            ImmutableSet.toImmutableSet());
+    private static final Set<Item> IMMUNE_TO_EXPLOSIONS = Stream.of(Blocks.DRAGON_EGG, Blocks.BEACON, Blocks.CONDUIT, Blocks.SKELETON_SKULL, Blocks.WITHER_SKELETON_SKULL, Blocks.PLAYER_HEAD, Blocks.ZOMBIE_HEAD,
+        Blocks.CREEPER_HEAD, Blocks.DRAGON_HEAD, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, Blocks.BLUE_SHULKER_BOX, Blocks.BROWN_SHULKER_BOX, Blocks.CYAN_SHULKER_BOX, Blocks.GRAY_SHULKER_BOX,
+        Blocks.GREEN_SHULKER_BOX, Blocks.LIGHT_BLUE_SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, Blocks.LIME_SHULKER_BOX, Blocks.MAGENTA_SHULKER_BOX, Blocks.ORANGE_SHULKER_BOX, Blocks.PINK_SHULKER_BOX,
+        Blocks.PURPLE_SHULKER_BOX, Blocks.RED_SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX).map(IItemProvider::asItem).collect(ImmutableSet.toImmutableSet());
 
-    private static final ILootCondition.IBuilder SILK_TOUCH = MatchTool.builder(
-        ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))));
+    private static final ILootCondition.IBuilder SILK_TOUCH = MatchTool.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))));
 
     private final DataGenerator generator;
 
@@ -95,9 +95,8 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     protected LootTable.Builder createSlabTable(String modid, Block block)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
-        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
-            withExplosionDecay(block, ItemLootEntry.builder(block).acceptFunction(SetCount.builder(ConstantRange.of(2)).acceptCondition(
-                BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(SlabBlock.TYPE, SlabType.DOUBLE))))));
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(withExplosionDecay(block, ItemLootEntry.builder(block).acceptFunction(
+            SetCount.builder(ConstantRange.of(2)).acceptCondition(BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(SlabBlock.TYPE, SlabType.DOUBLE))))));
         return LootTable.builder().addLootPool(builder);
     }
 
@@ -105,24 +104,24 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
-            BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER)))).acceptCondition(
-                SurvivesExplosion.builder());
+            BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER)))).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
     protected LootTable.Builder createBedTable(String modid, Block block)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
-        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptCondition(
-            BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(BedBlock.PART, BedPart.HEAD)))).acceptCondition(SurvivesExplosion.builder());
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ItemLootEntry.builder(block).acceptCondition(BlockStateProperty.builder(block).fromProperties(StatePropertiesPredicate.Builder.newBuilder().withProp(BedBlock.PART, BedPart.HEAD)))).acceptCondition(
+                SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
     protected LootTable.Builder createChestTable(String modid, Block block)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
-        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
-            ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(SurvivesExplosion.builder());
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(
+            SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
@@ -134,13 +133,22 @@ public abstract class BaseLootTableProvider extends LootTableProvider
             ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block, ItemLootEntry.builder(loot))));
         return LootTable.builder().addLootPool(builder);
     }
-    
+
     @SuppressWarnings({"rawtypes", "unchecked"})
     protected LootTable.Builder createSilkTable(String modid, Block block, Item loot)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
             ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block, ItemLootEntry.builder(loot))));
+        return LootTable.builder().addLootPool(builder);
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    protected LootTable.Builder createSilkTable(String modid, Block block, Item loot, int min, int max, int fortune)
+    {
+        String name = block.getRegistryName().toString().replace(modid + ":", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(
+            withSurvivesExplosion(block, ItemLootEntry.builder(loot).acceptFunction(SetCount.builder(RandomValueRange.of(min, max))).acceptFunction(ApplyBonus.uniformBonusCount(Enchantments.FORTUNE, fortune)))));
         return LootTable.builder().addLootPool(builder);
     }
 
