@@ -103,7 +103,6 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL)).setGroup("steel_ingot").build(consumer, MapperBase.MODID + ":steel_ingot_from_block");
 
         // Tools
-
         ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_AXE.get()).key('#', Items.STICK).key('X', BaseTags.ForgeItems.INGOTS_STEEL).patternLine("XX").patternLine("X#").patternLine(" #").addCriterion(
             "has_steel_ingot", this.hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_PICKAXE.get()).key('#', Items.STICK).key('X', BaseTags.ForgeItems.INGOTS_STEEL).patternLine("XXX").patternLine(" # ").patternLine(" # ").addCriterion(
@@ -156,5 +155,11 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseItems.RAW_BITUMEN.get())).build(consumer);
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.RAW_BITUMEN.get(), 9).addIngredient(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN).addCriterion("has_bitumen_block",
             this.hasItem(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN)).build(consumer, MapperBase.MODID + ":raw_bitumen_from_block");
+
+        // Ore
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 100).addCriterion("has_bitumen_ore",
+            this.hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_blasting");
+        CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 200).addCriterion("has_bitumen_ore",
+            this.hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_smelting");
     }
 }

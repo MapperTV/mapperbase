@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mapperbase:raw_bitumen_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_bitumen_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mapperbase:bitumen_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mapperbase:raw_bitumen_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bitumen_ore",
+      "has_the_recipe"
+    ]
+  ]
+}
