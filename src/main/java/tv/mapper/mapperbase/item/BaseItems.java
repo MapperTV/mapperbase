@@ -43,6 +43,7 @@ public class BaseItems
         () -> new BlockItem(BaseBlocks.CONCRETE_FENCE_GATE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
 
     public static final RegistryObject<Item> RAW_BITUMEN = ITEMS.register("raw_bitumen", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> BITUMEN_ORE_ITEM = ITEMS.register("bitumen_ore", () -> new BlockItem(BaseBlocks.BITUMEN_ORE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> BITUMEN_ITEM = ITEMS.register("bitumen_block", () -> new BlockItem(BaseBlocks.BITUMEN_BLOCK.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
 
     public static final RegistryObject<Item> ASPHALT_ITEM = ITEMS.register("asphalt", () -> new BlockItem(BaseBlocks.ASPHALT.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
