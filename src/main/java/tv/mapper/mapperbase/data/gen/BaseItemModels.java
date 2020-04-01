@@ -42,6 +42,7 @@ public class BaseItemModels extends ItemModelProvider
         registerBlockBasics("asphalt", true, true, true, false, true, false);
 
         getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
+        getBuilder("bitumen_ore").parent(new UncheckedModelFile(modid + ":block/bitumen_ore"));
         getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
 
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));

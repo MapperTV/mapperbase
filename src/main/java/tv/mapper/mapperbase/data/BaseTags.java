@@ -39,6 +39,7 @@ public class BaseTags
         public static final Tag<Block> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
 
         public static final Tag<Block> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
+        public static final Tag<Block> ORES_BITUMEN = tag("ores/bitumen");
 
         private static Tag<Block> tag(String name)
         {
@@ -61,6 +62,7 @@ public class BaseTags
         public static final Tag<Item> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
 
         public static final Tag<Item> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
+        public static final Tag<Item> ORES_BITUMEN = tag("ores/bitumen");
 
         public static final Tag<Item> PRESSURE_PLATES = tag("pressure_plates");
 
