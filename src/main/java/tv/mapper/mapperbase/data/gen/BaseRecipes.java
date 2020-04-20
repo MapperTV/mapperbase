@@ -2,12 +2,14 @@ package tv.mapper.mapperbase.data.gen;
 
 import java.util.function.Consumer;
 
+import net.minecraft.block.Block;
 import net.minecraft.data.CookingRecipeBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.data.SingleItemRecipeBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
@@ -67,6 +69,8 @@ public class BaseRecipes extends RecipeProvider
             "has_concrete", this.hasItem(BaseTags.Items.CONCRETE)).addCriterion("has_concrete_slab", this.hasItem(BaseBlocks.CONCRETE_SLAB.get())).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.CONCRETE_FENCE_GATE.get()).patternLine("sis").patternLine("sis").key('i', BaseTags.Items.CONCRETE).key('s', BaseBlocks.CONCRETE_SLAB.get()).addCriterion(
             "has_concrete", this.hasItem(BaseTags.Items.CONCRETE)).addCriterion("has_concrete_slab", this.hasItem(BaseBlocks.CONCRETE_SLAB.get())).build(consumer);
+        basicRecipes(consumer, BaseBlocks.CONCRETE.get(), BaseBlocks.CONCRETE_SLAB.get(), BaseBlocks.CONCRETE_STAIRS.get(), BaseBlocks.CONCRETE_WALL.get(), BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), null,
+            BaseBlocks.CONCRETE_FENCE.get(), BaseBlocks.CONCRETE_FENCE_GATE.get());
 
         // Rods
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD.get(), 4).patternLine("x").patternLine("x").key('x', Tags.Items.INGOTS_IRON).addCriterion("has_iron_ingot", this.hasItem(Items.IRON_INGOT)).build(
@@ -150,6 +154,7 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseTags.Items.ASPHALT)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT_PRESSURE_PLATE.get()).key('#', BaseTags.Items.ASPHALT).patternLine("##").addCriterion("has_asphalt_block",
             this.hasItem(BaseTags.Items.ASPHALT)).build(consumer);
+        basicRecipes(consumer, BaseBlocks.ASPHALT.get(), BaseBlocks.ASPHALT_SLAB.get(), BaseBlocks.ASPHALT_STAIRS.get(), null, BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), null, null, null);
 
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.BITUMEN_BLOCK.get()).patternLine("xxx").patternLine("xxx").patternLine("xxx").key('x', BaseItems.RAW_BITUMEN.get()).addCriterion("has_raw_bitumen",
             this.hasItem(BaseItems.RAW_BITUMEN.get())).build(consumer);
@@ -161,5 +166,32 @@ public class BaseRecipes extends RecipeProvider
             this.hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_blasting");
         CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 200).addCriterion("has_bitumen_ore",
             this.hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_smelting");
+    }
+
+    private void basicRecipes(Consumer<IFinishedRecipe> consumer, Block base, Block slab, Block stairs, Block wall, Block pressure, Block button, Block fence, Block fence_gate)
+    {
+        String base_name = base.getRegistryName().getPath();
+
+        if(slab != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), slab, 2).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_slab_from_" + base_name + "_stonecutting");
+        if(stairs != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), stairs).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_stairs_from_" + base_name + "_stonecutting");
+        if(wall != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), wall).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_wall_from_" + base_name + "_stonecutting");
+        if(pressure != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), pressure, 2).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_pressure_plate_from_" + base_name + "_stonecutting");
+        if(button != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), button, 2).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_button_plate_from_" + base_name + "_stonecutting");
+        if(fence != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), fence).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_fence_plate_from_" + base_name + "_stonecutting");
+        if(fence_gate != null)
+            SingleItemRecipeBuilder.stonecuttingRecipe(Ingredient.fromItems(base), fence_gate).addCriterion("has_" + base_name, this.hasItem(base)).build(consumer,
+                base_name + "_fence_gate_plate_from_" + base_name + "_stonecutting");
     }
 }

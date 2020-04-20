@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mapperbase:asphalt"
+  },
+  "result": "mapperbase:asphalt_stairs",
+  "count": 1
+}

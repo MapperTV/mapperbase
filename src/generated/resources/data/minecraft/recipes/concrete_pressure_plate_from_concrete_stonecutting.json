@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "mapperbase:concrete"
+  },
+  "result": "mapperbase:concrete_pressure_plate",
+  "count": 2
+}
