@@ -23,9 +23,12 @@ import tv.mapper.mapperbase.block.UpDownBlock;
 
 public class BaseBlockStates extends BlockStateProvider
 {
+    protected final String mod_id;
+
     public BaseBlockStates(DataGenerator gen, String modid, ExistingFileHelper exFileHelper)
     {
         super(gen, modid, exFileHelper);
+        this.mod_id = modid;
     }
 
     @Override
