@@ -11,7 +11,10 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.properties.Half;
+import net.minecraft.state.properties.StairsShape;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
@@ -63,19 +66,19 @@ public class BaseBlockStates extends BlockStateProvider
 
     }
 
-    public void pressurePlateBlock(Block block, ModelFile plate, ModelFile plate_down)
+    protected void pressurePlateBlock(Block block, ModelFile plate, ModelFile plate_down)
     {
         getVariantBuilder(block).partialState().with(BlockStateProperties.POWERED, true).modelForState().modelFile(plate_down).addModel().partialState().with(BlockStateProperties.POWERED,
             false).modelForState().modelFile(plate).addModel();
     }
 
-    public void upDownBlock(Block block, ModelFile model)
+    protected void upDownBlock(Block block, ModelFile model)
     {
         getVariantBuilder(block).partialState().with(UpDownBlock.UPSIDE_DOWN, true).modelForState().modelFile(model).rotationX(180).addModel().partialState().with(UpDownBlock.UPSIDE_DOWN,
             false).modelForState().modelFile(model).addModel();
     }
 
-    public void allRotationBlock(Block block, ModelFile model)
+    protected void allRotationBlock(Block block, ModelFile model)
     {
         getVariantBuilder(block).partialState().with(BlockStateProperties.FACING, Direction.UP).modelForState().modelFile(model).rotationX(270).uvLock(true).addModel().partialState().with(
             BlockStateProperties.FACING, Direction.DOWN).modelForState().modelFile(model).rotationX(90).uvLock(true).addModel().partialState().with(BlockStateProperties.FACING,
@@ -84,7 +87,7 @@ public class BaseBlockStates extends BlockStateProvider
                         BlockStateProperties.FACING, Direction.WEST).modelForState().modelFile(model).rotationY(270).uvLock(true).addModel();
     }
 
-    public void buttonBlock(Block block, ModelFile model, ModelFile pressed, int angleOffset)
+    protected void buttonBlock(Block block, ModelFile model, ModelFile pressed, int angleOffset)
     {
         getVariantBuilder(block).forAllStates(state ->
         {
@@ -110,5 +113,37 @@ public class BaseBlockStates extends BlockStateProvider
         getVariantBuilder(block).forAllStatesExcept(
             state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY(((int)state.get(BlockStateProperties.HORIZONTAL_FACING).getHorizontalAngle() + angleOffset) % 360).build(),
             BlockStateProperties.WATERLOGGED);
+    }
+
+    protected void rooftilesStairsBlock(StairsBlock block, ResourceLocation texture)
+    {
+        String baseName = block.getRegistryName().toString();
+        ModelFile stairs = models().stairs(baseName, texture, texture, texture);
+        ModelFile stairsInner = models().stairsInner(baseName + "_inner", texture, texture, texture);
+        ModelFile stairsOuter = models().stairsOuter(baseName + "_outer", texture, texture, texture);
+
+        getVariantBuilder(block).forAllStatesExcept(state ->
+        {
+            Direction facing = state.get(StairsBlock.FACING);
+            Half half = state.get(StairsBlock.HALF);
+            StairsShape shape = state.get(StairsBlock.SHAPE);
+            int yRot = (int)facing.rotateY().getHorizontalAngle(); // Stairs model is rotated 90 degrees clockwise for some reason
+            if(shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT)
+            {
+                yRot += 270; // Left facing stairs are rotated 90 degrees clockwise
+            }
+            if(shape != StairsShape.STRAIGHT && half == Half.TOP)
+            {
+                yRot += 90; // Top stairs are rotated 90 degrees clockwise
+            }
+            yRot %= 360;
+            return ConfiguredModel.builder().modelFile(shape == StairsShape.STRAIGHT ? stairs : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? stairsInner : stairsOuter).rotationX(
+                half == Half.BOTTOM ? 0 : 180).rotationY(yRot).uvLock(false).build();
+        }, StairsBlock.WATERLOGGED);
+    }
+
+    protected String getModId()
+    {
+        return this.mod_id;
     }
 }

@@ -57,4 +57,14 @@ public class BaseBlockModels extends BlockModelProvider
         getBuilder(name + "_button_pressed").parent(getExistingFile(mcLoc("block/button_pressed"))).texture("texture", texture);
         getBuilder(name + "_button").parent(getExistingFile(mcLoc("block/button"))).texture("texture", texture);
     }
+
+    protected void buildRooftilesStairs(String name)
+    {
+        getBuilder(name + "_stairs").parent(getExistingFile(modLoc("block/rooftiles_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name)).texture("bottom",
+            new ResourceLocation(modid, "block/" + name)).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+        getBuilder(name + "_stairs_inner").parent(getExistingFile(modLoc("block/rooftiles_inner_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_inner")).texture("bottom",
+            new ResourceLocation(modid, "block/" + name + "_inner")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+        getBuilder(name + "_stairs_outer").parent(getExistingFile(modLoc("block/rooftiles_outer_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_outer")).texture("bottom",
+            new ResourceLocation(modid, "block/" + name + "_outer")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+    }
 }
