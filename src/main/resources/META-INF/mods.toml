@@ -15,7 +15,7 @@ description="This mod simply provides the basic elements for my other mods to av
 [[dependencies.mapperbase]] #optional
     modId="forge"
     mandatory=true
-    versionRange="[31,)"
+    versionRange="[31.2,)"
     ordering="NONE"
     side="BOTH"
 
