@@ -20,7 +20,7 @@ import tv.mapper.mapperbase.block.BaseBlocks;
 
 public class BaseItems
 {
-    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, MapperBase.MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MapperBase.MODID);
 
     public static final RegistryObject<Item> STEEL_ITEM = ITEMS.register("steel_block", () -> new BlockItem(BaseBlocks.STEEL_BLOCK.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_STAIRS_ITEM = ITEMS.register("steel_stairs", () -> new BlockItem(BaseBlocks.STEEL_STAIRS.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));

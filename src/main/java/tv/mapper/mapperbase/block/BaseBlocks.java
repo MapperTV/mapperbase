@@ -16,7 +16,7 @@ import tv.mapper.mapperbase.MapperBase;
 
 public class BaseBlocks
 {
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MapperBase.MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MapperBase.MODID);
 
     public static final RegistryObject<CustomBlock> STEEL_BLOCK = BLOCKS.register("steel_block",
         () -> new CustomBlock(Block.Properties.create(Material.IRON, MaterialColor.STONE).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.LANTERN), ToolType.PICKAXE));
