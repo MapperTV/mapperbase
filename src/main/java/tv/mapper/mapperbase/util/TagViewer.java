@@ -2,11 +2,12 @@ package tv.mapper.mapperbase.util;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.Item;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -31,11 +32,11 @@ public class TagViewer
 
         List<ITextComponent> tooltips = e.getToolTip();
         Item item = e.getItemStack().getItem();
-        Map<ResourceLocation, Tag<Item>> tagmap = ItemTags.getCollection().getTagMap();
+        Map<ResourceLocation, ITag<Item>> tagmap = ItemTags.getCollection().getTagMap();
 
         int count = 0;
 
-        for(Map.Entry<ResourceLocation, Tag<Item>> entry : tagmap.entrySet())
+        for(Entry<ResourceLocation, ITag<Item>> entry : tagmap.entrySet())
         {
             if(item.isIn(entry.getValue()))
             {
