@@ -5,9 +5,7 @@
  By itself this mods only adds a few contents, usually without any explicit usage so it is not a mod meant to be installed alone. It is best used with my other mods:
  
  EmbellishCraft: https://minecraft.curseforge.com/projects/embellishcraft  
- Road Stuff 2: https://www.curseforge.com/minecraft/mc-mods/road-stuff
- 
- Not: currently none of my mods are updated to 1.15 yet. Do not try to load them in a 1.15.1 instance. Wait for an update first.
- 
- Targeted Minecraft version: 1.15.1
+ Road Stuff: https://www.curseforge.com/minecraft/mc-mods/road-stuff
+  
+ Targeted Minecraft version: 1.15.2
  Mod loader: Forge
