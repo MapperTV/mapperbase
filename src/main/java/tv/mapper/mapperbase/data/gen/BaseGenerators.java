@@ -19,8 +19,10 @@ public class BaseGenerators
         generator.addProvider(new BaseBlockModels(generator, MapperBase.MODID, event.getExistingFileHelper()));
         generator.addProvider(new BaseItemModels(generator, MapperBase.MODID, event.getExistingFileHelper()));
 
-        generator.addProvider(new BaseBlockTags(generator));
-        generator.addProvider(new BaseItemTags(generator));
+        BaseBlockTags baseBlockTags = new BaseBlockTags(generator);
+
+        generator.addProvider(baseBlockTags);
+        generator.addProvider(new BaseItemTags(generator, baseBlockTags));
 
         generator.addProvider(new BaseLang(generator, MapperBase.MODID, "en_us"));
         generator.addProvider(new BaseLang(generator, MapperBase.MODID, "fr_fr"));
