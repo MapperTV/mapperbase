@@ -46,5 +46,7 @@ public class BaseItemTags extends ItemTagsProvider
 
         func_240522_a_(BaseTags.ForgeItems.PLATES).func_240532_a_(BaseItems.IRON_PLATE.get());
         func_240522_a_(BaseTags.ForgeItems.PLATES).func_240532_a_(BaseItems.STEEL_PLATE.get());
+
+        func_240522_a_(ItemTags.field_232908_Z_).func_240532_a_(BaseItems.STEEL_INGOT.get());
     }
 }

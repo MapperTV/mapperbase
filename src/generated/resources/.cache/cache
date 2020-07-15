@@ -281,6 +281,7 @@ d9e6f5335f54d1fc072ccbb4a782a76fcfbaad1b data/minecraft/recipes/concrete_stairs_
 f364b9477e46bce04a72a4bddc936ab30566994b data/minecraft/tags/blocks/slabs.json
 b51b8e5f57d74d354c73efc3ac870fac90cb26ed data/minecraft/tags/blocks/stairs.json
 3703d37b90691fff5a1413e16b65758dd1fc9b1e data/minecraft/tags/blocks/walls.json
+2d6304cc4f9f26a8b88d8d36f7b080ef2eecdce0 data/minecraft/tags/items/beacon_payment_items.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/minecraft/tags/items/fences.json
 f364b9477e46bce04a72a4bddc936ab30566994b data/minecraft/tags/items/slabs.json
 b51b8e5f57d74d354c73efc3ac870fac90cb26ed data/minecraft/tags/items/stairs.json
