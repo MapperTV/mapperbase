@@ -10,16 +10,25 @@
     },
     {
       "when": {
-        "north": "true"
+        "north": "low"
+      },
+      "apply": {
+        "model": "mapperbase:block/concrete_wall_side"
+      }
+    },
+    {
+      "when": {
+        "east": "low"
       },
       "apply": {
         "model": "mapperbase:block/concrete_wall_side",
+        "y": 90,
         "uvlock": true
       }
     },
     {
       "when": {
-        "south": "true"
+        "south": "low"
       },
       "apply": {
         "model": "mapperbase:block/concrete_wall_side",
@@ -29,7 +38,7 @@
     },
     {
       "when": {
-        "west": "true"
+        "west": "low"
       },
       "apply": {
         "model": "mapperbase:block/concrete_wall_side",
@@ -39,11 +48,39 @@
     },
     {
       "when": {
-        "east": "true"
+        "north": "tall"
       },
       "apply": {
-        "model": "mapperbase:block/concrete_wall_side",
+        "model": "mapperbase:block/concrete_wall_side_tall"
+      }
+    },
+    {
+      "when": {
+        "east": "tall"
+      },
+      "apply": {
+        "model": "mapperbase:block/concrete_wall_side_tall",
         "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "tall"
+      },
+      "apply": {
+        "model": "mapperbase:block/concrete_wall_side_tall",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "west": "tall"
+      },
+      "apply": {
+        "model": "mapperbase:block/concrete_wall_side_tall",
+        "y": 270,
         "uvlock": true
       }
     }

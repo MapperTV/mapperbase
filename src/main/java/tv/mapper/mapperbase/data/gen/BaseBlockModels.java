@@ -21,12 +21,12 @@ public class BaseBlockModels extends BlockModelProvider
     @Override
     protected void registerModels()
     {
-        getBuilder("steel_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/steel_block"));
+        buildWall("steel", modLoc("block/steel_block"));
         getBuilder("steel_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/steel_block"));
         getBuilder("steel_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/steel_block"));
         getBuilder("steel_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/steel_block"));
 
-        getBuilder("concrete_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/concrete"));
+        buildWall("concrete", modLoc("block/concrete"));
         getBuilder("concrete_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/concrete"));
         getBuilder("concrete_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/concrete"));
         getBuilder("concrete_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/concrete"));
@@ -38,6 +38,9 @@ public class BaseBlockModels extends BlockModelProvider
     protected void buildWall(String name, ResourceLocation texture) // Trump's favorite model generator
     {
         getBuilder(name + "_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", texture);
+        getBuilder(name + "_wall_post").parent(getExistingFile(mcLoc("block/template_wall_post"))).texture("wall", texture);
+        getBuilder(name + "_wall_side").parent(getExistingFile(mcLoc("block/template_wall_side"))).texture("wall", texture);
+        getBuilder(name + "_wall_side_tall").parent(getExistingFile(mcLoc("block/template_wall_side_tall"))).texture("wall", texture);
     }
 
     protected void buildFence(String name, ResourceLocation texture)

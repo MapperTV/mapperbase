@@ -8,6 +8,7 @@ import net.minecraft.block.FenceBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
+import net.minecraft.block.WallHeight;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -20,6 +21,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.block.UpDownBlock;
@@ -40,7 +42,8 @@ public class BaseBlockStates extends BlockStateProvider
         simpleBlock(BaseBlocks.STEEL_BLOCK.get());
         slabBlock((SlabBlock)BaseBlocks.STEEL_SLAB.get(), modLoc("block/steel_block"), modLoc("block/steel_slab_side"), modLoc("block/steel_block"), modLoc("block/steel_block"));
         stairsBlock((StairsBlock)BaseBlocks.STEEL_STAIRS.get(), modLoc("block/steel_block"), modLoc("block/steel_block"), modLoc("block/steel_block"));
-        wallBlock((WallBlock)BaseBlocks.STEEL_WALL.get(), modLoc("block/steel_block"));
+        newWallBlock((WallBlock)BaseBlocks.STEEL_WALL.get(), new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_post"), new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_side"),
+            new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_side_tall"));
         pressurePlateBlock(BaseBlocks.STEEL_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate"),
             new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate_down"));
         fenceBlock((FenceBlock)BaseBlocks.STEEL_FENCE.get(), modLoc("block/steel_block"));
@@ -49,7 +52,8 @@ public class BaseBlockStates extends BlockStateProvider
         simpleBlock(BaseBlocks.CONCRETE.get());
         slabBlock((SlabBlock)BaseBlocks.CONCRETE_SLAB.get(), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
         stairsBlock((StairsBlock)BaseBlocks.CONCRETE_STAIRS.get(), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
-        wallBlock((WallBlock)BaseBlocks.CONCRETE_WALL.get(), modLoc("block/concrete"));
+        newWallBlock((WallBlock)BaseBlocks.CONCRETE_WALL.get(), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_post"), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_side"),
+            new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_side_tall"));
         pressurePlateBlock(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate"),
             new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate_down"));
         fenceBlock((FenceBlock)BaseBlocks.CONCRETE_FENCE.get(), modLoc("block/concrete"));
@@ -140,6 +144,23 @@ public class BaseBlockStates extends BlockStateProvider
             return ConfiguredModel.builder().modelFile(shape == StairsShape.STRAIGHT ? stairs : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? stairsInner : stairsOuter).rotationX(
                 half == Half.BOTTOM ? 0 : 180).rotationY(yRot).uvLock(false).build();
         }, StairsBlock.WATERLOGGED);
+    }
+
+    protected void newWallBlock(WallBlock block, ModelFile post, ModelFile side, ModelFile side_tall)
+    {
+        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
+
+        builder.part().modelFile(post).addModel().condition(WallBlock.UP, true).end();
+
+        builder.part().modelFile(side).addModel().condition(WallBlock.field_235613_c_, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(90).uvLock(true).addModel().condition(WallBlock.field_235612_b_, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(180).uvLock(true).addModel().condition(WallBlock.field_235614_d_, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(270).uvLock(true).addModel().condition(WallBlock.field_235615_e_, WallHeight.LOW).end();
+
+        builder.part().modelFile(side_tall).addModel().condition(WallBlock.field_235613_c_, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(90).uvLock(true).addModel().condition(WallBlock.field_235612_b_, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(180).uvLock(true).addModel().condition(WallBlock.field_235614_d_, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(270).uvLock(true).addModel().condition(WallBlock.field_235615_e_, WallHeight.TALL).end();
     }
 
     protected String getModId()
