@@ -24,6 +24,7 @@ public class BaseBlockTags extends BlockTagsProvider
         this.getOrCreateBuilder(Tags.Blocks.FENCES).add(BaseBlocks.STEEL_FENCE.get(), BaseBlocks.CONCRETE_FENCE.get());
         this.getOrCreateBuilder(Tags.Blocks.STORAGE_BLOCKS).add(BaseBlocks.STEEL_BLOCK.get(), BaseBlocks.BITUMEN_BLOCK.get());
         this.getOrCreateBuilder(Tags.Blocks.ORES).addItemEntry(BaseBlocks.BITUMEN_ORE.get());
+        this.getOrCreateBuilder(BlockTags.BEACON_BASE_BLOCKS).add(BaseBlocks.STEEL_BLOCK.get());
         this.getOrCreateBuilder(BaseTags.ForgeBlocks.ORES_BITUMEN).addItemEntry(BaseBlocks.BITUMEN_ORE.get());
         this.getOrCreateBuilder(BaseTags.ForgeBlocks.STORAGE_BLOCKS_BITUMEN).addItemEntry(BaseBlocks.BITUMEN_BLOCK.get());
         this.getOrCreateBuilder(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL).addItemEntry(BaseBlocks.STEEL_BLOCK.get());
