@@ -17,36 +17,36 @@ public class BaseItemTags extends ItemTagsProvider
 
     public void registerTags()
     {
-        func_240521_a_(BlockTags.STAIRS, ItemTags.STAIRS);
-        func_240521_a_(BlockTags.SLABS, ItemTags.SLABS);
-        func_240521_a_(BlockTags.WALLS, ItemTags.WALLS);
-        func_240521_a_(BlockTags.FENCES, ItemTags.FENCES);
-        func_240521_a_(Tags.Blocks.FENCES, Tags.Items.FENCES);
-        func_240521_a_(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
-        func_240521_a_(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
-        func_240521_a_(Tags.Blocks.ORES, Tags.Items.ORES);
-        func_240521_a_(BaseTags.ForgeBlocks.ORES_BITUMEN, BaseTags.ForgeItems.ORES_BITUMEN);
-        func_240521_a_(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL, BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL);
-        func_240521_a_(BaseTags.ForgeBlocks.STORAGE_BLOCKS_BITUMEN, BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN);
-        func_240521_a_(BaseTags.ForgeBlocks.PRESSURE_PLATES, BaseTags.ForgeItems.PRESSURE_PLATES);
-        func_240521_a_(BaseTags.Blocks.CONCRETE, BaseTags.Items.CONCRETE);
-        func_240521_a_(BaseTags.Blocks.ASPHALT, BaseTags.Items.ASPHALT);
+        copy(BlockTags.STAIRS, ItemTags.STAIRS);
+        copy(BlockTags.SLABS, ItemTags.SLABS);
+        copy(BlockTags.WALLS, ItemTags.WALLS);
+        copy(BlockTags.FENCES, ItemTags.FENCES);
+        copy(Tags.Blocks.FENCES, Tags.Items.FENCES);
+        copy(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
+        copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
+        copy(Tags.Blocks.ORES, Tags.Items.ORES);
+        copy(BaseTags.ForgeBlocks.ORES_BITUMEN, BaseTags.ForgeItems.ORES_BITUMEN);
+        copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL, BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL);
+        copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_BITUMEN, BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN);
+        copy(BaseTags.ForgeBlocks.PRESSURE_PLATES, BaseTags.ForgeItems.PRESSURE_PLATES);
+        copy(BaseTags.Blocks.CONCRETE, BaseTags.Items.CONCRETE);
+        copy(BaseTags.Blocks.ASPHALT, BaseTags.Items.ASPHALT);
 
-        func_240522_a_(BaseTags.ForgeItems.INGOTS_STEEL).func_240532_a_(BaseItems.STEEL_INGOT.get());
-        func_240522_a_(BaseTags.ForgeItems.NUGGETS_STEEL).func_240532_a_(BaseItems.STEEL_NUGGET.get());
-        func_240522_a_(BaseTags.ForgeItems.PLATES_STEEL).func_240532_a_(BaseItems.STEEL_PLATE.get());
-        func_240522_a_(BaseTags.ForgeItems.RODS_STEEL).func_240532_a_(BaseItems.STEEL_ROD.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.PLATES_STEEL).add(BaseItems.STEEL_PLATE.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.RODS_STEEL).add(BaseItems.STEEL_ROD.get());
 
-        func_240522_a_(Tags.Items.NUGGETS).func_240532_a_(BaseItems.STEEL_NUGGET.get());
-        func_240522_a_(Tags.Items.RODS).func_240532_a_(BaseItems.STEEL_ROD.get());
-        func_240522_a_(Tags.Items.INGOTS).func_240532_a_(BaseItems.STEEL_INGOT.get());
+        getOrCreateBuilder(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
+        getOrCreateBuilder(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
+        getOrCreateBuilder(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
 
-        func_240522_a_(BaseTags.ForgeItems.PLATES_IRON).func_240532_a_(BaseItems.IRON_PLATE.get());
-        func_240522_a_(BaseTags.ForgeItems.RODS_IRON).func_240532_a_(BaseItems.IRON_ROD.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
 
-        func_240522_a_(BaseTags.ForgeItems.PLATES).func_240532_a_(BaseItems.IRON_PLATE.get());
-        func_240522_a_(BaseTags.ForgeItems.PLATES).func_240532_a_(BaseItems.STEEL_PLATE.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE.get());
+        getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
 
-        func_240522_a_(ItemTags.field_232908_Z_).func_240532_a_(BaseItems.STEEL_INGOT.get());
+        getOrCreateBuilder(ItemTags.field_232908_Z_).add(BaseItems.STEEL_INGOT.get());
     }
 }

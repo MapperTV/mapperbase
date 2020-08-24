@@ -152,15 +152,15 @@ public class BaseBlockStates extends BlockStateProvider
 
         builder.part().modelFile(post).addModel().condition(WallBlock.UP, true).end();
 
-        builder.part().modelFile(side).addModel().condition(WallBlock.field_235613_c_, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(90).uvLock(true).addModel().condition(WallBlock.field_235612_b_, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(180).uvLock(true).addModel().condition(WallBlock.field_235614_d_, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(270).uvLock(true).addModel().condition(WallBlock.field_235615_e_, WallHeight.LOW).end();
+        builder.part().modelFile(side).addModel().condition(WallBlock.WALL_HEIGHT_NORTH, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(90).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_EAST, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(180).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_SOUTH, WallHeight.LOW).end();
+        builder.part().modelFile(side).rotationY(270).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_WEST, WallHeight.LOW).end();
 
-        builder.part().modelFile(side_tall).addModel().condition(WallBlock.field_235613_c_, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(90).uvLock(true).addModel().condition(WallBlock.field_235612_b_, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(180).uvLock(true).addModel().condition(WallBlock.field_235614_d_, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(270).uvLock(true).addModel().condition(WallBlock.field_235615_e_, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).addModel().condition(WallBlock.WALL_HEIGHT_NORTH, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(90).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_EAST, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(180).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_SOUTH, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(270).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_WEST, WallHeight.TALL).end();
     }
 
     protected String getModId()

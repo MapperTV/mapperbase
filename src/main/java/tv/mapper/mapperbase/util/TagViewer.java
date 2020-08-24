@@ -40,12 +40,12 @@ public class TagViewer
         {
             if(item.isIn(entry.getValue()))
             {
-                tooltips.add(new StringTextComponent("Tag: " + entry.getKey().toString()).func_240699_a_(TextFormatting.ITALIC).func_240699_a_(TextFormatting.DARK_GRAY));
+                tooltips.add(new StringTextComponent("Tag: " + entry.getKey().toString()).mergeStyle(TextFormatting.ITALIC).mergeStyle(TextFormatting.DARK_GRAY));
                 count++;
             }
         }
 
         if(count <= 0)
-            tooltips.add(new StringTextComponent("No tag found...").func_240699_a_(TextFormatting.ITALIC).func_240699_a_(TextFormatting.DARK_GRAY));
+            tooltips.add(new StringTextComponent("No tag found...").mergeStyle(TextFormatting.ITALIC).mergeStyle(TextFormatting.DARK_GRAY));
     }
 }

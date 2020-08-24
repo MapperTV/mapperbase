@@ -76,7 +76,7 @@ public enum BaseArmorMaterial implements IArmorMaterial
     }
 
     @Override
-    public float func_230304_f_()
+    public float getKnockbackResistance()
     {
         return 0;
     }
