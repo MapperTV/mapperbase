@@ -32,7 +32,7 @@ public class TagViewer
 
         List<ITextComponent> tooltips = e.getToolTip();
         Item item = e.getItemStack().getItem();
-        Map<ResourceLocation, ITag<Item>> tagmap = ItemTags.getCollection().getTagMap();
+        Map<ResourceLocation, ITag<Item>> tagmap = ItemTags.getCollection().getIDTagMap();
 
         int count = 0;
 
