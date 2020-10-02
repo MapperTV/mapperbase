@@ -4,14 +4,16 @@ import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.data.BaseTags;
 
 public class BaseBlockTags extends BlockTagsProvider
 {
-    public BaseBlockTags(DataGenerator generatorIn)
+    public BaseBlockTags(DataGenerator generatorIn, ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn);
+        super(generatorIn, MapperBase.MODID, existingFileHelper);
     }
 
     public void registerTags()

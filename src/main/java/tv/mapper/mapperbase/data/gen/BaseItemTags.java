@@ -5,14 +5,16 @@ import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.data.BaseTags;
 import tv.mapper.mapperbase.item.BaseItems;
 
 public class BaseItemTags extends ItemTagsProvider
 {
-    public BaseItemTags(DataGenerator generatorIn, BaseBlockTags blockTagProvider)
+    public BaseItemTags(DataGenerator generatorIn, BaseBlockTags blockTagProvider, ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn, blockTagProvider);
+        super(generatorIn, blockTagProvider, MapperBase.MODID, existingFileHelper);
     }
 
     public void registerTags()
@@ -47,6 +49,6 @@ public class BaseItemTags extends ItemTagsProvider
         getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE.get());
         getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
 
-        getOrCreateBuilder(ItemTags.field_232908_Z_).add(BaseItems.STEEL_INGOT.get());
+        getOrCreateBuilder(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
     }
 }
