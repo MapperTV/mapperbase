@@ -3,6 +3,7 @@ package tv.mapper.mapperbase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -14,6 +15,7 @@ import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig;
 import tv.mapper.mapperbase.config.BaseOreGenConfig;
 import tv.mapper.mapperbase.item.BaseItems;
+import tv.mapper.mapperbase.world.BaseOreGenerator;
 
 @Mod(MapperBase.MODID)
 public class MapperBase
@@ -32,6 +34,8 @@ public class MapperBase
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
+
+        MinecraftForge.EVENT_BUS.register(new BaseOreGenerator());
     }
 
     private void setup(final FMLCommonSetupEvent event)

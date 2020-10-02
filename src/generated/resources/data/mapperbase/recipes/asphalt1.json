@@ -17,6 +17,7 @@
     }
   },
   "result": {
-    "item": "mapperbase:asphalt"
+    "item": "mapperbase:asphalt",
+    "count": 4
   }
 }
