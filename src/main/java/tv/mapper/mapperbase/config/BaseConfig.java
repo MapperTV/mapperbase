@@ -20,11 +20,14 @@ public class BaseConfig
     public static class ClientConfig
     {
         public static ForgeConfigSpec.BooleanValue ENABLE_TAG_VIEWER;
+        public static ForgeConfigSpec.BooleanValue ENABLE_GEN_LOGS;
 
         ClientConfig(ForgeConfigSpec.Builder CLIENT_BUILDER)
         {
             CLIENT_BUILDER.comment("Mapper Base General Config").push("general_config");
             ENABLE_TAG_VIEWER = CLIENT_BUILDER.comment("Enable the Tag Viewer (press CTRL while cursor being on item). This is client-side only. [default: false]").define("EnableTagViewer", false);
+            ENABLE_GEN_LOGS = CLIENT_BUILDER.comment("Enable the logs for ore genration, useful to check if your config file is correct. This is client-side only. [default: false]").define("EnableGenLogs",
+                false);
             CLIENT_BUILDER.pop();
         }
     }
