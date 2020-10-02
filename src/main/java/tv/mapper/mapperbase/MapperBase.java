@@ -14,7 +14,6 @@ import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig;
 import tv.mapper.mapperbase.config.BaseOreGenConfig;
 import tv.mapper.mapperbase.item.BaseItems;
-import tv.mapper.mapperbase.world.BaseOreGenerator;
 
 @Mod(MapperBase.MODID)
 public class MapperBase
@@ -38,8 +37,6 @@ public class MapperBase
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("Mapper Base setup started!");
-
-        BaseOreGenerator.setupOregen();
     }
 
     private void clientSetup(final FMLClientSetupEvent event)
