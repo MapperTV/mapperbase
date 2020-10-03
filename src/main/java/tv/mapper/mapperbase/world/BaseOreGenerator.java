@@ -52,8 +52,9 @@ public class BaseOreGenerator
             if(oreGen == null)
                 oreGen = Feature.ORE.withConfiguration(
                     new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
-                        Placement.field_242907_l.configure(new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), 0, CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
-                            CommonConfig.BITUMEN_CHANCE.get());
+                        Placement.field_242907_l.configure(
+                            new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
+                                CommonConfig.BITUMEN_CHANCE.get());
 
             event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreGen);
         }
