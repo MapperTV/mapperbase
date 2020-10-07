@@ -14,7 +14,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig;
 import tv.mapper.mapperbase.config.BaseOreGenConfig;
+import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
 import tv.mapper.mapperbase.item.BaseItems;
+import tv.mapper.mapperbase.util.ConfigChecker;
 import tv.mapper.mapperbase.world.BaseOreGenerator;
 
 @Mod(MapperBase.MODID)
@@ -41,6 +43,11 @@ public class MapperBase
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("Mapper Base setup started!");
+
+        ConfigChecker.checkConfig();
+
+        if(!CommonConfig.BITUMEN_GENERATION.get())
+            LOGGER.info("Ore generation is disabled by config.");
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

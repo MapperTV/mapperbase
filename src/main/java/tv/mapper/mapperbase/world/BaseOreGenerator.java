@@ -22,41 +22,44 @@ public class BaseOreGenerator
     @SubscribeEvent(priority = EventPriority.HIGH)
     public void registerOreGen(BiomeLoadingEvent event)
     {
-        String biome = event.getName().toString();
-
-        if(CommonConfig.BITUMEN_WHITELIST_MODE.get())
+        if(CommonConfig.BITUMEN_GENERATION.get())
         {
-            if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
+            String biome = event.getName().toString();
+
+            if(CommonConfig.BITUMEN_WHITELIST_MODE.get())
             {
-                generate = true;
-                if(ClientConfig.ENABLE_GEN_LOGS.get())
-                    MapperBase.LOGGER.info("Bitumen ore whitelisted for biome " + biome + " in the config.");
+                if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
+                {
+                    generate = true;
+                    if(ClientConfig.ENABLE_GEN_LOGS.get())
+                        MapperBase.LOGGER.info("Bitumen ore whitelisted for biome " + biome + " in the config.");
+                }
+                else
+                    generate = false;
             }
             else
-                generate = false;
-        }
-        else
-        {
-            if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
             {
-                generate = false;
-                if(ClientConfig.ENABLE_GEN_LOGS.get())
-                    MapperBase.LOGGER.info("Bitumen ore blacklisted for biome " + biome + " in the config.");
+                if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
+                {
+                    generate = false;
+                    if(ClientConfig.ENABLE_GEN_LOGS.get())
+                        MapperBase.LOGGER.info("Bitumen ore blacklisted for biome " + biome + " in the config.");
+                }
+                else
+                    generate = true;
             }
-            else
-                generate = true;
-        }
 
-        if(generate)
-        {
-            if(oreGen == null)
-                oreGen = Feature.ORE.withConfiguration(
-                    new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
-                        Placement.field_242907_l.configure(
-                            new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
-                                CommonConfig.BITUMEN_CHANCE.get());
+            if(generate)
+            {
+                if(oreGen == null)
+                    oreGen = Feature.ORE.withConfiguration(
+                        new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
+                            Placement.field_242907_l.configure(
+                                new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
+                                    CommonConfig.BITUMEN_CHANCE.get());
 
-            event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreGen);
+                event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreGen);
+            }
         }
     }
 }
