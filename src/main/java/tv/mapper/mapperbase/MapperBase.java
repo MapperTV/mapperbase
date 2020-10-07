@@ -44,10 +44,10 @@ public class MapperBase
     {
         LOGGER.info("Mapper Base setup started!");
 
-        ConfigChecker.checkConfig();
-
         if(!CommonConfig.BITUMEN_GENERATION.get())
             LOGGER.info("Ore generation is disabled by config.");
+        else
+            ConfigChecker.checkConfig();
     }
 
     private void clientSetup(final FMLClientSetupEvent event)
