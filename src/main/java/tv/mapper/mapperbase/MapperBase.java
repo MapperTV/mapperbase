@@ -17,7 +17,9 @@ import tv.mapper.mapperbase.config.BaseOreGenConfig;
 import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
 import tv.mapper.mapperbase.item.BaseItems;
 import tv.mapper.mapperbase.util.ConfigChecker;
+import tv.mapper.mapperbase.world.BaseFeatures;
 import tv.mapper.mapperbase.world.BaseOreGenerator;
+import tv.mapper.mapperbase.world.OreList;
 
 @Mod(MapperBase.MODID)
 public class MapperBase
@@ -44,10 +46,15 @@ public class MapperBase
     {
         LOGGER.info("Mapper Base setup started!");
 
+        OreList.initOres();
+
         if(!CommonConfig.BITUMEN_GENERATION.get())
             LOGGER.info("Ore generation is disabled by config.");
         else
+        {
             ConfigChecker.checkConfig();
+            BaseFeatures.registerFeatures();
+        }
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

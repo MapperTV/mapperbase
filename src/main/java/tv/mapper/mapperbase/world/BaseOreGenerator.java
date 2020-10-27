@@ -1,64 +1,52 @@
 package tv.mapper.mapperbase.world;
 
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.placement.TopSolidRangeConfig;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig.ClientConfig;
-import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
 
 public class BaseOreGenerator
 {
     private static boolean generate;
-    private ConfiguredFeature<?, ?> oreGen;
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public void registerOreGen(BiomeLoadingEvent event)
     {
-        if(CommonConfig.BITUMEN_GENERATION.get())
+        for(CustomOre ore : OreList.ores)
         {
-            String biome = event.getName().toString();
-
-            if(CommonConfig.BITUMEN_WHITELIST_MODE.get())
+            if(ore.canGenerate())
             {
-                if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
+                String biome = event.getName().toString();
+
+                if(ore.hasWhitelist())
                 {
-                    generate = true;
-                    if(ClientConfig.ENABLE_GEN_LOGS.get())
-                        MapperBase.LOGGER.info("Bitumen ore whitelisted for biome " + biome + " in the config.");
+                    if(ore.getBiomeList().contains(biome))
+                    {
+                        generate = true;
+                        if(ClientConfig.ENABLE_GEN_LOGS.get())
+                            MapperBase.LOGGER.info(ore.name + " whitelisted for biome " + biome + " in the config.");
+                    }
+                    else
+                        generate = false;
                 }
                 else
-                    generate = false;
-            }
-            else
-            {
-                if(CommonConfig.BITUMEN_BIOME_LIST.get().contains(biome))
                 {
-                    generate = false;
-                    if(ClientConfig.ENABLE_GEN_LOGS.get())
-                        MapperBase.LOGGER.info("Bitumen ore blacklisted for biome " + biome + " in the config.");
+                    if(ore.getBiomeList().contains(biome))
+                    {
+                        generate = false;
+                        if(ClientConfig.ENABLE_GEN_LOGS.get())
+                            MapperBase.LOGGER.info(ore.name + " blacklisted for biome " + biome + " in the config.");
+                    }
+                    else
+                        generate = true;
                 }
-                else
-                    generate = true;
-            }
 
-            if(generate)
-            {
-                if(oreGen == null)
-                    oreGen = Feature.ORE.withConfiguration(
-                        new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
-                            Placement.field_242907_l.configure(
-                                new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
-                                    CommonConfig.BITUMEN_CHANCE.get());
-
-                event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, oreGen);
+                if(generate)
+                {
+                    event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore.getFeature());
+                }
             }
         }
     }
