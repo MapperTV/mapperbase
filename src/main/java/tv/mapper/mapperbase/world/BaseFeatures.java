@@ -16,10 +16,9 @@ import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
 public class BaseFeatures
 {
     public static ConfiguredFeature<?, ?> BITUMEN = Feature.ORE.withConfiguration(
-        new OreFeatureConfig(OreFeatureConfig.FillerBlockType.field_241882_a, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
-            Placement.field_242907_l.configure(
-                new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).func_242728_a().func_242731_b(
-                    CommonConfig.BITUMEN_CHANCE.get());
+        new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BaseBlocks.BITUMEN_ORE.get().getDefaultState(), CommonConfig.BITUMEN_SIZE.get())).withPlacement(
+            Placement.RANGE.configure(new TopSolidRangeConfig(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MAX_HEIGHT.get()))).square().func_242731_b(
+                CommonConfig.BITUMEN_CHANCE.get());
 
     public static void registerFeatures()
     {
