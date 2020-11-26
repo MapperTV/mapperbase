@@ -11,107 +11,7 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:iron_nugget"
-          }
-        ]
-      }
-    },
-    "has_steel_pickaxe": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_pickaxe"
-          }
-        ]
-      }
-    },
-    "has_steel_shovel": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_shovel"
-          }
-        ]
-      }
-    },
-    "has_steel_axe": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_axe"
-          }
-        ]
-      }
-    },
-    "has_steel_hoe": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_hoe"
-          }
-        ]
-      }
-    },
-    "has_steel_sword": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_sword"
-          }
-        ]
-      }
-    },
-    "has_steel_helmet": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_helmet"
-          }
-        ]
-      }
-    },
-    "has_steel_chestplate": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_chestplate"
-          }
-        ]
-      }
-    },
-    "has_steel_leggings": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_leggings"
-          }
-        ]
-      }
-    },
-    "has_steel_boots": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_boots"
-          }
-        ]
-      }
-    },
-    "has_steel_horse_armor": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "mapperbase:steel_horse_armor"
+            "tag": "forge:nuggets/iron"
           }
         ]
       }
@@ -126,16 +26,6 @@
   "requirements": [
     [
       "has_iron_nugget",
-      "has_steel_pickaxe",
-      "has_steel_shovel",
-      "has_steel_axe",
-      "has_steel_hoe",
-      "has_steel_sword",
-      "has_steel_helmet",
-      "has_steel_chestplate",
-      "has_steel_leggings",
-      "has_steel_boots",
-      "has_steel_horse_armor",
       "has_the_recipe"
     ]
   ]

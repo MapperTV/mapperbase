@@ -4,6 +4,6 @@
     "tag": "forge:storage_blocks/iron"
   },
   "result": "mapperbase:steel_block",
-  "experience": 2.0,
-  "cookingtime": 960
+  "experience": 8.0,
+  "cookingtime": 3200
 }

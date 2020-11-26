@@ -78,13 +78,15 @@ public class BaseRecipes extends RecipeProvider
             hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).build(consumer);
 
         // Blasting iron to steel
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.STEEL_INGOT.get(), 1.0f, 120).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer,
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.NUGGETS_IRON), BaseItems.STEEL_NUGGET.get(), 0.1f, 100).addCriterion("has_iron_nugget", hasItem(Tags.Items.NUGGETS_IRON)).build(
+            consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.STEEL_INGOT.get(), 1.0f, 400).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer,
             MapperBase.MODID + ":steel_ingot_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.STORAGE_BLOCKS_IRON), BaseBlocks.STEEL_BLOCK.get(), 2.0f, 960).addCriterion("has_iron_block",
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.STORAGE_BLOCKS_IRON), BaseBlocks.STEEL_BLOCK.get(), 8.0f, 3200).addCriterion("has_iron_block",
             hasItem(Tags.Items.STORAGE_BLOCKS_IRON)).build(consumer, MapperBase.MODID + ":steel_block_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.PLATES_IRON), BaseItems.STEEL_PLATE.get(), 1.0f, 120).addCriterion("has_iron_plate",
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.PLATES_IRON), BaseItems.STEEL_PLATE.get(), 1.0f, 200).addCriterion("has_iron_plate",
             hasItem(BaseTags.ForgeItems.PLATES_IRON)).build(consumer, MapperBase.MODID + ":steel_plate_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.RODS_IRON), BaseItems.STEEL_ROD.get(), 1.0f, 120).addCriterion("has_iron_rod", hasItem(BaseTags.ForgeItems.RODS_IRON)).build(
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.RODS_IRON), BaseItems.STEEL_ROD.get(), 1.0f, 200).addCriterion("has_iron_rod", hasItem(BaseTags.ForgeItems.RODS_IRON)).build(
             consumer, MapperBase.MODID + ":steel_rod_from_blasting");
 
         // Metal plates
@@ -126,15 +128,14 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_LEGGINGS.get()).key('X', BaseTags.ForgeItems.INGOTS_STEEL).patternLine("XXX").patternLine("X X").patternLine("X X").addCriterion("has_steel",
             hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).build(consumer);
 
-        CookingRecipeBuilder.blastingRecipe(
-            Ingredient.fromItems(Items.IRON_NUGGET, BaseItems.STEEL_PICKAXE.get(), BaseItems.STEEL_SHOVEL.get(), BaseItems.STEEL_AXE.get(), BaseItems.STEEL_HOE.get(), BaseItems.STEEL_SWORD.get(),
-                BaseItems.STEEL_HELMET.get(), BaseItems.STEEL_CHESTPLATE.get(), BaseItems.STEEL_LEGGINGS.get(), BaseItems.STEEL_BOOTS.get(), BaseItems.STEEL_HORSE_ARMOR.get()),
-            BaseItems.STEEL_NUGGET.get(), 0.1F, 100).addCriterion("has_iron_nugget", hasItem(Items.IRON_NUGGET)).addCriterion("has_steel_pickaxe", hasItem(BaseItems.STEEL_PICKAXE.get())).addCriterion(
-                "has_steel_shovel", hasItem(BaseItems.STEEL_SHOVEL.get())).addCriterion("has_steel_axe", hasItem(BaseItems.STEEL_AXE.get())).addCriterion("has_steel_hoe",
-                    hasItem(BaseItems.STEEL_HOE.get())).addCriterion("has_steel_sword", hasItem(BaseItems.STEEL_SWORD.get())).addCriterion("has_steel_helmet",
-                        hasItem(BaseItems.STEEL_HELMET.get())).addCriterion("has_steel_chestplate", hasItem(BaseItems.STEEL_CHESTPLATE.get())).addCriterion("has_steel_leggings",
-                            hasItem(BaseItems.STEEL_LEGGINGS.get())).addCriterion("has_steel_boots", hasItem(BaseItems.STEEL_BOOTS.get())).addCriterion("has_steel_horse_armor",
-                                hasItem(BaseItems.STEEL_HORSE_ARMOR.get())).build(consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.STEEL_PICKAXE.get(), BaseItems.STEEL_SHOVEL.get(), BaseItems.STEEL_AXE.get(), BaseItems.STEEL_HOE.get(), BaseItems.STEEL_SWORD.get(),
+            BaseItems.STEEL_HELMET.get(), BaseItems.STEEL_CHESTPLATE.get(), BaseItems.STEEL_LEGGINGS.get(), BaseItems.STEEL_BOOTS.get(), BaseItems.STEEL_HORSE_ARMOR.get()), BaseItems.STEEL_NUGGET.get(), 0.1f,
+            100).addCriterion("has_iron_nugget", hasItem(Items.IRON_NUGGET)).addCriterion("has_steel_pickaxe", hasItem(BaseItems.STEEL_PICKAXE.get())).addCriterion("has_steel_shovel",
+                hasItem(BaseItems.STEEL_SHOVEL.get())).addCriterion("has_steel_axe", hasItem(BaseItems.STEEL_AXE.get())).addCriterion("has_steel_hoe", hasItem(BaseItems.STEEL_HOE.get())).addCriterion(
+                    "has_steel_sword", hasItem(BaseItems.STEEL_SWORD.get())).addCriterion("has_steel_helmet", hasItem(BaseItems.STEEL_HELMET.get())).addCriterion("has_steel_chestplate",
+                        hasItem(BaseItems.STEEL_CHESTPLATE.get())).addCriterion("has_steel_leggings", hasItem(BaseItems.STEEL_LEGGINGS.get())).addCriterion("has_steel_boots",
+                            hasItem(BaseItems.STEEL_BOOTS.get())).addCriterion("has_steel_horse_armor", hasItem(BaseItems.STEEL_HORSE_ARMOR.get())).build(consumer,
+                                MapperBase.MODID + ":steel_nugget_from_recycling");
 
         // Asphalt
         ShapedRecipeBuilder.shapedRecipe(BaseBlocks.ASPHALT.get(), 4).key('G', Tags.Items.GRAVEL).key('B', BaseItems.RAW_BITUMEN.get()).key('S', Tags.Items.SAND).patternLine("SB").patternLine(
