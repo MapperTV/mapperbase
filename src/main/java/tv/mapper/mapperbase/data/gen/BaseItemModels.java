@@ -44,6 +44,7 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
         getBuilder("bitumen_ore").parent(new UncheckedModelFile(modid + ":block/bitumen_ore"));
         getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
+        getBuilder("bituminous_coal").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/bituminous_coal"));
 
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));
         getBuilder("steel_pickaxe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_pickaxe"));

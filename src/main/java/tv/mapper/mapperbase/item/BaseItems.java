@@ -45,6 +45,7 @@ public class BaseItems
     public static final RegistryObject<Item> RAW_BITUMEN = ITEMS.register("raw_bitumen", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> BITUMEN_ORE_ITEM = ITEMS.register("bitumen_ore", () -> new BlockItem(BaseBlocks.BITUMEN_ORE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> BITUMEN_ITEM = ITEMS.register("bitumen_block", () -> new BlockItem(BaseBlocks.BITUMEN_BLOCK.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> BITUMINOUS_COAL = ITEMS.register("bituminous_coal", () -> new FuelItem(new Item.Properties().group(BaseGroups.MAPPERBASE), 250));
 
     public static final RegistryObject<Item> ASPHALT_ITEM = ITEMS.register("asphalt", () -> new BlockItem(BaseBlocks.ASPHALT.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> ASPHALT_STAIRS_ITEM = ITEMS.register("asphalt_stairs", () -> new BlockItem(BaseBlocks.ASPHALT_STAIRS.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));

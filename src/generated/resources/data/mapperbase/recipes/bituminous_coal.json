@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "mapperbase:raw_bitumen"
+    },
+    "y": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "mapperbase:bituminous_coal",
+    "count": 8
+  }
+}

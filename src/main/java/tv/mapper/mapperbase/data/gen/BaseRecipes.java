@@ -165,6 +165,10 @@ public class BaseRecipes extends RecipeProvider
             hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_blasting");
         CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 200).addCriterion("has_bitumen_ore",
             hasItem(BaseItems.BITUMEN_ORE_ITEM.get())).build(consumer, MapperBase.MODID + ":raw_bitumen_from_smelting");
+
+        // Others
+        ShapedRecipeBuilder.shapedRecipe(BaseItems.BITUMINOUS_COAL.get(), 8).patternLine("xxx").patternLine("xyx").patternLine("xxx").key('x', BaseItems.RAW_BITUMEN.get()).key('y', Items.COAL).addCriterion(
+            "has_raw_bitumen", hasItem(BaseItems.RAW_BITUMEN.get())).addCriterion("has_coal", hasItem(Items.COAL)).build(consumer);
     }
 
     private void basicRecipes(Consumer<IFinishedRecipe> consumer, Block base, Block slab, Block stairs, Block wall, Block pressure, Block button, Block fence, Block fence_gate)

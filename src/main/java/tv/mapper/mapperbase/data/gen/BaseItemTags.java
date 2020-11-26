@@ -42,6 +42,7 @@ public class BaseItemTags extends ItemTagsProvider
         getOrCreateBuilder(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
         getOrCreateBuilder(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
         getOrCreateBuilder(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
+        getOrCreateBuilder(ItemTags.COALS).add(BaseItems.BITUMINOUS_COAL.get());
 
         getOrCreateBuilder(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
         getOrCreateBuilder(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
