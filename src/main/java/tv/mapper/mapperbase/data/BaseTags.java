@@ -63,6 +63,8 @@ public class BaseTags
 
         public static final ITag.INamedTag<Item> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
         public static final ITag.INamedTag<Item> ORES_BITUMEN = tag("ores/bitumen");
+        
+        public static final ITag.INamedTag<Item> BITUMEN = tag("bitumen");
 
         public static final ITag.INamedTag<Item> PRESSURE_PLATES = tag("pressure_plates");
 

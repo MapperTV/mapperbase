@@ -50,5 +50,7 @@ public class BaseItemTags extends ItemTagsProvider
         getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
 
         getOrCreateBuilder(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
+
+        getOrCreateBuilder(BaseTags.ForgeItems.BITUMEN).add(BaseItems.RAW_BITUMEN.get());
     }
 }

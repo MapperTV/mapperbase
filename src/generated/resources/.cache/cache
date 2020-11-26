@@ -115,6 +115,7 @@ a7d02fa3055ed5ecc9f96af03deee85759ec2777 data/forge/tags/blocks/ores/bitumen.jso
 09efc77f73ae5ac8af3a786931c5533a2d8da9af data/forge/tags/blocks/storage_blocks.json
 610895aa0bd18ec4cd626b7d04abc9fe9364147f data/forge/tags/blocks/storage_blocks/bitumen.json
 cfddfe11a253fde70c454bc662eeffab61c8cf2e data/forge/tags/blocks/storage_blocks/steel.json
+04fc69c3bbec309a299fc1f13a6b3f3c618c3864 data/forge/tags/items/bitumen.json
 4510cde9f50ddbecf4fe32061c636775d436baf8 data/forge/tags/items/fence_gates.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/forge/tags/items/fences.json
 2d6304cc4f9f26a8b88d8d36f7b080ef2eecdce0 data/forge/tags/items/ingots.json
