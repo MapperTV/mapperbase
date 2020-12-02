@@ -117,9 +117,8 @@ public abstract class BaseLootTableProvider extends LootTableProvider
         return LootTable.builder().addLootPool(builder);
     }
 
-    protected LootTable.Builder createChestTable(String modid, Block block)
+    protected LootTable.Builder createChestTable(String name, Block block)
     {
-        String name = block.getRegistryName().toString().replace(modid + ":", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(
             SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
@@ -147,8 +146,9 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     protected LootTable.Builder createSilkTable(String modid, Block block, Item loot, int min, int max, int fortune)
     {
         String name = block.getRegistryName().toString().replace(modid + ":", "");
-        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(
-            withSurvivesExplosion(block, ItemLootEntry.builder(loot).acceptFunction(SetCount.builder(RandomValueRange.of(min, max))).acceptFunction(ApplyBonus.uniformBonusCount(Enchantments.FORTUNE, fortune)))));
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ((StandaloneLootEntry.Builder)ItemLootEntry.builder(block).acceptCondition(SILK_TOUCH)).alternatively(withSurvivesExplosion(block,
+                ItemLootEntry.builder(loot).acceptFunction(SetCount.builder(RandomValueRange.of(min, max))).acceptFunction(ApplyBonus.uniformBonusCount(Enchantments.FORTUNE, fortune)))));
         return LootTable.builder().addLootPool(builder);
     }
 
