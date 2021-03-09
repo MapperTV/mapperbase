@@ -34,6 +34,19 @@ public class BaseOreGenConfig
 
         CommonConfig(ForgeConfigSpec.Builder COMMON_BUILDER)
         {
+            // Overworld biomes
+            default_biomes.add("minecraft:mountains");
+            default_biomes.add("minecraft:wooded_mountains");
+            default_biomes.add("minecraft:modified_gravelly_mountains");
+            default_biomes.add("minecraft:snowy_taiga_mountains");
+            default_biomes.add("minecraft:gravelly_mountains");
+            default_biomes.add("minecraft:shattered_savanna_plateau");
+            default_biomes.add("minecraft:shattered_savanna");
+            default_biomes.add("minecraft:badlands_plateau");
+            default_biomes.add("minecraft:modified_badlands_plateau");
+            default_biomes.add("minecraft:wooded_badlands_plateau");
+            default_biomes.add("minecraft:modified_wooded_badlands_plateau");
+
             // Nether biomes
             default_biomes.add("minecraft:nether_wastes");
             default_biomes.add("minecraft:soul_sand_valley");
@@ -51,10 +64,10 @@ public class BaseOreGenConfig
             COMMON_BUILDER.comment("Bitumen Generation").push("bitumen");
 
             BITUMEN_GENERATION = COMMON_BUILDER.comment("Generate bitumen in the world [true / false]").define("bitumenGeneration", true);
-            BITUMEN_SIZE = COMMON_BUILDER.comment("Size of bitumen pockets [1-100, default: 48]").defineInRange("bitumenSize", 48, 1, 100);
-            BITUMEN_CHANCE = COMMON_BUILDER.comment("Amount of bitumen pocket being generated per chunk [1-100, default: 2]").defineInRange("bitumenChance", 2, 1, 100);
-            BITUMEN_MIN_HEIGHT = COMMON_BUILDER.comment("Minimal height for bitumen pocket generation, [1-254, default: 56]").defineInRange("bitumenMinHeight", 56, 1, 254);
-            BITUMEN_MAX_HEIGHT = COMMON_BUILDER.comment("Maximal height for bitumen pocket generation, must be higher than minimal height [1-255, default: 80]").defineInRange("bitumenMaxHeight", 80, 1, 255);
+            BITUMEN_SIZE = COMMON_BUILDER.comment("Size of bitumen pockets [1-100, default: 24]").defineInRange("bitumenSize", 24, 1, 100);
+            BITUMEN_CHANCE = COMMON_BUILDER.comment("Amount of bitumen pocket being generated per chunk [1-100, default: 1]").defineInRange("bitumenChance", 1, 1, 100);
+            BITUMEN_MIN_HEIGHT = COMMON_BUILDER.comment("Minimal height for bitumen pocket generation, [1-254, default: 60]").defineInRange("bitumenMinHeight", 60, 1, 254);
+            BITUMEN_MAX_HEIGHT = COMMON_BUILDER.comment("Maximal height for bitumen pocket generation, must be higher than minimal height [1-255, default: 68]").defineInRange("bitumenMaxHeight", 68, 1, 255);
 
             COMMON_BUILDER.pop();
             COMMON_BUILDER.comment(
