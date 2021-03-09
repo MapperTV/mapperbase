@@ -7,6 +7,6 @@
  EmbellishCraft: https://minecraft.curseforge.com/projects/embellishcraft (not available for 1.16.1 yet)  
  Road Stuff 2: https://www.curseforge.com/minecraft/mc-mods/road-stuff (not available for 1.16.1 yet)
  
- Targeted Minecraft version: 1.16.1  
+ Targeted Minecraft version: 1.16.4~5  
  Mod loader: Forge  
  Status: currently updating, waiting for Forge updates
