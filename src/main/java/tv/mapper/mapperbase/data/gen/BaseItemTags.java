@@ -24,6 +24,7 @@ public class BaseItemTags extends ItemTagsProvider
         copy(BlockTags.WALLS, ItemTags.WALLS);
         copy(BlockTags.FENCES, ItemTags.FENCES);
         copy(Tags.Blocks.FENCES, Tags.Items.FENCES);
+        copy(BaseTags.ForgeBlocks.FENCES_STEEL, BaseTags.ForgeItems.FENCES_STEEL);
         copy(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
         copy(Tags.Blocks.ORES, Tags.Items.ORES);

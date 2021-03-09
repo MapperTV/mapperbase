@@ -110,6 +110,7 @@ a57c9003d86b4b9ba1f443c262b56b7b8a31bd4a assets/mapperbase/models/item/steel_swo
 092919fa17220b6c02dda14d8d4e825f3738a0eb assets/mapperbase/models/item/steel_wall.json
 4510cde9f50ddbecf4fe32061c636775d436baf8 data/forge/tags/blocks/fence_gates.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/forge/tags/blocks/fences.json
+25b82482b44c73473a2ed3a28c62946738ae2730 data/forge/tags/blocks/fences/steel.json
 a7d02fa3055ed5ecc9f96af03deee85759ec2777 data/forge/tags/blocks/ores.json
 a7d02fa3055ed5ecc9f96af03deee85759ec2777 data/forge/tags/blocks/ores/bitumen.json
 568c6ebc48e34bccd0984e282b2493ad969de01f data/forge/tags/blocks/pressure_plates.json
@@ -119,6 +120,7 @@ cfddfe11a253fde70c454bc662eeffab61c8cf2e data/forge/tags/blocks/storage_blocks/s
 04fc69c3bbec309a299fc1f13a6b3f3c618c3864 data/forge/tags/items/bitumen.json
 4510cde9f50ddbecf4fe32061c636775d436baf8 data/forge/tags/items/fence_gates.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/forge/tags/items/fences.json
+25b82482b44c73473a2ed3a28c62946738ae2730 data/forge/tags/items/fences/steel.json
 2d6304cc4f9f26a8b88d8d36f7b080ef2eecdce0 data/forge/tags/items/ingots.json
 2d6304cc4f9f26a8b88d8d36f7b080ef2eecdce0 data/forge/tags/items/ingots/steel.json
 e916f6420cdd02af81a4868ea309a711b6a54cdc data/forge/tags/items/nuggets.json
