@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[36,)"
 license="MIT License"
 issueTrackerURL="https://github.com/MapperTV/mapperbase/issues"
 [[mods]]
@@ -7,7 +7,7 @@ modId="mapperbase"
 version="${file.jarVersion}"
 displayName="Mapper Base"
 #updateJSONURL="http://myurl.me/"
-displayURL="http://mapper.tv/mapperbase"
+displayURL="http://mapper.tv/minecraft/mapperbase"
 logoFile="mapperbase_logo.png"
 credits="The Forge team and community for the help and resources."
 authors="Mapper"
@@ -16,13 +16,13 @@ description="This mod simply provides the basic elements for my other mods to av
 [[dependencies.mapperbase]]
     modId="forge"
     mandatory=true
-    versionRange="[35.1.4,)"
+    versionRange="[36.1.0,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.mapperbase]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"
