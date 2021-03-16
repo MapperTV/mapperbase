@@ -65,8 +65,8 @@ public class BaseBlocks
 
     public static final RegistryObject<CustomBlock> BITUMEN_BLOCK = BLOCKS.register("bitumen_block",
         () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(3.0F), ToolType.PICKAXE));
-    public static final RegistryObject<CustomBlock> BITUMEN_ORE = BLOCKS.register("bitumen_ore",
-        () -> new CustomBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(3.0F), ToolType.PICKAXE));
+    public static final RegistryObject<CustomOreBlock> BITUMEN_ORE = BLOCKS.register("bitumen_ore",
+        () -> new CustomOreBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).hardnessAndResistance(3.0F), ToolType.PICKAXE));
 
     public static void init()
     {
