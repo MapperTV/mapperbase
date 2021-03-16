@@ -9,7 +9,7 @@ import tv.mapper.mapperbase.data.BaseTags;
 
 public enum BaseItemTier implements IItemTier
 {
-    STEEL(3, 1024, 7.0F, 3.0F, 12, () ->
+    STEEL(2, 960, 7.0F, 2.0F, 12, () ->
     {
         return Ingredient.fromTag(BaseTags.ForgeItems.INGOTS_STEEL);
     });

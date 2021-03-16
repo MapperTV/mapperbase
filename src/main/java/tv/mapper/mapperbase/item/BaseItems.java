@@ -65,10 +65,10 @@ public class BaseItems
 
     public static final RegistryObject<FlatterHammerItem> FLATTER_HAMMER = ITEMS.register("flatter_hammer", () -> new FlatterHammerItem(new Item.Properties().group(BaseGroups.MAPPERBASE).maxDamage(128)));
 
-    public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe", () -> new AxeItem(BaseItemTier.STEEL, 5.0F, -3.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe", () -> new AxeItem(BaseItemTier.STEEL, 6.0F, -3.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", () -> new PickaxeItem(BaseItemTier.STEEL, 1, -2.8F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register("steel_shovel", () -> new ShovelItem(BaseItemTier.STEEL, 1.5F, -3.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
-    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe", () -> new HoeItem(BaseItemTier.STEEL, 0, 0.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe", () -> new HoeItem(BaseItemTier.STEEL, -2, -0.0F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword", () -> new SwordItem(BaseItemTier.STEEL, 3, -2.4F, (new Item.Properties()).group(BaseGroups.MAPPERBASE)));
 
     public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
