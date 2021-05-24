@@ -78,16 +78,19 @@ public class BaseRecipes extends RecipeProvider
             hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).build(consumer);
 
         // Blasting iron to steel
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.NUGGETS_IRON), BaseItems.STEEL_NUGGET.get(), 0.1f, 130).addCriterion("has_iron_nugget", hasItem(Tags.Items.NUGGETS_IRON)).build(
-            consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.STEEL_INGOT.get(), 1.0f, 1200).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer,
-            MapperBase.MODID + ":steel_ingot_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.STORAGE_BLOCKS_IRON), BaseBlocks.STEEL_BLOCK.get(), 8.0f, 10800).addCriterion("has_iron_block",
-            hasItem(Tags.Items.STORAGE_BLOCKS_IRON)).build(consumer, MapperBase.MODID + ":steel_block_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.PLATES_IRON), BaseItems.STEEL_PLATE.get(), 1.0f, 1200).addCriterion("has_iron_plate",
-            hasItem(BaseTags.ForgeItems.PLATES_IRON)).build(consumer, MapperBase.MODID + ":steel_plate_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.RODS_IRON), BaseItems.STEEL_ROD.get(), 1.0f, 1200).addCriterion("has_iron_rod", hasItem(BaseTags.ForgeItems.RODS_IRON)).build(
-            consumer, MapperBase.MODID + ":steel_rod_from_blasting");
+        // CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.NUGGETS_IRON), BaseItems.STEEL_NUGGET.get(), 0.1f, 130).addCriterion("has_iron_nugget",
+        // hasItem(Tags.Items.NUGGETS_IRON)).build(
+        // consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
+        
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.STEEL_NUGGET.get(), 1.0f, 200).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer,
+            MapperBase.MODID + ":steel_nugget_from_blasting");
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.STORAGE_BLOCKS_IRON), BaseItems.STEEL_INGOT.get(), 8.0f, 1800).addCriterion("has_iron_block",
+            hasItem(Tags.Items.STORAGE_BLOCKS_IRON)).build(consumer, MapperBase.MODID + ":steel_ingot_from_blasting");
+        // CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.PLATES_IRON), BaseItems.STEEL_PLATE.get(), 1.0f, 1200).addCriterion("has_iron_plate",
+        // hasItem(BaseTags.ForgeItems.PLATES_IRON)).build(consumer, MapperBase.MODID + ":steel_plate_from_blasting");
+        // CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(BaseTags.ForgeItems.RODS_IRON), BaseItems.STEEL_ROD.get(), 1.0f, 1200).addCriterion("has_iron_rod",
+        // hasItem(BaseTags.ForgeItems.RODS_IRON)).build(
+        // consumer, MapperBase.MODID + ":steel_rod_from_blasting");
 
         // Metal plates
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.IRON_PLATE.get()).addIngredient(Tags.Items.INGOTS_IRON).addIngredient(BaseItems.FLATTER_HAMMER.get()).addCriterion("has_iron_ingot",
