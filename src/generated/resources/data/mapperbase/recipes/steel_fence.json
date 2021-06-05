@@ -1,10 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "isi",
+    "nsn",
     "isi"
   ],
   "key": {
+    "n": {
+      "item": "mapperbase:bolt"
+    },
     "i": {
       "tag": "forge:ingots/steel"
     },
