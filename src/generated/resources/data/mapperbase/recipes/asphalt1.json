@@ -10,7 +10,7 @@
       "tag": "forge:gravel"
     },
     "B": {
-      "item": "mapperbase:raw_bitumen"
+      "tag": "forge:bitumen"
     },
     "S": {
       "tag": "forge:sand"

@@ -7,7 +7,7 @@
   ],
   "key": {
     "x": {
-      "item": "mapperbase:raw_bitumen"
+      "tag": "forge:bitumen"
     },
     "y": {
       "item": "minecraft:coal"
