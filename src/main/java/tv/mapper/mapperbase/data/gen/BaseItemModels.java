@@ -26,6 +26,8 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_ingot").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_ingot"));
         getBuilder("steel_plate").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_plate"));
         getBuilder("steel_rod").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/steel_rod"));
+        getBuilder("ferrite").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/ferrite"));
+        getBuilder("raw_steel").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_steel"));
 
         getBuilder("iron_plate").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/iron_plate"));
         getBuilder("iron_rod").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/iron_rod"));

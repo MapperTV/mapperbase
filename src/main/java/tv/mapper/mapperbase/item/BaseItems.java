@@ -53,6 +53,9 @@ public class BaseItems
     public static final RegistryObject<Item> ASPHALT_PRESSURE_PLATE_ITEM = ITEMS.register("asphalt_pressure_plate",
         () -> new BlockItem(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), new Item.Properties().group(BaseGroups.MAPPERBASE)));
 
+    public static final RegistryObject<Item> FERRITE = ITEMS.register("ferrite", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    public static final RegistryObject<Item> RAW_STEEL = ITEMS.register("raw_steel", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
+    
     public static final RegistryObject<Item> STEEL_NUGGET = ITEMS.register("steel_nugget", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));
     public static final RegistryObject<Item> STEEL_PLATE = ITEMS.register("steel_plate", () -> new Item(new Item.Properties().group(BaseGroups.MAPPERBASE)));

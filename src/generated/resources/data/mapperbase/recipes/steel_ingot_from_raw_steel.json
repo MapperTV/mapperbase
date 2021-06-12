@@ -1,9 +1,9 @@
 {
   "type": "minecraft:blasting",
   "ingredient": {
-    "tag": "forge:storage_blocks/iron"
+    "item": "mapperbase:raw_steel"
   },
   "result": "mapperbase:steel_ingot",
-  "experience": 8.0,
-  "cookingtime": 1800
+  "experience": 0.5,
+  "cookingtime": 800
 }

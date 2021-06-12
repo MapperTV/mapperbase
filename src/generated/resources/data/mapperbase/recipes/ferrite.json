@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "forge:ingots/iron"
   },
-  "result": "mapperbase:steel_nugget",
-  "experience": 1.0,
-  "cookingtime": 200
+  "result": "mapperbase:ferrite",
+  "experience": 0.5,
+  "cookingtime": 800
 }

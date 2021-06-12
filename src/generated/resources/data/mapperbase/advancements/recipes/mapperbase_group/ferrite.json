@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "mapperbase:steel_ingot_from_blasting"
+      "mapperbase:ferrite"
     ]
   },
   "criteria": {
-    "has_iron_block": {
+    "has_iron_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "forge:storage_blocks/iron"
+            "tag": "forge:ingots/iron"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "mapperbase:steel_ingot_from_blasting"
+        "recipe": "mapperbase:ferrite"
       }
     }
   },
   "requirements": [
     [
-      "has_iron_block",
+      "has_iron_ingot",
       "has_the_recipe"
     ]
   ]

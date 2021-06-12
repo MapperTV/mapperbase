@@ -48,6 +48,8 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.BITUMEN_BLOCK.get(), "Block of Bitumen");
                 add(BaseItems.BITUMINOUS_COAL.get(), "Bituminous Coal");
 
+                add(BaseItems.FERRITE.get(), "Ferrite");
+                add(BaseItems.RAW_STEEL.get(), "Raw Steel");
                 add(BaseItems.BOLT.get(), "Bolt");
                 add(BaseItems.FLATTER_HAMMER.get(), "Flatter Hammer");
                 add(BaseItems.IRON_PLATE.get(), "Iron Plate");
@@ -100,6 +102,8 @@ public class BaseLang extends LanguageProvider
                 add(BaseItems.BITUMINOUS_COAL.get(), "Charbon bitumineux");
 
                 add(BaseItems.BOLT.get(), "Boulon");
+                add(BaseItems.FERRITE.get(), "Ferrite");
+                add(BaseItems.RAW_STEEL.get(), "Acier brut");
                 add(BaseItems.FLATTER_HAMMER.get(), "Masse");
                 add(BaseItems.IRON_PLATE.get(), "Plaque de fer");
                 add(BaseItems.IRON_ROD.get(), "Barre de fer");

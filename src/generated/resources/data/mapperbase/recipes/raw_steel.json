@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mapperbase:ferrite"
+    },
+    {
+      "item": "mapperbase:ferrite"
+    },
+    {
+      "item": "mapperbase:ferrite"
+    }
+  ],
+  "result": {
+    "item": "mapperbase:raw_steel"
+  }
+}

@@ -56,8 +56,10 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shapedRecipe(BaseItems.IRON_ROD.get(), 4).patternLine("x").patternLine("x").key('x', Tags.Items.INGOTS_IRON).addCriterion("has_iron_ingot", hasItem(Items.IRON_INGOT)).build(consumer);
         ShapedRecipeBuilder.shapedRecipe(BaseItems.STEEL_ROD.get(), 4).patternLine("x").patternLine("x").key('x', BaseTags.ForgeItems.INGOTS_STEEL).addCriterion("has_steel_ingot", hasItem(BaseTags.ForgeItems.INGOTS_STEEL)).build(consumer);
 
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.STEEL_NUGGET.get(), 1.0f, 200).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer, MapperBase.MODID + ":steel_nugget_from_blasting");
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.STORAGE_BLOCKS_IRON), BaseItems.STEEL_INGOT.get(), 8.0f, 1800).addCriterion("has_iron_block", hasItem(Tags.Items.STORAGE_BLOCKS_IRON)).build(consumer, MapperBase.MODID + ":steel_ingot_from_blasting");
+        // Steel processing
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromTag(Tags.Items.INGOTS_IRON), BaseItems.FERRITE.get(), 0.5f, 800).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer);
+        ShapelessRecipeBuilder.shapelessRecipe(BaseItems.RAW_STEEL.get()).addIngredient(BaseItems.FERRITE.get()).addIngredient(BaseItems.FERRITE.get()).addIngredient(BaseItems.FERRITE.get()).addCriterion("has_ferrite", hasItem(BaseItems.FERRITE.get())).build(consumer);
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(BaseItems.RAW_STEEL.get()), BaseItems.STEEL_INGOT.get(), 0.5f, 800).addCriterion("has_raw_steel", hasItem(BaseItems.RAW_STEEL.get())).build(consumer, MapperBase.MODID + ":steel_ingot_from_raw_steel");
 
         // Metal plates
         ShapelessRecipeBuilder.shapelessRecipe(BaseItems.IRON_PLATE.get()).addIngredient(Tags.Items.INGOTS_IRON).addIngredient(BaseItems.FLATTER_HAMMER.get()).addCriterion("has_iron_ingot", hasItem(Tags.Items.INGOTS_IRON)).build(consumer);

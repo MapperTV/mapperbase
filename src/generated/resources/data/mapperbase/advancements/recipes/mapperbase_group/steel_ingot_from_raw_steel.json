@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "mapperbase:steel_nugget_from_blasting"
+      "mapperbase:steel_ingot_from_raw_steel"
     ]
   },
   "criteria": {
-    "has_iron_ingot": {
+    "has_raw_steel": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/iron"
+            "item": "mapperbase:raw_steel"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "mapperbase:steel_nugget_from_blasting"
+        "recipe": "mapperbase:steel_ingot_from_raw_steel"
       }
     }
   },
   "requirements": [
     [
-      "has_iron_ingot",
+      "has_raw_steel",
       "has_the_recipe"
     ]
   ]
