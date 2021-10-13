@@ -2,21 +2,22 @@ package tv.mapper.mapperbase.item;
 
 import java.util.function.Supplier;
 
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tv.mapper.mapperbase.MapperBase;
 
-public enum BaseArmorMaterial implements IArmorMaterial
+@SuppressWarnings("deprecation")
+public enum BaseArmorMaterial implements ArmorMaterial
 {
-    STEEL("steel", 25, new int[] {3, 6, 7, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F, () ->
+    STEEL("steel", 25, new int[] {3, 6, 7, 3}, 9, SoundEvents.ARMOR_EQUIP_IRON, 1.0F, () ->
     {
-        return Ingredient.fromItems(BaseItems.STEEL_INGOT.get());
+        return Ingredient.of(BaseItems.STEEL_INGOT.get());
     });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] {13, 15, 16, 11};
@@ -26,7 +27,7 @@ public enum BaseArmorMaterial implements IArmorMaterial
     private final int enchantability;
     private final SoundEvent soundEvent;
     private final float toughness;
-    private final LazyValue<Ingredient> repairMaterial;
+    private final LazyLoadedValue<Ingredient> repairMaterial;
 
     private BaseArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn, SoundEvent equipSoundIn, float p_i48533_8_, Supplier<Ingredient> repairMaterialSupplier)
     {
@@ -36,32 +37,32 @@ public enum BaseArmorMaterial implements IArmorMaterial
         this.enchantability = enchantabilityIn;
         this.soundEvent = equipSoundIn;
         this.toughness = p_i48533_8_;
-        this.repairMaterial = new LazyValue<>(repairMaterialSupplier);
+        this.repairMaterial = new LazyLoadedValue<>(repairMaterialSupplier);
     }
 
-    public int getDurability(EquipmentSlotType slotIn)
+    public int getDurabilityForSlot(EquipmentSlot slotIn)
     {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
     }
 
-    public int getDamageReductionAmount(EquipmentSlotType slotIn)
+    public int getDefenseForSlot(EquipmentSlot slotIn)
     {
         return this.damageReductionAmountArray[slotIn.getIndex()];
     }
 
-    public int getEnchantability()
+    public int getEnchantmentValue()
     {
         return this.enchantability;
     }
 
-    public SoundEvent getSoundEvent()
+    public SoundEvent getEquipSound()
     {
         return this.soundEvent;
     }
 
-    public Ingredient getRepairMaterial()
+    public Ingredient getRepairIngredient()
     {
-        return this.repairMaterial.getValue();
+        return this.repairMaterial.get();
     }
 
     @OnlyIn(Dist.CLIENT)

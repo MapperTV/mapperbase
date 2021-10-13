@@ -2,7 +2,7 @@ package tv.mapper.mapperbase.world;
 
 import java.util.ArrayList;
 
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 public class CustomOre
 {

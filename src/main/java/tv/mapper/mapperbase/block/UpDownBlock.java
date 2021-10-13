@@ -2,14 +2,13 @@ package tv.mapper.mapperbase.block;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.state.BooleanProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.common.ToolType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 public class UpDownBlock extends CustomBlock
 {
@@ -18,27 +17,20 @@ public class UpDownBlock extends CustomBlock
     public UpDownBlock(Properties properties)
     {
         super(properties);
-        this.setDefaultState(this.getDefaultState().with(UPSIDE_DOWN, Boolean.valueOf(false)));
+        this.registerDefaultState(this.defaultBlockState().setValue(UPSIDE_DOWN, Boolean.valueOf(false)));
     }
 
-    public UpDownBlock(Properties properties, ToolType toolType)
-    {
-        super(properties, toolType);
-        this.setDefaultState(this.getDefaultState().with(UPSIDE_DOWN, Boolean.valueOf(false)));
-        this.toolType = toolType;
-    }
-
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder)
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder)
     {
         builder.add(UPSIDE_DOWN);
     }
 
     @Nullable
-    public BlockState getStateForPlacement(BlockItemUseContext context)
+    public BlockState getStateForPlacement(BlockPlaceContext context)
     {
-        BlockPos blockpos = context.getPos();
-        BlockState state = this.getDefaultState().with(UPSIDE_DOWN, false);
-        Direction facing = context.getFace();
-        return facing != Direction.DOWN && (facing == Direction.UP || !(context.getHitVec().y - (double)blockpos.getY() > 0.5D)) ? state : state.with(UPSIDE_DOWN, Boolean.valueOf(true));
+        BlockPos blockpos = context.getClickedPos();
+        BlockState state = this.defaultBlockState().setValue(UPSIDE_DOWN, false);
+        Direction facing = context.getClickedFace();
+        return facing != Direction.DOWN && (facing == Direction.UP || !(context.getClickLocation().y - (double)blockpos.getY() > 0.5D)) ? state : state.setValue(UPSIDE_DOWN, Boolean.valueOf(true));
     }
 }

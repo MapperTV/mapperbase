@@ -1,9 +1,9 @@
 package tv.mapper.mapperbase.data.loot;
 
-import net.minecraft.loot.LootEntry;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.TableLootEntry;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -34,13 +34,13 @@ public class BaseLoot
 
     public static LootPool getInjectPool(String entryName)
     {
-        return LootPool.builder().addEntry(getInjectEntry(entryName, 1)).bonusRolls(0, 1).name("mapperbase_inject").build();
+        return LootPool.lootPool().add(getInjectEntry(entryName, 1)).bonusRolls(0, 1).name("mapperbase_inject").build();
     }
 
     @SuppressWarnings("rawtypes")
-    private static LootEntry.Builder getInjectEntry(String name, int weight)
+    private static LootPoolEntryContainer.Builder getInjectEntry(String name, int weight)
     {
         ResourceLocation table = new ResourceLocation(MapperBase.MODID, "inject/" + name);
-        return TableLootEntry.builder(table).weight(weight);
+        return LootTableReference.lootTableReference(table).setWeight(weight);
     }
 }

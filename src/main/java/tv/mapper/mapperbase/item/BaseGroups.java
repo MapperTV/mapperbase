@@ -1,14 +1,14 @@
 package tv.mapper.mapperbase.item;
 
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 public class BaseGroups
 {
-    public static final ItemGroup MAPPERBASE = new ItemGroup("mapperbase_group")
+    public static final CreativeModeTab MAPPERBASE = new CreativeModeTab("mapperbase_group")
     {
         @Override
-        public ItemStack createIcon()
+        public ItemStack makeIcon()
         {
             return new ItemStack(BaseItems.STEEL_INGOT.get());
         }

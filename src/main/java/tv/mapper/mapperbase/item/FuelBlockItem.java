@@ -1,8 +1,9 @@
 package tv.mapper.mapperbase.item;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.block.Block;
 
 public class FuelBlockItem extends BlockItem
 {
@@ -15,8 +16,9 @@ public class FuelBlockItem extends BlockItem
     }
 
     @Override
-    public int getBurnTime(ItemStack itemBlock)
+    public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType)
     {
         return burnTime;
     }
+
 }

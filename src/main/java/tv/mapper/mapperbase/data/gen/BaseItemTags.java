@@ -1,7 +1,7 @@
 package tv.mapper.mapperbase.data.gen;
 
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.ItemTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
@@ -17,7 +17,7 @@ public class BaseItemTags extends ItemTagsProvider
         super(generatorIn, blockTagProvider, MapperBase.MODID, existingFileHelper);
     }
 
-    public void registerTags()
+    public void addTags()
     {
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
         copy(BlockTags.SLABS, ItemTags.SLABS);
@@ -35,24 +35,24 @@ public class BaseItemTags extends ItemTagsProvider
         copy(BaseTags.Blocks.CONCRETE, BaseTags.Items.CONCRETE);
         copy(BaseTags.Blocks.ASPHALT, BaseTags.Items.ASPHALT);
 
-        getOrCreateBuilder(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT.get());
-        getOrCreateBuilder(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET.get());
-        getOrCreateBuilder(BaseTags.ForgeItems.PLATES_STEEL).add(BaseItems.STEEL_PLATE.get());
-        getOrCreateBuilder(BaseTags.ForgeItems.RODS_STEEL).add(BaseItems.STEEL_ROD.get());
+        tag(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT.get());
+        tag(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET.get());
+        tag(BaseTags.ForgeItems.PLATES_STEEL).add(BaseItems.STEEL_PLATE.get());
+        tag(BaseTags.ForgeItems.RODS_STEEL).add(BaseItems.STEEL_ROD.get());
 
-        getOrCreateBuilder(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
-        getOrCreateBuilder(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
-        getOrCreateBuilder(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
-        getOrCreateBuilder(ItemTags.COALS).add(BaseItems.BITUMINOUS_COAL.get());
+        tag(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
+        tag(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
+        tag(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
+        tag(ItemTags.COALS).add(BaseItems.BITUMINOUS_COAL.get());
 
-        getOrCreateBuilder(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
-        getOrCreateBuilder(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
+        tag(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
+        tag(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
 
-        getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE.get());
-        getOrCreateBuilder(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
+        tag(BaseTags.ForgeItems.PLATES).add(BaseItems.IRON_PLATE.get());
+        tag(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
 
-        getOrCreateBuilder(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
+        tag(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
 
-        getOrCreateBuilder(BaseTags.ForgeItems.BITUMEN).add(BaseItems.RAW_BITUMEN.get());
+        tag(BaseTags.ForgeItems.BITUMEN).add(BaseItems.RAW_BITUMEN.get());
     }
 }

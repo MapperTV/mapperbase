@@ -2,7 +2,7 @@ package tv.mapper.mapperbase.util;
 
 import java.util.ArrayList;
 
-import net.minecraft.world.biome.Biome;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.registries.ForgeRegistries;
 import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;

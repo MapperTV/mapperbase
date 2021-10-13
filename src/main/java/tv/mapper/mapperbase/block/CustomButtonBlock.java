@@ -1,10 +1,10 @@
 package tv.mapper.mapperbase.block;
 
-import net.minecraft.block.AbstractButtonBlock;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.block.ButtonBlock;
 
-public class CustomButtonBlock extends AbstractButtonBlock
+public class CustomButtonBlock extends ButtonBlock
 {
     private boolean wooden;
 
@@ -15,11 +15,11 @@ public class CustomButtonBlock extends AbstractButtonBlock
     }
 
     @Override
-    protected SoundEvent getSoundEvent(boolean activate)
+    protected SoundEvent getSound(boolean activate)
     {
         if(wooden)
-            return activate ? SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_ON : SoundEvents.BLOCK_WOODEN_BUTTON_CLICK_OFF;
+            return activate ? SoundEvents.WOODEN_BUTTON_CLICK_ON : SoundEvents.WOODEN_BUTTON_CLICK_OFF;
         else
-            return activate ? SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON : SoundEvents.BLOCK_STONE_BUTTON_CLICK_OFF;
+            return activate ? SoundEvents.STONE_BUTTON_CLICK_ON : SoundEvents.STONE_BUTTON_CLICK_OFF;
     }
 }

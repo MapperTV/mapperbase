@@ -1,6 +1,6 @@
 package tv.mapper.mapperbase.world;
 
-import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,7 +45,7 @@ public class BaseOreGenerator
 
                 if(generate)
                 {
-                    event.getGeneration().withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ore.getFeature());
+                    event.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, ore.getFeature());
                 }
             }
         }

@@ -2,20 +2,20 @@ package tv.mapper.mapperbase.data.gen;
 
 import java.util.function.Function;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.WallBlock;
-import net.minecraft.block.WallHeight;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.properties.WallSide;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.state.properties.AttachFace;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.Half;
-import net.minecraft.state.properties.StairsShape;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.block.state.properties.StairsShape;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -41,7 +41,7 @@ public class BaseBlockStates extends BlockStateProvider
     {
         simpleBlock(BaseBlocks.STEEL_BLOCK.get());
         slabBlock((SlabBlock)BaseBlocks.STEEL_SLAB.get(), modLoc("block/steel_block"), modLoc("block/steel_slab_side"), modLoc("block/steel_block"), modLoc("block/steel_block"));
-        stairsBlock((StairsBlock)BaseBlocks.STEEL_STAIRS.get(), modLoc("block/steel_block"), modLoc("block/steel_block"), modLoc("block/steel_block"));
+        stairsBlock((StairBlock)BaseBlocks.STEEL_STAIRS.get(), modLoc("block/steel_block"), modLoc("block/steel_block"), modLoc("block/steel_block"));
         newWallBlock((WallBlock)BaseBlocks.STEEL_WALL.get(), new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_post"), new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_side"),
             new UncheckedModelFile(MapperBase.MODID + ":block/steel_wall_side_tall"));
         pressurePlateBlock(BaseBlocks.STEEL_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/steel_pressure_plate"),
@@ -51,7 +51,7 @@ public class BaseBlockStates extends BlockStateProvider
 
         simpleBlock(BaseBlocks.CONCRETE.get());
         slabBlock((SlabBlock)BaseBlocks.CONCRETE_SLAB.get(), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
-        stairsBlock((StairsBlock)BaseBlocks.CONCRETE_STAIRS.get(), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
+        stairsBlock((StairBlock)BaseBlocks.CONCRETE_STAIRS.get(), modLoc("block/concrete"), modLoc("block/concrete"), modLoc("block/concrete"));
         newWallBlock((WallBlock)BaseBlocks.CONCRETE_WALL.get(), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_post"), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_side"),
             new UncheckedModelFile(MapperBase.MODID + ":block/concrete_wall_side_tall"));
         pressurePlateBlock(BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/concrete_pressure_plate"),
@@ -61,7 +61,7 @@ public class BaseBlockStates extends BlockStateProvider
 
         simpleBlock(BaseBlocks.ASPHALT.get());
         slabBlock((SlabBlock)BaseBlocks.ASPHALT_SLAB.get(), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"));
-        stairsBlock((StairsBlock)BaseBlocks.ASPHALT_STAIRS.get(), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"));
+        stairsBlock((StairBlock)BaseBlocks.ASPHALT_STAIRS.get(), modLoc("block/asphalt"), modLoc("block/asphalt"), modLoc("block/asphalt"));
         pressurePlateBlock(BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), new UncheckedModelFile(MapperBase.MODID + ":block/asphalt_pressure_plate"),
             new UncheckedModelFile(MapperBase.MODID + ":block/asphalt_pressure_plate_down"));
 
@@ -95,12 +95,12 @@ public class BaseBlockStates extends BlockStateProvider
     {
         getVariantBuilder(block).forAllStates(state ->
         {
-            AttachFace face = state.get(BlockStateProperties.FACE);
-            Direction dir = state.get(BlockStateProperties.HORIZONTAL_FACING);
-            Boolean powered = state.get(BlockStateProperties.POWERED);
+            AttachFace face = state.getValue(BlockStateProperties.ATTACH_FACE);
+            Direction dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+            Boolean powered = state.getValue(BlockStateProperties.POWERED);
 
             return ConfiguredModel.builder().modelFile(powered ? pressed : model).rotationX(face == AttachFace.WALL ? 90 : face == AttachFace.CEILING ? 180 : 0).rotationY(
-                (((int)dir.getHorizontalAngle()) + angleOffset) % 360).uvLock(face == AttachFace.WALL ? true : false).build();
+                (((int)dir.toYRot()) + angleOffset) % 360).uvLock(face == AttachFace.WALL ? true : false).build();
         });
     }
 
@@ -115,11 +115,11 @@ public class BaseBlockStates extends BlockStateProvider
     protected void orientableBlock(Block block, Function<BlockState, ModelFile> modelFunc, int angleOffset)
     {
         getVariantBuilder(block).forAllStatesExcept(
-            state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY(((int)state.get(BlockStateProperties.HORIZONTAL_FACING).getHorizontalAngle() + angleOffset) % 360).build(),
+            state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY(((int)state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + angleOffset) % 360).build(),
             BlockStateProperties.WATERLOGGED);
     }
 
-    protected void rooftilesStairsBlock(StairsBlock block, ResourceLocation texture)
+    protected void rooftilesStairsBlock(StairBlock block, ResourceLocation texture)
     {
         String baseName = block.getRegistryName().toString();
         ModelFile stairs = models().stairs(baseName, texture, texture, texture);
@@ -128,10 +128,10 @@ public class BaseBlockStates extends BlockStateProvider
 
         getVariantBuilder(block).forAllStatesExcept(state ->
         {
-            Direction facing = state.get(StairsBlock.FACING);
-            Half half = state.get(StairsBlock.HALF);
-            StairsShape shape = state.get(StairsBlock.SHAPE);
-            int yRot = (int)facing.rotateY().getHorizontalAngle(); // Stairs model is rotated 90 degrees clockwise for some reason
+            Direction facing = state.getValue(StairBlock.FACING);
+            Half half = state.getValue(StairBlock.HALF);
+            StairsShape shape = state.getValue(StairBlock.SHAPE);
+            int yRot = (int)facing.getClockWise().toYRot(); // Stairs model is rotated 90 degrees clockwise for some reason
             if(shape == StairsShape.INNER_LEFT || shape == StairsShape.OUTER_LEFT)
             {
                 yRot += 270; // Left facing stairs are rotated 90 degrees clockwise
@@ -143,7 +143,7 @@ public class BaseBlockStates extends BlockStateProvider
             yRot %= 360;
             return ConfiguredModel.builder().modelFile(shape == StairsShape.STRAIGHT ? stairs : shape == StairsShape.INNER_LEFT || shape == StairsShape.INNER_RIGHT ? stairsInner : stairsOuter).rotationX(
                 half == Half.BOTTOM ? 0 : 180).rotationY(yRot).uvLock(false).build();
-        }, StairsBlock.WATERLOGGED);
+        }, StairBlock.WATERLOGGED);
     }
 
     protected void newWallBlock(WallBlock block, ModelFile post, ModelFile side, ModelFile side_tall)
@@ -152,15 +152,15 @@ public class BaseBlockStates extends BlockStateProvider
 
         builder.part().modelFile(post).addModel().condition(WallBlock.UP, true).end();
 
-        builder.part().modelFile(side).addModel().condition(WallBlock.WALL_HEIGHT_NORTH, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(90).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_EAST, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(180).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_SOUTH, WallHeight.LOW).end();
-        builder.part().modelFile(side).rotationY(270).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_WEST, WallHeight.LOW).end();
+        builder.part().modelFile(side).addModel().condition(WallBlock.NORTH_WALL, WallSide.LOW).end();
+        builder.part().modelFile(side).rotationY(90).uvLock(true).addModel().condition(WallBlock.EAST_WALL, WallSide.LOW).end();
+        builder.part().modelFile(side).rotationY(180).uvLock(true).addModel().condition(WallBlock.SOUTH_WALL, WallSide.LOW).end();
+        builder.part().modelFile(side).rotationY(270).uvLock(true).addModel().condition(WallBlock.WEST_WALL, WallSide.LOW).end();
 
-        builder.part().modelFile(side_tall).addModel().condition(WallBlock.WALL_HEIGHT_NORTH, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(90).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_EAST, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(180).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_SOUTH, WallHeight.TALL).end();
-        builder.part().modelFile(side_tall).rotationY(270).uvLock(true).addModel().condition(WallBlock.WALL_HEIGHT_WEST, WallHeight.TALL).end();
+        builder.part().modelFile(side_tall).addModel().condition(WallBlock.NORTH_WALL, WallSide.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(90).uvLock(true).addModel().condition(WallBlock.EAST_WALL, WallSide.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(180).uvLock(true).addModel().condition(WallBlock.SOUTH_WALL, WallSide.TALL).end();
+        builder.part().modelFile(side_tall).rotationY(270).uvLock(true).addModel().condition(WallBlock.WEST_WALL, WallSide.TALL).end();
     }
 
     protected String getModId()

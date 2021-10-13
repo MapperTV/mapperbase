@@ -10,7 +10,7 @@ import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
 
 public class OreList
 {
-    public static final CustomOre bitumen = new CustomOre("bitumen", BaseFeatures.BITUMEN, CommonConfig.BITUMEN_GENERATION.get(), CommonConfig.BITUMEN_WHITELIST_MODE.get(), CommonConfig.BITUMEN_BIOME_LIST.get());
+    public static final CustomOre bitumen = new CustomOre("bitumen", BaseFeatures.ORE_BITUMEN, CommonConfig.BITUMEN_GENERATION.get(), CommonConfig.BITUMEN_WHITELIST_MODE.get(), CommonConfig.BITUMEN_BIOME_LIST.get());
 
     public static List<CustomOre> ores = new ArrayList<>();
 

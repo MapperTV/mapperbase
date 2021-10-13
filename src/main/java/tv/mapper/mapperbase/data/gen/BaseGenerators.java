@@ -4,14 +4,13 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import tv.mapper.mapperbase.MapperBase;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BaseGenerators
 {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event)
+    public static void gatherData(net.minecraftforge.forge.event.lifecycle.GatherDataEvent event)
     {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();

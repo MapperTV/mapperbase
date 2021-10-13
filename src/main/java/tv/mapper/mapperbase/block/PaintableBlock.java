@@ -1,10 +1,9 @@
 package tv.mapper.mapperbase.block;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
-import net.minecraftforge.common.ToolType;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.state.BlockState;
 
 /*
  *  PaintableBlock
@@ -17,9 +16,9 @@ public class PaintableBlock extends CustomBlock
 {
     protected int materialType = 0;
 
-    public PaintableBlock(Properties properties, ToolType toolType, int materialType)
+    public PaintableBlock(Properties properties, int materialType)
     {
-        super(properties, toolType);
+        super(properties);
         this.materialType = materialType;
     }
 
@@ -29,7 +28,7 @@ public class PaintableBlock extends CustomBlock
     }
 
     @Override
-    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state)
+    public ItemStack getCloneItemStack(BlockGetter worldIn, BlockPos pos, BlockState state)
     {
         switch(materialType)
         {
