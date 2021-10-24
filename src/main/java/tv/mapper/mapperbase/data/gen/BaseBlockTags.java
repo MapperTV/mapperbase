@@ -1,7 +1,7 @@
 package tv.mapper.mapperbase.data.gen;
 
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -34,5 +34,9 @@ public class BaseBlockTags extends BlockTagsProvider
         this.tag(BaseTags.ForgeBlocks.PRESSURE_PLATES).add(BaseBlocks.STEEL_PRESSURE_PLATE.get(), BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), BaseBlocks.ASPHALT_PRESSURE_PLATE.get());
         this.tag(BaseTags.Blocks.CONCRETE).add(BaseBlocks.CONCRETE.get());
         this.tag(BaseTags.Blocks.ASPHALT).add(BaseBlocks.ASPHALT.get());
+
+        // Tool system
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BaseBlocks.STEEL_BLOCK.get(), BaseBlocks.STEEL_STAIRS.get(), BaseBlocks.STEEL_SLAB.get(), BaseBlocks.STEEL_WALL.get(), BaseBlocks.STEEL_FENCE.get(), BaseBlocks.STEEL_FENCE_GATE.get());
+        this.tag(BlockTags.NEEDS_IRON_TOOL).add(BaseBlocks.STEEL_BLOCK.get(), BaseBlocks.STEEL_STAIRS.get(), BaseBlocks.STEEL_SLAB.get(), BaseBlocks.STEEL_WALL.get(), BaseBlocks.STEEL_FENCE.get(), BaseBlocks.STEEL_FENCE_GATE.get());
     }
 }

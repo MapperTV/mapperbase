@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mapperbase:steel_block",
+    "mapperbase:steel_stairs",
+    "mapperbase:steel_slab",
+    "mapperbase:steel_wall",
+    "mapperbase:steel_fence",
+    "mapperbase:steel_fence_gate"
+  ]
+}

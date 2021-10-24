@@ -11,7 +11,9 @@
       "conditions": {
         "items": [
           {
-            "item": "minecraft:iron_nugget"
+            "items": [
+              "minecraft:iron_nugget"
+            ]
           }
         ]
       }
@@ -21,7 +23,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_pickaxe"
+            "items": [
+              "mapperbase:steel_pickaxe"
+            ]
           }
         ]
       }
@@ -31,7 +35,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_shovel"
+            "items": [
+              "mapperbase:steel_shovel"
+            ]
           }
         ]
       }
@@ -41,7 +47,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_axe"
+            "items": [
+              "mapperbase:steel_axe"
+            ]
           }
         ]
       }
@@ -51,7 +59,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_hoe"
+            "items": [
+              "mapperbase:steel_hoe"
+            ]
           }
         ]
       }
@@ -61,7 +71,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_sword"
+            "items": [
+              "mapperbase:steel_sword"
+            ]
           }
         ]
       }
@@ -71,7 +83,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_helmet"
+            "items": [
+              "mapperbase:steel_helmet"
+            ]
           }
         ]
       }
@@ -81,7 +95,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_chestplate"
+            "items": [
+              "mapperbase:steel_chestplate"
+            ]
           }
         ]
       }
@@ -91,7 +107,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_leggings"
+            "items": [
+              "mapperbase:steel_leggings"
+            ]
           }
         ]
       }
@@ -101,7 +119,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_boots"
+            "items": [
+              "mapperbase:steel_boots"
+            ]
           }
         ]
       }
@@ -111,7 +131,9 @@
       "conditions": {
         "items": [
           {
-            "item": "mapperbase:steel_horse_armor"
+            "items": [
+              "mapperbase:steel_horse_armor"
+            ]
           }
         ]
       }
