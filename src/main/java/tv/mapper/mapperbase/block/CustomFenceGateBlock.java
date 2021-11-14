@@ -1,20 +1,21 @@
 package tv.mapper.mapperbase.block;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceGateBlock;
+import tv.mapper.mapperbase.MapperBase;
 
-public class CustomBlock extends Block implements ToolType
+public class CustomFenceGateBlock extends FenceGateBlock implements ToolType
 {
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomBlock(Properties properties, ToolTypes tool)
+    public CustomFenceGateBlock(Properties properties, ToolTypes tool)
     {
         super(properties);
         this.tool = tool;
         this.tier = ToolTiers.WOOD;
     }
 
-    public CustomBlock(Properties properties, ToolTypes tool, ToolTiers tier)
+    public CustomFenceGateBlock(Properties properties, ToolTypes tool, ToolTiers tier)
     {
         super(properties);
         this.tool = tool;
@@ -30,6 +31,8 @@ public class CustomBlock extends Block implements ToolType
     @Override
     public ToolTypes getTool()
     {
+        MapperBase.LOGGER.debug(this.tool);
         return this.tool;
     }
+
 }

@@ -1,20 +1,25 @@
 package tv.mapper.mapperbase.block;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FenceBlock;
 
-public class CustomBlock extends Block implements ToolType
+public class CustomFenceBlock extends FenceBlock implements ToolType
 {
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomBlock(Properties properties, ToolTypes tool)
+    public CustomFenceBlock(Properties properties)
+    {
+        super(properties);
+    }
+
+    public CustomFenceBlock(Properties properties, ToolTypes tool)
     {
         super(properties);
         this.tool = tool;
         this.tier = ToolTiers.WOOD;
     }
 
-    public CustomBlock(Properties properties, ToolTypes tool, ToolTiers tier)
+    public CustomFenceBlock(Properties properties, ToolTypes tool, ToolTiers tier)
     {
         super(properties);
         this.tool = tool;

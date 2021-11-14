@@ -3,11 +3,15 @@ package tv.mapper.mapperbase.data.gen;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fmllegacy.RegistryObject;
 import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.block.BaseBlocks;
+import tv.mapper.mapperbase.block.ToolType;
 import tv.mapper.mapperbase.data.BaseTags;
+import tv.mapper.mapperbase.item.BaseTiers;
 
 public class BaseBlockTags extends BlockTagsProvider
 {
@@ -38,5 +42,58 @@ public class BaseBlockTags extends BlockTagsProvider
         // Tool system
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(BaseBlocks.STEEL_BLOCK.get(), BaseBlocks.STEEL_STAIRS.get(), BaseBlocks.STEEL_SLAB.get(), BaseBlocks.STEEL_WALL.get(), BaseBlocks.STEEL_FENCE.get(), BaseBlocks.STEEL_FENCE_GATE.get());
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(BaseBlocks.STEEL_BLOCK.get(), BaseBlocks.STEEL_STAIRS.get(), BaseBlocks.STEEL_SLAB.get(), BaseBlocks.STEEL_WALL.get(), BaseBlocks.STEEL_FENCE.get(), BaseBlocks.STEEL_FENCE_GATE.get());
+
+        for(RegistryObject<Block> object : BaseBlocks.BLOCKS.getEntries())
+        {
+            Block block = object.get();
+
+            if(block instanceof ToolType)
+            {
+                switch(((ToolType)block).getTool())
+                {
+                    case PICKAXE:
+                        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+                        break;
+                    case AXE:
+                        this.tag(BlockTags.MINEABLE_WITH_AXE).add(block);
+                        break;
+                    case SHOVEL:
+                        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block);
+                        break;
+                    case HOE:
+                        this.tag(BlockTags.MINEABLE_WITH_HOE).add(block);
+                        break;
+                    default:
+                        break;
+                }
+
+                switch(((ToolType)block).getTier())
+                {
+                    case WOOD:
+                        this.tag(Tags.Blocks.NEEDS_WOOD_TOOL).add(block);
+                        break;
+                    case GOLD:
+                        this.tag(Tags.Blocks.NEEDS_GOLD_TOOL).add(block);
+                        break;
+                    case STONE:
+                        this.tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+                        break;
+                    case IRON:
+                        this.tag(BlockTags.NEEDS_IRON_TOOL).add(block);
+                        break;
+                    case STEEL:
+                        this.tag(BaseTiers.NEEDS_STEEL_TOOL).add(block);
+                        break;
+                    case DIAMOND:
+                        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block);
+                        break;
+                    case NETHERITE:
+                        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(block);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

@@ -14,9 +14,15 @@ public class UpDownBlock extends CustomBlock
 {
     public static final BooleanProperty UPSIDE_DOWN = BooleanProperty.create("upside_down");
 
-    public UpDownBlock(Properties properties)
+    public UpDownBlock(Properties properties, ToolTypes tool)
     {
-        super(properties);
+        super(properties, tool);
+        this.registerDefaultState(this.defaultBlockState().setValue(UPSIDE_DOWN, Boolean.valueOf(false)));
+    }
+
+    public UpDownBlock(Properties properties, ToolTypes tool, ToolTiers tier)
+    {
+        super(properties, tool, tier);
         this.registerDefaultState(this.defaultBlockState().setValue(UPSIDE_DOWN, Boolean.valueOf(false)));
     }
 

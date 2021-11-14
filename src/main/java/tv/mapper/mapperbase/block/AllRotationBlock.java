@@ -9,9 +9,15 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class AllRotationBlock extends CustomBlock
 {
-    public AllRotationBlock(Properties properties)
+    public AllRotationBlock(Properties properties, ToolTypes tool)
     {
-        super(properties);
+        super(properties, tool);
+        this.registerDefaultState(this.stateDefinition.any().setValue(BlockStateProperties.FACING, Direction.NORTH));
+    }
+
+    public AllRotationBlock(Properties properties, ToolTypes tool, ToolTiers tier)
+    {
+        super(properties, tool, tier);
         this.registerDefaultState(this.stateDefinition.any().setValue(BlockStateProperties.FACING, Direction.NORTH));
     }
 

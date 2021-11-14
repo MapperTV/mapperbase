@@ -113,6 +113,7 @@ a57c9003d86b4b9ba1f443c262b56b7b8a31bd4a assets/mapperbase/models/item/steel_swo
 4510cde9f50ddbecf4fe32061c636775d436baf8 data/forge/tags/blocks/fence_gates.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/forge/tags/blocks/fences.json
 25b82482b44c73473a2ed3a28c62946738ae2730 data/forge/tags/blocks/fences/steel.json
+a8136a5d4452f1e3accb962de283375a925a2644 data/forge/tags/blocks/needs_wood_tool.json
 a7d02fa3055ed5ecc9f96af03deee85759ec2777 data/forge/tags/blocks/ores.json
 a7d02fa3055ed5ecc9f96af03deee85759ec2777 data/forge/tags/blocks/ores/bitumen.json
 568c6ebc48e34bccd0984e282b2493ad969de01f data/forge/tags/blocks/pressure_plates.json
@@ -196,7 +197,7 @@ d7ed38db7528d9f2b4e244692d88c423442b9be2 data/mapperbase/loot_tables/blocks/asph
 e702c14edc6973e332c49251234cdbd7865fe43e data/mapperbase/loot_tables/blocks/asphalt_slab.json
 ec6262815d08aada90a28f715125ac17600b2a03 data/mapperbase/loot_tables/blocks/asphalt_stairs.json
 da27d0932da42b671bf6d9607b5a46476688ec47 data/mapperbase/loot_tables/blocks/bitumen_block.json
-b723595787a0585de6947a42a2d38f710c0e3828 data/mapperbase/loot_tables/blocks/bitumen_ore.json
+2847db38215a90302c70e49671ac8e2b38983cc2 data/mapperbase/loot_tables/blocks/bitumen_ore.json
 48f039b3c5b7f5483f7eab85a798bb47b35bd2b1 data/mapperbase/loot_tables/blocks/concrete.json
 422ca54a9874d9b229b37c23e039aaf82d25ce5b data/mapperbase/loot_tables/blocks/concrete_fence.json
 e8a57e8d83a4af5671f60550c17183f5131a10e0 data/mapperbase/loot_tables/blocks/concrete_pressure_plate.json
@@ -285,8 +286,8 @@ d9e6f5335f54d1fc072ccbb4a782a76fcfbaad1b data/minecraft/recipes/concrete_stairs_
 5b67cc171456ebeaf6eea04f110c6b0bb3656acb data/minecraft/recipes/concrete_wall_from_concrete_stonecutting.json
 cfddfe11a253fde70c454bc662eeffab61c8cf2e data/minecraft/tags/blocks/beacon_base_blocks.json
 11508c8aca09adb872b9c6acaecaf11abf5d075f data/minecraft/tags/blocks/fences.json
-efa63c48e821db392e2c3d0bc3fc37d2ca064931 data/minecraft/tags/blocks/mineable/pickaxe.json
-efa63c48e821db392e2c3d0bc3fc37d2ca064931 data/minecraft/tags/blocks/needs_iron_tool.json
+e4d56ca5dd4c0dd68bade3b2b521b53340699581 data/minecraft/tags/blocks/mineable/pickaxe.json
+c43ad577eb07447b72cbc8fe2270fc9c38c86893 data/minecraft/tags/blocks/needs_iron_tool.json
 f364b9477e46bce04a72a4bddc936ab30566994b data/minecraft/tags/blocks/slabs.json
 b51b8e5f57d74d354c73efc3ac870fac90cb26ed data/minecraft/tags/blocks/stairs.json
 3703d37b90691fff5a1413e16b65758dd1fc9b1e data/minecraft/tags/blocks/walls.json

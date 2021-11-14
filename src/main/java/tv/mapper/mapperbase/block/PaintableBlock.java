@@ -12,13 +12,19 @@ import net.minecraft.world.level.block.state.BlockState;
  *  If Road Stuff isn't loaded then nothing special happens, it's just a regular block.
  *  
  */
-public class PaintableBlock extends CustomBlock
+public class PaintableBlock extends CustomBlock implements ToolType
 {
     protected int materialType = 0;
 
-    public PaintableBlock(Properties properties, int materialType)
+    public PaintableBlock(Properties properties, ToolTypes tool, int materialType)
     {
-        super(properties);
+        super(properties, tool);
+        this.materialType = materialType;
+    }
+
+    public PaintableBlock(Properties properties, ToolTypes tool, ToolTiers tier, int materialType)
+    {
+        super(properties, tool, tier);
         this.materialType = materialType;
     }
 
