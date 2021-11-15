@@ -7,11 +7,6 @@ public class CustomSlabBlock extends SlabBlock implements ToolType
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomSlabBlock(Properties properties)
-    {
-        super(properties);
-    }
-
     public CustomSlabBlock(Properties properties, ToolTypes tool)
     {
         super(properties);

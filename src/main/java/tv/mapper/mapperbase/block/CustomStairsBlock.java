@@ -9,12 +9,7 @@ public class CustomStairsBlock extends StairBlock implements ToolType
 {
     private ToolTiers tier;
     private ToolTypes tool;
-
-    public CustomStairsBlock(Supplier<BlockState> state, Properties properties)
-    {
-        super(state, properties);
-    }
-
+    
     public CustomStairsBlock(Supplier<BlockState> state, Properties properties, ToolTypes tool)
     {
         super(state, properties);

@@ -1,7 +1,6 @@
 package tv.mapper.mapperbase.block;
 
 import net.minecraft.world.level.block.FenceGateBlock;
-import tv.mapper.mapperbase.MapperBase;
 
 public class CustomFenceGateBlock extends FenceGateBlock implements ToolType
 {
@@ -31,7 +30,6 @@ public class CustomFenceGateBlock extends FenceGateBlock implements ToolType
     @Override
     public ToolTypes getTool()
     {
-        MapperBase.LOGGER.debug(this.tool);
         return this.tool;
     }
 

@@ -7,11 +7,6 @@ public class CustomPressurePlateBlock extends PressurePlateBlock implements Tool
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomPressurePlateBlock(Sensitivity sensitivity, Properties properties)
-    {
-        super(sensitivity, properties);
-    }
-
     public CustomPressurePlateBlock(Sensitivity sensitivity, Properties properties, ToolTypes tool)
     {
         super(sensitivity, properties);

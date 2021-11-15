@@ -7,11 +7,6 @@ public class CustomWallBlock extends WallBlock implements ToolType
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomWallBlock(Properties properties)
-    {
-        super(properties);
-    }
-
     public CustomWallBlock(Properties properties, ToolTypes tool)
     {
         super(properties);

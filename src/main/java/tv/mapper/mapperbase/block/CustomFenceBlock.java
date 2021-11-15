@@ -7,11 +7,6 @@ public class CustomFenceBlock extends FenceBlock implements ToolType
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomFenceBlock(Properties properties)
-    {
-        super(properties);
-    }
-
     public CustomFenceBlock(Properties properties, ToolTypes tool)
     {
         super(properties);

@@ -4,8 +4,8 @@ import net.minecraft.world.level.block.Block;
 
 public class CustomBlock extends Block implements ToolType
 {
-    private ToolTiers tier;
-    private ToolTypes tool;
+    protected ToolTiers tier;
+    protected ToolTypes tool;
 
     public CustomBlock(Properties properties, ToolTypes tool)
     {
