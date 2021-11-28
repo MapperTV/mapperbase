@@ -26,13 +26,19 @@ public class BaseBlockModels extends BlockModelProvider
         getBuilder("steel_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/steel_block"));
         getBuilder("steel_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/steel_block"));
 
-        buildWall("concrete", modLoc("block/concrete"));
-        getBuilder("concrete_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/concrete"));
-        getBuilder("concrete_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/concrete"));
-        getBuilder("concrete_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/concrete"));
+        // buildWall("concrete", modLoc("block/concrete"));
+        // getBuilder("concrete_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/concrete"));
+        // getBuilder("concrete_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/concrete"));
+        // getBuilder("concrete_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/concrete"));
+        //
+        // getBuilder("asphalt_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/asphalt"));
+        // getBuilder("asphalt_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/asphalt"));
 
-        getBuilder("asphalt_pressure_plate").parent(getExistingFile(mcLoc("block/pressure_plate_up"))).texture("texture", modLoc("block/asphalt"));
-        getBuilder("asphalt_pressure_plate_down").parent(getExistingFile(mcLoc("block/pressure_plate_down"))).texture("texture", modLoc("block/asphalt"));
+        // for(int i = 1; i < 8; i++)
+        // {
+        // getBuilder("asphalt_slope_" + i * 2).parent(getExistingFile(modLoc("block/slope_" + i * 2))).texture("base", modLoc("block/asphalt")).texture("particle", modLoc("block/asphalt"));
+        // getBuilder("concrete_slope_" + i * 2).parent(getExistingFile(modLoc("block/slope_" + i * 2))).texture("base", modLoc("block/concrete")).texture("particle", modLoc("block/concrete"));
+        // }
     }
 
     protected void buildWall(String name, ResourceLocation texture) // Trump's favorite model generator
@@ -63,11 +69,8 @@ public class BaseBlockModels extends BlockModelProvider
 
     protected void buildRooftilesStairs(String name)
     {
-        getBuilder(name + "_stairs").parent(getExistingFile(modLoc("block/rooftiles_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name)).texture("bottom",
-            new ResourceLocation(modid, "block/" + name)).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
-        getBuilder(name + "_stairs_inner").parent(getExistingFile(modLoc("block/rooftiles_inner_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_inner")).texture("bottom",
-            new ResourceLocation(modid, "block/" + name + "_inner")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
-        getBuilder(name + "_stairs_outer").parent(getExistingFile(modLoc("block/rooftiles_outer_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_outer")).texture("bottom",
-            new ResourceLocation(modid, "block/" + name + "_outer")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+        getBuilder(name + "_stairs").parent(getExistingFile(modLoc("block/rooftiles_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name)).texture("bottom", new ResourceLocation(modid, "block/" + name)).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+        getBuilder(name + "_stairs_inner").parent(getExistingFile(modLoc("block/rooftiles_inner_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_inner")).texture("bottom", new ResourceLocation(modid, "block/" + name + "_inner")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
+        getBuilder(name + "_stairs_outer").parent(getExistingFile(modLoc("block/rooftiles_outer_stairs"))).texture("top", new ResourceLocation(modid, "block/" + name + "_outer")).texture("bottom", new ResourceLocation(modid, "block/" + name + "_outer")).texture("side", new ResourceLocation(modid, "block/" + name)).texture("particle", new ResourceLocation(modid, "block/" + name));
     }
 }

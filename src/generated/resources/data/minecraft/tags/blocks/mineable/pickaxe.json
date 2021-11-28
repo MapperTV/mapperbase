@@ -5,27 +5,8 @@
     "mapperbase:steel_stairs",
     "mapperbase:steel_slab",
     "mapperbase:steel_wall",
-    "mapperbase:steel_fence",
-    "mapperbase:steel_fence_gate",
-    "mapperbase:steel_block",
-    "mapperbase:steel_stairs",
-    "mapperbase:steel_slab",
-    "mapperbase:steel_wall",
     "mapperbase:steel_pressure_plate",
     "mapperbase:steel_fence",
-    "mapperbase:steel_fence_gate",
-    "mapperbase:concrete",
-    "mapperbase:concrete_stairs",
-    "mapperbase:concrete_slab",
-    "mapperbase:concrete_wall",
-    "mapperbase:concrete_pressure_plate",
-    "mapperbase:concrete_fence",
-    "mapperbase:concrete_fence_gate",
-    "mapperbase:asphalt",
-    "mapperbase:asphalt_stairs",
-    "mapperbase:asphalt_slab",
-    "mapperbase:asphalt_pressure_plate",
-    "mapperbase:bitumen_block",
-    "mapperbase:bitumen_ore"
+    "mapperbase:steel_fence_gate"
   ]
 }

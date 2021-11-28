@@ -11,15 +11,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.config.BaseConfig;
-import tv.mapper.mapperbase.config.BaseOreGenConfig;
-import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
-import tv.mapper.mapperbase.item.BaseItems;
-import tv.mapper.mapperbase.util.ConfigChecker;
-import tv.mapper.mapperbase.world.BaseFeatures;
 import tv.mapper.mapperbase.world.BaseOreGenerator;
-import tv.mapper.mapperbase.world.OreList;
+import tv.mapper.mapperbase.world.item.BaseItems;
+import tv.mapper.mapperbase.world.level.block.BaseBlocks;
 
 @Mod(MapperBase.MODID)
 public class MapperBase
@@ -30,7 +25,7 @@ public class MapperBase
     public MapperBase()
     {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BaseConfig.CLIENT_CONFIG);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseOreGenConfig.COMMON_CONFIG);
+//        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseOreGenConfig.COMMON_CONFIG);
 
         BaseBlocks.init();
         BaseItems.init();
@@ -46,15 +41,15 @@ public class MapperBase
     {
         LOGGER.info("Mapper Base setup started!");
 
-        OreList.initOres();
+//        OreList.initOres();
 
-        if(!CommonConfig.BITUMEN_GENERATION.get())
-            LOGGER.info("Ore generation is disabled by config.");
-        else
-        {
-            ConfigChecker.checkConfig();
-            BaseFeatures.registerFeatures();
-        }
+// if(!CommonConfig.BITUMEN_GENERATION.get())
+// LOGGER.info("Ore generation is disabled by config.");
+// else
+// {
+// ConfigChecker.checkConfig();
+// BaseFeatures.registerFeatures();
+// }
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

@@ -5,15 +5,8 @@
     "mapperbase:steel_stairs",
     "mapperbase:steel_slab",
     "mapperbase:steel_wall",
-    "mapperbase:steel_fence",
-    "mapperbase:steel_fence_gate",
-    "mapperbase:steel_block",
-    "mapperbase:steel_stairs",
-    "mapperbase:steel_slab",
-    "mapperbase:steel_wall",
     "mapperbase:steel_pressure_plate",
     "mapperbase:steel_fence",
-    "mapperbase:steel_fence_gate",
-    "mapperbase:concrete_fence_gate"
+    "mapperbase:steel_fence_gate"
   ]
 }

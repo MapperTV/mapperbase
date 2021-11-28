@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "side": "mapperbase:block/concrete",
-    "bottom": "mapperbase:block/concrete",
-    "top": "mapperbase:block/concrete"
-  }
-}

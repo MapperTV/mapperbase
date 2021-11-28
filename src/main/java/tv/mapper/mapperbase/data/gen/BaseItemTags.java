@@ -8,7 +8,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.data.BaseTags;
-import tv.mapper.mapperbase.item.BaseItems;
+import tv.mapper.mapperbase.world.item.BaseItems;
 
 public class BaseItemTags extends ItemTagsProvider
 {
@@ -27,13 +27,9 @@ public class BaseItemTags extends ItemTagsProvider
         copy(BaseTags.ForgeBlocks.FENCES_STEEL, BaseTags.ForgeItems.FENCES_STEEL);
         copy(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
-        copy(Tags.Blocks.ORES, Tags.Items.ORES);
-        copy(BaseTags.ForgeBlocks.ORES_BITUMEN, BaseTags.ForgeItems.ORES_BITUMEN);
+        // copy(Tags.Blocks.ORES, Tags.Items.ORES);
         copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL, BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL);
-        copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_BITUMEN, BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN);
         copy(BaseTags.ForgeBlocks.PRESSURE_PLATES, BaseTags.ForgeItems.PRESSURE_PLATES);
-        copy(BaseTags.Blocks.CONCRETE, BaseTags.Items.CONCRETE);
-        copy(BaseTags.Blocks.ASPHALT, BaseTags.Items.ASPHALT);
 
         tag(BaseTags.ForgeItems.INGOTS_STEEL).add(BaseItems.STEEL_INGOT.get());
         tag(BaseTags.ForgeItems.NUGGETS_STEEL).add(BaseItems.STEEL_NUGGET.get());
@@ -43,7 +39,6 @@ public class BaseItemTags extends ItemTagsProvider
         tag(Tags.Items.NUGGETS).add(BaseItems.STEEL_NUGGET.get());
         tag(Tags.Items.RODS).add(BaseItems.STEEL_ROD.get());
         tag(Tags.Items.INGOTS).add(BaseItems.STEEL_INGOT.get());
-        tag(ItemTags.COALS).add(BaseItems.BITUMINOUS_COAL.get());
 
         tag(BaseTags.ForgeItems.PLATES_IRON).add(BaseItems.IRON_PLATE.get());
         tag(BaseTags.ForgeItems.RODS_IRON).add(BaseItems.IRON_ROD.get());
@@ -53,6 +48,5 @@ public class BaseItemTags extends ItemTagsProvider
 
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
 
-        tag(BaseTags.ForgeItems.BITUMEN).add(BaseItems.RAW_BITUMEN.get());
     }
 }

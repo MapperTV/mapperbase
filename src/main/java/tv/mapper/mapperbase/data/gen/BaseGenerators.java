@@ -21,7 +21,7 @@ public class BaseGenerators
         generator.addProvider(new BaseBlockModels(generator, MapperBase.MODID, existingFileHelper));
         generator.addProvider(new BaseItemModels(generator, MapperBase.MODID, existingFileHelper));
 
-        BaseBlockTags baseBlockTags = new BaseBlockTags(generator, existingFileHelper);
+        BaseBlockTags baseBlockTags = new BaseBlockTags(generator, MapperBase.MODID, existingFileHelper);
 
         generator.addProvider(baseBlockTags);
         generator.addProvider(new BaseItemTags(generator, baseBlockTags, existingFileHelper));

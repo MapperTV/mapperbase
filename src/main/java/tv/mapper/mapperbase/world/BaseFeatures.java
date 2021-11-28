@@ -1,34 +1,18 @@
-package tv.mapper.mapperbase.world;
-
-import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.block.BaseBlocks;
-import tv.mapper.mapperbase.config.BaseConfig.ClientConfig;
-import tv.mapper.mapperbase.config.BaseOreGenConfig.CommonConfig;
-
-public class BaseFeatures
-{
-    // public static ConfiguredFeature<?, ?> ORE_BITUMEN = Feature.ORE.configured(
-    // new OreConfiguration(OreConfiguration.Predicates.NATURAL_STONE, BaseBlocks.BITUMEN_ORE.get().defaultBlockState(), CommonConfig.BITUMEN_SIZE.get())).decorated(
-    // FeatureDecorator.RANGE.configured(new RangeDecoratorConfiguration(CommonConfig.BITUMEN_MIN_HEIGHT.get(), CommonConfig.BITUMEN_MIN_HEIGHT.get(),
-    // CommonConfig.BITUMEN_MAX_HEIGHT.get()))).squared().count(
-    // CommonConfig.BITUMEN_CHANCE.get());
-
-    public static final ConfiguredFeature<?, ?> ORE_BITUMEN = Feature.ORE.configured(new OreConfiguration(OreConfiguration.Predicates.NATURAL_STONE, BaseBlocks.BITUMEN_ORE.get().defaultBlockState(), CommonConfig.BITUMEN_SIZE.get())).rangeUniform(VerticalAnchor.absolute(CommonConfig.BITUMEN_MIN_HEIGHT.get()), VerticalAnchor.absolute(CommonConfig.BITUMEN_MAX_HEIGHT.get())).squared().count(CommonConfig.BITUMEN_CHANCE.get());
-
-    public static void registerFeatures()
-    {
-        Registry<ConfiguredFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_FEATURE;
-
-        Registry.register(registry, new ResourceLocation(MapperBase.MODID, "bitumen_ore"), ORE_BITUMEN);
-
-        if(ClientConfig.ENABLE_GEN_LOGS.get())
-            MapperBase.LOGGER.debug("Registered feature " + ORE_BITUMEN.toString());
-    }
-}
+//package tv.mapper.mapperbase.world;
+//
+//public class BaseFeatures
+//{
+// public static final ConfiguredFeature<?, ?> ORE_BITUMEN = Feature.ORE.configured(new OreConfiguration(OreConfiguration.Predicates.NATURAL_STONE,
+// BaseBlocks.BITUMEN_ORE.get().defaultBlockState(), CommonConfig.BITUMEN_SIZE.get())).rangeUniform(VerticalAnchor.absolute(CommonConfig.BITUMEN_MIN_HEIGHT.get()),
+// VerticalAnchor.absolute(CommonConfig.BITUMEN_MAX_HEIGHT.get())).squared().count(CommonConfig.BITUMEN_CHANCE.get());
+//
+// public static void registerFeatures()
+// {
+// Registry<ConfiguredFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_FEATURE;
+//
+// Registry.register(registry, new ResourceLocation(MapperBase.MODID, "bitumen_ore"), ORE_BITUMEN);
+//
+// if(ClientConfig.ENABLE_GEN_LOGS.get())
+// MapperBase.LOGGER.debug("Registered feature " + ORE_BITUMEN.toString());
+// }
+//}

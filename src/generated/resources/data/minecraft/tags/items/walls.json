@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "mapperbase:steel_wall",
-    "mapperbase:concrete_wall"
+    "mapperbase:steel_wall"
   ]
 }

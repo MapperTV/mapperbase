@@ -1,20 +1,18 @@
 package tv.mapper.mapperbase.data;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.Item;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.Tag;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import tv.mapper.mapperbase.MapperBase;
 
 public class BaseTags
 {
     public static class Blocks
     {
-        public static final Tag.Named<Block> CONCRETE = tag("concrete");
-        public static final Tag.Named<Block> ASPHALT = tag("asphalt");
-
+        @SuppressWarnings("unused")
         private static Tag.Named<Block> tag(String name)
         {
             return BlockTags.bind(new ResourceLocation(MapperBase.MODID, name).toString());
@@ -23,9 +21,7 @@ public class BaseTags
 
     public static class Items
     {
-        public static final Tag.Named<Item> CONCRETE = tag("concrete");
-        public static final Tag.Named<Item> ASPHALT = tag("asphalt");
-
+        @SuppressWarnings("unused")
         private static Tag.Named<Item> tag(String name)
         {
             return ItemTags.bind(new ResourceLocation(MapperBase.MODID, name).toString());
@@ -38,9 +34,6 @@ public class BaseTags
 
         public static final Tag.Named<Block> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
         public static final Tag.Named<Block> FENCES_STEEL = tag("fences/steel");
-
-        public static final Tag.Named<Block> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
-        public static final Tag.Named<Block> ORES_BITUMEN = tag("ores/bitumen");
 
         private static Tag.Named<Block> tag(String name)
         {
@@ -62,11 +55,6 @@ public class BaseTags
         public static final Tag.Named<Item> INGOTS_STEEL = tag("ingots/steel");
         public static final Tag.Named<Item> NUGGETS_STEEL = tag("nuggets/steel");
         public static final Tag.Named<Item> STORAGE_BLOCKS_STEEL = tag("storage_blocks/steel");
-
-        public static final Tag.Named<Item> STORAGE_BLOCKS_BITUMEN = tag("storage_blocks/bitumen");
-        public static final Tag.Named<Item> ORES_BITUMEN = tag("ores/bitumen");
-        
-        public static final Tag.Named<Item> BITUMEN = tag("bitumen");
 
         public static final Tag.Named<Item> PRESSURE_PLATES = tag("pressure_plates");
 

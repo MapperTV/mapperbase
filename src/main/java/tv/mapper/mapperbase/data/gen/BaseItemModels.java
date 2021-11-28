@@ -37,16 +37,19 @@ public class BaseItemModels extends ItemModelProvider
         getBuilder("steel_block").parent(new UncheckedModelFile(modid + ":block/steel_block"));
 
         registerBlockBasics("steel", false, true, true, true, true, true);
-        registerBlockBasics("concrete", true, true, true, true, true, true);
+        // registerBlockBasics("concrete", true, true, true, true, true, true);
         getBuilder("steel_fence_gate").parent(new UncheckedModelFile(modid + ":block/steel_fence_gate"));
-        getBuilder("concrete_fence_gate").parent(new UncheckedModelFile(modid + ":block/concrete_fence_gate"));
+        // getBuilder("concrete_fence_gate").parent(new UncheckedModelFile(modid + ":block/concrete_fence_gate"));
 
-        registerBlockBasics("asphalt", true, true, true, false, true, false);
+        // registerBlockBasics("asphalt", true, true, true, false, true, false);
+        //
+        // getBuilder("asphalt_slope").parent(new UncheckedModelFile(modid + ":block/asphalt_slope_2"));
+        // getBuilder("concrete_slope").parent(new UncheckedModelFile(modid + ":block/concrete_slope_2"));
 
-        getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
-        getBuilder("bitumen_ore").parent(new UncheckedModelFile(modid + ":block/bitumen_ore"));
-        getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
-        getBuilder("bituminous_coal").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/bituminous_coal"));
+        // getBuilder("bitumen_block").parent(new UncheckedModelFile(modid + ":block/bitumen_block"));
+        // getBuilder("bitumen_ore").parent(new UncheckedModelFile(modid + ":block/bitumen_ore"));
+        // getBuilder("raw_bitumen").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/raw_bitumen"));
+        // getBuilder("bituminous_coal").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/bituminous_coal"));
 
         getBuilder("steel_axe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_axe"));
         getBuilder("steel_pickaxe").parent(new UncheckedModelFile("item/handheld")).texture("layer0", modLoc("item/steel_pickaxe"));

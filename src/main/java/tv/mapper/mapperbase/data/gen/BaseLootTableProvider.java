@@ -49,7 +49,7 @@ import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.block.CustomDoorBlock;
+import tv.mapper.mapperbase.world.level.block.CustomDoorBlock;
 
 public abstract class BaseLootTableProvider extends LootTableProvider
 {

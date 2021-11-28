@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "mapperbase:steel_stairs",
-    "mapperbase:concrete_stairs",
-    "mapperbase:asphalt_stairs"
+    "mapperbase:steel_stairs"
   ]
 }

@@ -14,9 +14,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.block.BaseBlocks;
 import tv.mapper.mapperbase.data.BaseTags;
-import tv.mapper.mapperbase.item.BaseItems;
+import tv.mapper.mapperbase.world.item.BaseItems;
+import tv.mapper.mapperbase.world.level.block.BaseBlocks;
 
 public class BaseRecipes extends RecipeProvider
 {
@@ -39,18 +39,6 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shaped(BaseBlocks.STEEL_PRESSURE_PLATE.get()).define('#', BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL).pattern("##").unlockedBy("has_steel_block", has(BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL)).save(consumer);
         ShapedRecipeBuilder.shaped(BaseBlocks.STEEL_FENCE.get(), 3).pattern("nsn").pattern("isi").define('n', BaseItems.BOLT.get()).define('i', BaseTags.ForgeItems.INGOTS_STEEL).define('s', BaseTags.ForgeItems.RODS_STEEL).unlockedBy("has_steel_ingot", has(BaseTags.ForgeItems.INGOTS_STEEL)).unlockedBy("has_steel_rod", has(BaseTags.ForgeItems.RODS_STEEL)).save(consumer);
         ShapedRecipeBuilder.shaped(BaseBlocks.STEEL_FENCE_GATE.get()).pattern("sis").pattern("sis").define('i', BaseTags.ForgeItems.INGOTS_STEEL).define('s', BaseTags.ForgeItems.RODS_STEEL).unlockedBy("has_steel_ingot", has(BaseTags.ForgeItems.INGOTS_STEEL)).unlockedBy("has_steel_rod", has(BaseTags.ForgeItems.RODS_STEEL)).save(consumer);
-
-        // Concrete blocks
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE.get(), 4).define('G', Tags.Items.GRAVEL).define('S', Tags.Items.SAND).pattern("GS").pattern("SG").unlockedBy("has_sand", has(Tags.Items.SAND)).unlockedBy("has_gravel", has(Tags.Items.GRAVEL)).save(consumer, MapperBase.MODID + ":concrete_1");
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE.get(), 4).define('G', Tags.Items.GRAVEL).define('S', Tags.Items.SAND).pattern("GS").pattern("SG").unlockedBy("has_sand", has(Tags.Items.SAND)).unlockedBy("has_gravel", has(Tags.Items.GRAVEL)).save(consumer, MapperBase.MODID + ":concrete_2");
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_SLAB.get(), 6).pattern("iii").define('i', BaseTags.Items.CONCRETE).unlockedBy("has_concrete_block", has(BaseTags.Items.CONCRETE)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE.get()).pattern("i").pattern("i").define('i', BaseBlocks.CONCRETE_SLAB.get()).unlockedBy("has_concrete_slab", has(BaseBlocks.CONCRETE_SLAB.get())).save(consumer, MapperBase.MODID + ":concrete_block_from_slabs");
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_STAIRS.get(), 4).define('#', BaseTags.Items.CONCRETE).pattern("#  ").pattern("## ").pattern("###").unlockedBy("has_concrete_block", has(BaseTags.Items.CONCRETE)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_WALL.get(), 6).define('#', BaseTags.Items.CONCRETE).pattern("###").pattern("###").unlockedBy("has_concrete_block", has(BaseTags.Items.CONCRETE)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_PRESSURE_PLATE.get()).define('#', BaseTags.Items.CONCRETE).pattern("##").unlockedBy("has_concrete_block", has(BaseTags.Items.CONCRETE)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_FENCE.get(), 3).pattern("isi").pattern("isi").define('i', BaseTags.Items.CONCRETE).define('s', BaseBlocks.CONCRETE_SLAB.get()).unlockedBy("has_concrete", has(BaseTags.Items.CONCRETE)).unlockedBy("has_concrete_slab", has(BaseBlocks.CONCRETE_SLAB.get())).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.CONCRETE_FENCE_GATE.get()).pattern("sis").pattern("sis").define('i', BaseTags.Items.CONCRETE).define('s', BaseBlocks.CONCRETE_SLAB.get()).unlockedBy("has_concrete", has(BaseTags.Items.CONCRETE)).unlockedBy("has_concrete_slab", has(BaseBlocks.CONCRETE_SLAB.get())).save(consumer);
-        basicRecipes(consumer, BaseBlocks.CONCRETE.get(), BaseBlocks.CONCRETE_SLAB.get(), BaseBlocks.CONCRETE_STAIRS.get(), BaseBlocks.CONCRETE_WALL.get(), BaseBlocks.CONCRETE_PRESSURE_PLATE.get(), null, BaseBlocks.CONCRETE_FENCE.get(), BaseBlocks.CONCRETE_FENCE_GATE.get());
 
         // Rods
         ShapedRecipeBuilder.shaped(BaseItems.IRON_ROD.get(), 4).pattern("x").pattern("x").define('x', Tags.Items.INGOTS_IRON).unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(consumer);
@@ -86,30 +74,9 @@ public class BaseRecipes extends RecipeProvider
         ShapedRecipeBuilder.shaped(BaseItems.STEEL_LEGGINGS.get()).define('X', BaseTags.ForgeItems.INGOTS_STEEL).pattern("XXX").pattern("X X").pattern("X X").unlockedBy("has_steel", has(BaseTags.ForgeItems.INGOTS_STEEL)).save(consumer);
 
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(BaseItems.STEEL_PICKAXE.get(), BaseItems.STEEL_SHOVEL.get(), BaseItems.STEEL_AXE.get(), BaseItems.STEEL_HOE.get(), BaseItems.STEEL_SWORD.get(), BaseItems.STEEL_HELMET.get(), BaseItems.STEEL_CHESTPLATE.get(), BaseItems.STEEL_LEGGINGS.get(), BaseItems.STEEL_BOOTS.get(), BaseItems.STEEL_HORSE_ARMOR.get()), BaseItems.STEEL_NUGGET.get(), 0.1f, 130).unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET)).unlockedBy("has_steel_pickaxe", has(BaseItems.STEEL_PICKAXE.get())).unlockedBy("has_steel_shovel", has(BaseItems.STEEL_SHOVEL.get())).unlockedBy("has_steel_axe", has(BaseItems.STEEL_AXE.get())).unlockedBy("has_steel_hoe", has(BaseItems.STEEL_HOE.get())).unlockedBy("has_steel_sword", has(BaseItems.STEEL_SWORD.get())).unlockedBy("has_steel_helmet", has(BaseItems.STEEL_HELMET.get())).unlockedBy("has_steel_chestplate", has(BaseItems.STEEL_CHESTPLATE.get())).unlockedBy("has_steel_leggings", has(BaseItems.STEEL_LEGGINGS.get())).unlockedBy("has_steel_boots", has(BaseItems.STEEL_BOOTS.get())).unlockedBy("has_steel_horse_armor", has(BaseItems.STEEL_HORSE_ARMOR.get())).save(consumer, MapperBase.MODID + ":steel_nugget_from_recycling");
-
-        // Asphalt
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT.get(), 4).define('G', Tags.Items.GRAVEL).define('B', BaseTags.ForgeItems.BITUMEN).define('S', Tags.Items.SAND).pattern("SB").pattern("BG").unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).group("asphalt").save(consumer, MapperBase.MODID + ":asphalt1");
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT.get(), 4).define('G', Tags.Items.GRAVEL).define('B', BaseTags.ForgeItems.BITUMEN).define('S', Tags.Items.SAND).pattern("BS").pattern("GB").unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).group("asphalt").save(consumer, MapperBase.MODID + ":asphalt2");
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT.get(), 4).define('G', Tags.Items.GRAVEL).define('B', BaseTags.ForgeItems.BITUMEN).define('S', Tags.Items.SAND).pattern("GB").pattern("BS").unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).group("asphalt").save(consumer, MapperBase.MODID + ":asphalt3");
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT.get(), 4).define('G', Tags.Items.GRAVEL).define('B', BaseTags.ForgeItems.BITUMEN).define('S', Tags.Items.SAND).pattern("BG").pattern("SB").unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).group("asphalt").save(consumer, MapperBase.MODID + ":asphalt4");
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT.get()).pattern("i").pattern("i").define('i', BaseBlocks.ASPHALT_SLAB.get()).unlockedBy("has_asphalt_slab", has(BaseBlocks.ASPHALT_SLAB.get())).save(consumer, MapperBase.MODID + ":asphalt_block_from_slabs");
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT_SLAB.get(), 6).pattern("iii").define('i', BaseTags.Items.ASPHALT).unlockedBy("has_asphalt_block", has(BaseTags.Items.ASPHALT)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT_STAIRS.get(), 4).define('#', BaseTags.Items.ASPHALT).pattern("#  ").pattern("## ").pattern("###").unlockedBy("has_asphalt_block", has(BaseTags.Items.ASPHALT)).save(consumer);
-        ShapedRecipeBuilder.shaped(BaseBlocks.ASPHALT_PRESSURE_PLATE.get()).define('#', BaseTags.Items.ASPHALT).pattern("##").unlockedBy("has_asphalt_block", has(BaseTags.Items.ASPHALT)).save(consumer);
-        basicRecipes(consumer, BaseBlocks.ASPHALT.get(), BaseBlocks.ASPHALT_SLAB.get(), BaseBlocks.ASPHALT_STAIRS.get(), null, BaseBlocks.ASPHALT_PRESSURE_PLATE.get(), null, null, null);
-
-        ShapedRecipeBuilder.shaped(BaseBlocks.BITUMEN_BLOCK.get()).pattern("xxx").pattern("xxx").pattern("xxx").define('x', BaseTags.ForgeItems.BITUMEN).unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).save(consumer);
-        ShapelessRecipeBuilder.shapeless(BaseItems.RAW_BITUMEN.get(), 9).requires(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN).unlockedBy("has_bitumen_block", has(BaseTags.ForgeItems.STORAGE_BLOCKS_BITUMEN)).save(consumer, MapperBase.MODID + ":raw_bitumen_from_block");
-
-        // Ore
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 100).unlockedBy("has_bitumen_ore", has(BaseItems.BITUMEN_ORE_ITEM.get())).save(consumer, MapperBase.MODID + ":raw_bitumen_from_blasting");
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(BaseItems.BITUMEN_ORE_ITEM.get()), BaseItems.RAW_BITUMEN.get(), 0.1f, 200).unlockedBy("has_bitumen_ore", has(BaseItems.BITUMEN_ORE_ITEM.get())).save(consumer, MapperBase.MODID + ":raw_bitumen_from_smelting");
-
-        // Others
-        ShapedRecipeBuilder.shaped(BaseItems.BITUMINOUS_COAL.get(), 8).pattern("xxx").pattern("xyx").pattern("xxx").define('x', BaseTags.ForgeItems.BITUMEN).define('y', Items.COAL).unlockedBy("has_raw_bitumen", has(BaseTags.ForgeItems.BITUMEN)).unlockedBy("has_coal", has(Items.COAL)).save(consumer);
     }
 
-    private void basicRecipes(Consumer<FinishedRecipe> consumer, Block base, Block slab, Block stairs, Block wall, Block pressure, Block button, Block fence, Block fence_gate)
+    protected void basicRecipes(Consumer<FinishedRecipe> consumer, Block base, Block slab, Block stairs, Block wall, Block pressure, Block button, Block fence, Block fence_gate)
     {
         String base_name = base.getRegistryName().getPath();
 

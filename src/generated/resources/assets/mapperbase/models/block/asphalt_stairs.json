@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "side": "mapperbase:block/asphalt",
-    "bottom": "mapperbase:block/asphalt",
-    "top": "mapperbase:block/asphalt"
-  }
-}

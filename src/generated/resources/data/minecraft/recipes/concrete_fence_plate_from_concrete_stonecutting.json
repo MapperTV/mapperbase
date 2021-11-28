@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "mapperbase:concrete"
-  },
-  "result": "mapperbase:concrete_fence",
-  "count": 1
-}

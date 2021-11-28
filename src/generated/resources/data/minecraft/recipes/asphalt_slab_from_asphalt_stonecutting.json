@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "mapperbase:asphalt"
-  },
-  "result": "mapperbase:asphalt_slab",
-  "count": 2
-}
