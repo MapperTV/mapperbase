@@ -38,7 +38,7 @@ public class MapperBase
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("Mapper Base setup started! Thank you for using it!");
+        LOGGER.info("Mapper Base setup started! Thank you for using my mods!");
     }
 
     private void clientSetup(final FMLClientSetupEvent event)
