@@ -25,7 +25,6 @@ public class MapperBase
     public MapperBase()
     {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BaseConfig.CLIENT_CONFIG);
-//        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaseOreGenConfig.COMMON_CONFIG);
 
         BaseBlocks.init();
         BaseItems.init();
@@ -39,17 +38,7 @@ public class MapperBase
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("Mapper Base setup started!");
-
-//        OreList.initOres();
-
-// if(!CommonConfig.BITUMEN_GENERATION.get())
-// LOGGER.info("Ore generation is disabled by config.");
-// else
-// {
-// ConfigChecker.checkConfig();
-// BaseFeatures.registerFeatures();
-// }
+        LOGGER.info("Mapper Base setup started! Thank you for using it!");
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

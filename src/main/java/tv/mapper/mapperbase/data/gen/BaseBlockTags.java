@@ -36,7 +36,7 @@ public class BaseBlockTags extends BlockTagsProvider
 
         registerToolTags(BaseBlocks.BLOCKS);
     }
-    
+
     // Tool system
     protected void registerToolTags(DeferredRegister<Block> blocks)
     {

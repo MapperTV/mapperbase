@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import tv.mapper.mapperbase.MapperBase;
 
+@SuppressWarnings("deprecation")
 public enum BaseArmorMaterial implements ArmorMaterial
 {
     STEEL("steel", 25, new int[] {3, 6, 7, 3}, 9, SoundEvents.ARMOR_EQUIP_IRON, 1.0F, () ->

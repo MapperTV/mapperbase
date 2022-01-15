@@ -27,7 +27,6 @@ public class BaseItemTags extends ItemTagsProvider
         copy(BaseTags.ForgeBlocks.FENCES_STEEL, BaseTags.ForgeItems.FENCES_STEEL);
         copy(Tags.Blocks.FENCE_GATES, Tags.Items.FENCE_GATES);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
-        // copy(Tags.Blocks.ORES, Tags.Items.ORES);
         copy(BaseTags.ForgeBlocks.STORAGE_BLOCKS_STEEL, BaseTags.ForgeItems.STORAGE_BLOCKS_STEEL);
         copy(BaseTags.ForgeBlocks.PRESSURE_PLATES, BaseTags.ForgeItems.PRESSURE_PLATES);
 
@@ -47,6 +46,5 @@ public class BaseItemTags extends ItemTagsProvider
         tag(BaseTags.ForgeItems.PLATES).add(BaseItems.STEEL_PLATE.get());
 
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(BaseItems.STEEL_INGOT.get());
-
     }
 }

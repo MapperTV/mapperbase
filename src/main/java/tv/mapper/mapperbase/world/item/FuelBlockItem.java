@@ -20,5 +20,4 @@ public class FuelBlockItem extends BlockItem
     {
         return burnTime;
     }
-
 }

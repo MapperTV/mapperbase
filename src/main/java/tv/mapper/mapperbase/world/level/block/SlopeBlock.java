@@ -1,17 +1,11 @@
 package tv.mapper.mapperbase.world.level.block;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -22,10 +16,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import tv.mapper.mapperbase.MapperBase;
 
 public class SlopeBlock extends CustomBlock implements SimpleWaterloggedBlock
 {
@@ -58,43 +52,42 @@ public class SlopeBlock extends CustomBlock implements SimpleWaterloggedBlock
         return SHAPES[state.getValue(LAYERS)];
     }
 
-    @Override
+    public boolean canBeReplaced(BlockState p_56589_, BlockPlaceContext p_56590_)
+    {
+        int i = p_56589_.getValue(LAYERS);
+        if(p_56590_.getItemInHand().is(this.asItem()) && i < 8)
+        {
+            if(p_56590_.replacingClickedOnBlock())
+            {
+                return p_56590_.getClickedFace() == Direction.UP;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context)
     {
         BlockPos blockpos = context.getClickedPos();
+        BlockState blockstate = context.getLevel().getBlockState(blockpos);
         FluidState FluidState = context.getLevel().getFluidState(blockpos);
-
-        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(Boolean.valueOf(FluidState.getType() == Fluids.WATER)));
-    }
-
-    @Override
-    public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit)
-    {
-        if(hit.getDirection() == Direction.UP)
+        MapperBase.LOGGER.info(blockstate + " - " + this);
+        if(blockstate.is(this))
         {
-            Item itemCheck = this.asItem();
-
-            if(!player.isShiftKeyDown() && state.getValue(LAYERS) < 8)
-            {
-                ItemStack stack = ItemStack.EMPTY;
-                if(player.getMainHandItem().getItem() == itemCheck)
-                    stack = player.getMainHandItem();
-                else if(player.getOffhandItem().getItem() == itemCheck)
-                    stack = player.getOffhandItem();
-
-                if(stack.getItem() == itemCheck)
-                {
-                    worldIn.setBlockAndUpdate(pos, state.setValue(LAYERS, state.getValue(LAYERS) + 1));
-                    if(!worldIn.isClientSide)
-                        worldIn.playSound(null, pos, SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
-
-                    if(!player.isCreative())
-                        stack.setCount(stack.getCount() - 1);
-                    return InteractionResult.SUCCESS;
-                }
-            }
+            int i = blockstate.getValue(LAYERS);
+            return blockstate.setValue(WATERLOGGED, Boolean.valueOf(Boolean.valueOf(FluidState.getType() == Fluids.WATER))).setValue(LAYERS, Integer.valueOf(Math.min(8, i + 1)));
         }
-        return InteractionResult.PASS;
+        else
+        {
+            return super.getStateForPlacement(context);
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -112,5 +105,4 @@ public class SlopeBlock extends CustomBlock implements SimpleWaterloggedBlock
     {
         return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
     }
-
 }

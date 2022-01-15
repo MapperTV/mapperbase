@@ -29,7 +29,7 @@ public class BaseLang extends LanguageProvider
                 add(BaseBlocks.STEEL_PRESSURE_PLATE.get(), "Steel Pressure Plate");
                 add(BaseBlocks.STEEL_FENCE.get(), "Steel Fence");
                 add(BaseBlocks.STEEL_FENCE_GATE.get(), "Steel Fence Gate");
-                
+
                 add(BaseItems.FERRITE.get(), "Ferrite");
                 add(BaseItems.RAW_STEEL.get(), "Raw Steel");
                 add(BaseItems.BOLT.get(), "Bolt");

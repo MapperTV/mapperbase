@@ -1,20 +1,20 @@
 package tv.mapper.mapperbase.world.level.block;
 
-import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 
-public class CustomFenceGateBlock extends FenceGateBlock implements ToolManager
+public class CustomRotatedPillarBlock extends RotatedPillarBlock implements ToolManager
 {
     private ToolTiers tier;
     private ToolTypes tool;
 
-    public CustomFenceGateBlock(Properties properties, ToolTypes tool)
+    public CustomRotatedPillarBlock(Properties properties, ToolTypes tool)
     {
         super(properties);
         this.tool = tool;
         this.tier = ToolTiers.WOOD;
     }
 
-    public CustomFenceGateBlock(Properties properties, ToolTypes tool, ToolTiers tier)
+    public CustomRotatedPillarBlock(Properties properties, ToolTypes tool, ToolTiers tier)
     {
         super(properties);
         this.tool = tool;
