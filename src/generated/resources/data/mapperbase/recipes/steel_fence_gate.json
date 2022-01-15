@@ -1,10 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "sis",
+    "nin",
     "sis"
   ],
   "key": {
+    "n": {
+      "item": "mapperbase:bolt"
+    },
     "i": {
       "tag": "forge:ingots/steel"
     },
@@ -13,6 +16,7 @@
     }
   },
   "result": {
-    "item": "mapperbase:steel_fence_gate"
+    "item": "mapperbase:steel_fence_gate",
+    "count": 4
   }
 }
