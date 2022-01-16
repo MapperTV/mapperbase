@@ -19,7 +19,6 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import tv.mapper.mapperbase.MapperBase;
 
 public class SlopeBlock extends CustomBlock implements SimpleWaterloggedBlock
 {
@@ -78,7 +77,7 @@ public class SlopeBlock extends CustomBlock implements SimpleWaterloggedBlock
         BlockPos blockpos = context.getClickedPos();
         BlockState blockstate = context.getLevel().getBlockState(blockpos);
         FluidState FluidState = context.getLevel().getFluidState(blockpos);
-        MapperBase.LOGGER.info(blockstate + " - " + this);
+
         if(blockstate.is(this))
         {
             int i = blockstate.getValue(LAYERS);
