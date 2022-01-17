@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[37,)"
+loaderVersion="[39,)"
 license="MIT License"
 issueTrackerURL="https://github.com/MapperTV/mapperbase/issues"
 [[mods]]
@@ -16,13 +16,13 @@ description="This mod simply provides the basic elements for my other mods to av
 [[dependencies.mapperbase]]
     modId="forge"
     mandatory=true
-    versionRange="[37,)"
+    versionRange="[39,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.mapperbase]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.17.1]"
+    versionRange="[1.18.1]"
     ordering="NONE"
     side="BOTH"

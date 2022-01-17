@@ -2,7 +2,7 @@ package tv.mapper.mapperbase.world;
 
 import java.util.ArrayList;
 
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class CustomOre
 {
@@ -13,15 +13,15 @@ public class CustomOre
 
     private ArrayList<String> biomeList;
 
-    private ConfiguredFeature<?, ?> configuredFeature;
+    private PlacedFeature placedFeature;
 
-    public CustomOre(String name, ConfiguredFeature<?, ?> feature, boolean generate, boolean whitelist, ArrayList<String> list)
+    public CustomOre(String name, PlacedFeature feature, boolean generate, boolean whitelist, ArrayList<String> biomeList)
     {
         this.name = name;
         this.allowGeneration = generate;
         this.whitelisteMode = whitelist;
-        this.biomeList = list;
-        this.configuredFeature = feature;
+        this.biomeList = biomeList;
+        this.placedFeature = feature;
     }
 
     public boolean canGenerate()
@@ -39,8 +39,8 @@ public class CustomOre
         return this.biomeList;
     }
 
-    public ConfiguredFeature<?, ?> getFeature()
+    public PlacedFeature getFeature()
     {
-        return this.configuredFeature;
+        return this.placedFeature;
     }
 }
