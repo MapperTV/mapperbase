@@ -1,6 +1,13 @@
 package tv.mapper.mapperbase.world;
 
+import java.util.List;
+
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -49,5 +56,20 @@ public class BaseOreGenerator
                 }
             }
         }
+    }
+
+    public static List<PlacementModifier> orePlacement(PlacementModifier amount, PlacementModifier modifier)
+    {
+        return List.of(amount, InSquarePlacement.spread(), modifier, BiomeFilter.biome());
+    }
+
+    public static List<PlacementModifier> commonOrePlacement(int amount, PlacementModifier modifier)
+    {
+        return orePlacement(CountPlacement.of(amount), modifier);
+    }
+
+    public static List<PlacementModifier> rareOrePlacement(int amount, PlacementModifier modifier)
+    {
+        return orePlacement(RarityFilter.onAverageOnceEvery(amount), modifier);
     }
 }
