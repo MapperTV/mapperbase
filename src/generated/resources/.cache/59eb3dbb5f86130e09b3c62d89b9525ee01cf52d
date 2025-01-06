@@ -1,0 +1,9 @@
+// 1.21.1	2025-01-05T23:03:13.4490809	Loot Tables
+88b978c85410152b6879f5428ca04b4776768798 data/mapperbase/loot_table/blocks/steel_block.json
+8c4f2735f37fe676a7df750bdaca77d819dbdd29 data/mapperbase/loot_table/blocks/steel_button.json
+de32fbac212b524bc876a11dc34b24bd7a161e04 data/mapperbase/loot_table/blocks/steel_fence.json
+c3d0834e2b9f4c389aac19bdcff1ab18811b2f56 data/mapperbase/loot_table/blocks/steel_fence_gate.json
+a98c594c3d8d0ec10bd0fa14aa61ea13107f4195 data/mapperbase/loot_table/blocks/steel_pressure_plate.json
+4e28670964c0c5e366e68ce83c55e7f7ee1861c8 data/mapperbase/loot_table/blocks/steel_slab.json
+ce5df9ba2aaeafe1a6514a6f7cc03ec5a1a7a114 data/mapperbase/loot_table/blocks/steel_stairs.json
+10242964738a9844abdcee0cd2766d9b0a384b25 data/mapperbase/loot_table/blocks/steel_wall.json

@@ -1,49 +1,97 @@
 package tv.mapper.mapperbase;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import tv.mapper.mapperbase.config.BaseConfig;
-import tv.mapper.mapperbase.world.BaseOreGenerator;
-import tv.mapper.mapperbase.world.item.BaseItems;
-import tv.mapper.mapperbase.world.level.block.BaseBlocks;
+import com.mojang.logging.LogUtils;
 
+import net.minecraft.world.item.CreativeModeTabs;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import tv.mapper.mapperbase.block.MB_Blocks;
+import tv.mapper.mapperbase.config.MB_Config;
+import tv.mapper.mapperbase.data.MB_DataGenerators;
+import tv.mapper.mapperbase.item.MB_CreativeTab;
+import tv.mapper.mapperbase.item.MB_Items;
+import tv.mapper.mapperbase.item.MB_Tiers;
+
+// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MapperBase.MODID)
 public class MapperBase
 {
     public static final String MODID = "mapperbase";
-    public static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogUtils.getLogger();
 
-    public MapperBase()
+    public MapperBase(IEventBus modEventBus, ModContainer modContainer)
     {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BaseConfig.CLIENT_CONFIG);
+        // Register the commonSetup method for modloading
+        modEventBus.addListener(this::commonSetup);
 
-        BaseBlocks.init();
-        BaseItems.init();
+        MB_Blocks.BLOCKS.register(modEventBus);
+        MB_Blocks.BLOCK_ITEMS.register(modEventBus);
+        MB_Tiers.ARMOR_MATERIALS.register(modEventBus);
+        MB_Items.ITEMS.register(modEventBus);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
+        MB_CreativeTab.CREATIVE_MODE_TABS.register(modEventBus);
 
-        MinecraftForge.EVENT_BUS.register(new BaseOreGenerator());
+        // NeoForge.EVENT_BUS.register(this);
+
+        modEventBus.addListener(this::addCreative);
+
+        modEventBus.addListener(MB_DataGenerators::generate); // Data Generators
+        modContainer.registerConfig(ModConfig.Type.COMMON, MB_Config.SPEC);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
+    private void commonSetup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("Mapper Base setup started! Thank you for using my mods!");
+        if(MB_Config.enableTagViewer)
+            LOGGER.info("Tag Viewer enabled.");
     }
 
-    private void clientSetup(final FMLClientSetupEvent event)
-    {}
+    private void addCreative(BuildCreativeModeTabContentsEvent event)
+    {
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(MB_Items.STEEL_SHOVEL.get());
+            event.accept(MB_Items.STEEL_PICKAXE.get());
+            event.accept(MB_Items.STEEL_AXE.get());
+            event.accept(MB_Items.STEEL_HOE.get());
+        }
+        if(event.getTabKey() == CreativeModeTabs.COMBAT)
+        {
+            event.accept(MB_Items.STEEL_SWORD.get());
+            event.accept(MB_Items.STEEL_HELMET.get());
+            event.accept(MB_Items.STEEL_CHESTPLATE.get());
+            event.accept(MB_Items.STEEL_LEGGINGS.get());
+            event.accept(MB_Items.STEEL_BOOTS.get());
+        }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+            event.accept(MB_Items.PIG_IRON_CHUNK.get());
+            event.accept(MB_Items.RAW_STEEL.get());
+            event.accept(MB_Items.STEEL_INGOT.get());
+            event.accept(MB_Items.STEEL_NUGGET.get());
+        }
+    }
 
-    private void serverSetup(final FMLDedicatedServerSetupEvent event)
-    {}
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    // @SubscribeEvent
+    // public void onServerStarting(ServerStartingEvent event)
+    // {
+    // Do something when the server starts
+    // }
+
+    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    // @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    // public static class ClientModEvents
+    // {
+    // @SubscribeEvent
+    // public static void onClientSetup(FMLClientSetupEvent event)
+    // {
+    // Some client setup code
+    // }
+    // }
 }

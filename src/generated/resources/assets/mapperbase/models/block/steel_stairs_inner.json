@@ -1,8 +1,7 @@
 {
-  "parent": "minecraft:block/inner_stairs",
+  "parent": "mapperbase:block/textured_stairs_inner",
   "textures": {
-    "side": "mapperbase:block/steel_block",
-    "bottom": "mapperbase:block/steel_block",
-    "top": "mapperbase:block/steel_block"
+    "full": "mapperbase:block/steel_block",
+    "side": "mapperbase:block/steel_stairs"
   }
 }

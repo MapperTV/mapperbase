@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "tag": "forge:ingots/iron"
-  },
-  "result": "mapperbase:ferrite",
-  "experience": 0.5,
-  "cookingtime": 800
-}

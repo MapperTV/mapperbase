@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mapperbase:pig_iron_chunk"
+    },
+    {
+      "item": "mapperbase:pig_iron_chunk"
+    },
+    {
+      "item": "mapperbase:pig_iron_chunk"
+    },
+    {
+      "tag": "mapperbase:flatter_hammers"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mapperbase:raw_steel"
+  }
+}

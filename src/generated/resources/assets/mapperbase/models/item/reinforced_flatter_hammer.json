@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "mapperbase:item/reinforced_flatter_hammer"
+  }
+}

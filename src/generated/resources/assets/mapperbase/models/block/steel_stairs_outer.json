@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/outer_stairs",
+  "parent": "mapperbase:block/textured_stairs_outer",
   "textures": {
-    "side": "mapperbase:block/steel_block",
-    "bottom": "mapperbase:block/steel_block",
-    "top": "mapperbase:block/steel_block"
+    "full": "mapperbase:block/steel_block",
+    "half": "mapperbase:block/steel_slab_side",
+    "side": "mapperbase:block/steel_stairs"
   }
 }

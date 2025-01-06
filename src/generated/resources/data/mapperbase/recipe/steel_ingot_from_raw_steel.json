@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "mapperbase:raw_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "mapperbase:steel_ingot"
+  }
+}

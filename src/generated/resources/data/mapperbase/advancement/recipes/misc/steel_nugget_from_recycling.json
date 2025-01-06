@@ -1,0 +1,131 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_axe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_helmet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_leggings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:nuggets/steel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_shovel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_shovel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mapperbase:steel_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mapperbase:steel_nugget_from_recycling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_nugget",
+      "has_steel_pickaxe",
+      "has_steel_shovel",
+      "has_steel_axe",
+      "has_steel_hoe",
+      "has_steel_sword",
+      "has_steel_helmet",
+      "has_steel_chestplate",
+      "has_steel_leggings",
+      "has_steel_boots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mapperbase:steel_nugget_from_recycling"
+    ]
+  }
+}

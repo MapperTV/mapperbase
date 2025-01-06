@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "a": {
+      "tag": "c:ingots/steel"
+    },
+    "s": {
+      "tag": "c:rods/iron"
+    }
+  },
+  "pattern": [
+    "aa",
+    "as",
+    " s"
+  ],
+  "result": {
+    "count": 1,
+    "id": "mapperbase:steel_axe"
+  }
+}

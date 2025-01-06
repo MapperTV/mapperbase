@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/iron"
+    },
+    {
+      "tag": "mapperbase:flatter_hammers"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mapperbase:iron_plate"
+  }
+}

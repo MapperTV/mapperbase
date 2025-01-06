@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "a": {
+      "tag": "c:rods/steel"
+    },
+    "b": {
+      "tag": "c:plates/steel"
+    }
+  },
+  "pattern": [
+    "bab",
+    "bab"
+  ],
+  "result": {
+    "count": 3,
+    "id": "mapperbase:steel_fence"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:plates/steel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mapperbase:steel_button"
+  }
+}

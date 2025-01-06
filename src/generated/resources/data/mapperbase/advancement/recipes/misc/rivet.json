@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flatter_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#mapperbase:flatter_hammers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#c:nuggets/steel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mapperbase:rivet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_nugget",
+      "has_flatter_hammer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mapperbase:rivet"
+    ]
+  }
+}
