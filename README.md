@@ -1,12 +1,12 @@
 # Mapper Base
  A base mod for my Minecraft mods.
  
- This is a small mod that adds contents used by my other mods. This is to avoid duplicating elements between my other mods.
- By itself this mods only adds a few contents, usually without any explicit usage so it is not a mod meant to be installed alone. It is best used with my other mods:
+ This is a small mod that adds common contents used by my other mods, to avoid duplicated elements.
+ By itself this mods only adds a few content, usually without any explicit usage so it is not a mod meant to be installed alone. It is best used with my other mods:
  
- EmbellishCraft: https://minecraft.curseforge.com/projects/embellishcraft  
- Road Stuff 2: https://www.curseforge.com/minecraft/mc-mods/road-stuff
+ EmbellishCraft: https://minecraft.curseforge.com/projects/embellishcraft (not ready for 1.21 yet)  
+ Road Stuff: https://www.curseforge.com/minecraft/mc-mods/road-stuff (not ready for 1.20+ yet)
  
- Targeted Minecraft version: 1.18.x  
- Mod loader: Forge  
- Status: released for 1.17.1, WIP for 1.18.1
+ Targeted Minecraft version: 1.21.1
+ Mod loader: NeoForge  
+ Status: released for 1.20.1, WIP for 1.21.1
