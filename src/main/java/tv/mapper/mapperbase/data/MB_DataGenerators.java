@@ -11,6 +11,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import tv.mapper.mapperbase.MapperBase;
+import tv.mapper.mapperbase.data.loot.GlobalLootModifiersGenerator;
 import tv.mapper.mapperbase.data.tags.BlockTagGenerator;
 import tv.mapper.mapperbase.data.tags.ItemTagGenerator;
 
@@ -34,6 +35,8 @@ public class MB_DataGenerators
         generator.addProvider(event.includeServer(), new ItemTagGenerator(pack, lookup, blockTagProvider.contentsGetter(), event.getExistingFileHelper()));
 
         generator.addProvider(event.includeServer(), new RecipeGenerator(pack, lookup));
+
+        generator.addProvider(event.includeServer(), new GlobalLootModifiersGenerator(pack, lookup, MapperBase.MODID));
 
         // generator.addProvider(event.includeServer(), new WorldgenGenerator(pack, event.getLookupProvider()));
     }

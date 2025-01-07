@@ -1,0 +1,8 @@
+{
+  "entries": [
+    "mapperbase:steel_ingot_in_dungeon_chest",
+    "mapperbase:steel_nugget_in_dungeon_chest",
+    "mapperbase:steel_horse_armor_in_dungeon_chest"
+  ],
+  "replace": false
+}

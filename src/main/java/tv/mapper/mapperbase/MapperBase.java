@@ -14,6 +14,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import tv.mapper.mapperbase.block.MB_Blocks;
 import tv.mapper.mapperbase.config.MB_Config;
 import tv.mapper.mapperbase.data.MB_DataGenerators;
+import tv.mapper.mapperbase.data.loot.MB_Loots;
 import tv.mapper.mapperbase.item.MB_CreativeTab;
 import tv.mapper.mapperbase.item.MB_Items;
 import tv.mapper.mapperbase.item.MB_Tiers;
@@ -34,6 +35,7 @@ public class MapperBase
         MB_Blocks.BLOCK_ITEMS.register(modEventBus);
         MB_Tiers.ARMOR_MATERIALS.register(modEventBus);
         MB_Items.ITEMS.register(modEventBus);
+        MB_Loots.LOOT_MODIFIERS.register(modEventBus);
 
         MB_CreativeTab.CREATIVE_MODE_TABS.register(modEventBus);
 
