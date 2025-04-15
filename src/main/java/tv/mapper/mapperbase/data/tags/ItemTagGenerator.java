@@ -4,35 +4,35 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import tv.mapper.mapperbase.MapperBase;
+import tv.mapper.mapperbase.api.data.tags.BaseItemTagsProvider;
+import tv.mapper.mapperbase.api.data.tags.BaseTags;
 import tv.mapper.mapperbase.block.MB_Blocks;
 import tv.mapper.mapperbase.item.MB_Items;
 
-public class ItemTagGenerator extends ItemTagsProvider
+public class ItemTagGenerator extends BaseItemTagsProvider
 {
 
-    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, ExistingFileHelper existingFileHelper)
+    public ItemTagGenerator(PackOutput pOutput, CompletableFuture<Provider> pLookupProvider, CompletableFuture<TagLookup<Block>> pBlockTags, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(pOutput, pLookupProvider, pBlockTags, MapperBase.MODID, existingFileHelper);
+        super(pOutput, pLookupProvider, pBlockTags, modid, existingFileHelper);
     }
 
     @Override
     protected void addTags(Provider pProvider)
     {
         // Steel material
-        tag(MB_Tags.Items.INGOT_STEEL).add(MB_Items.STEEL_INGOT.get());
+        tag(BaseTags.Items.INGOTS_STEEL).add(MB_Items.STEEL_INGOT.get());
         tag(Tags.Items.INGOTS).add(MB_Items.STEEL_INGOT.get());
         tag(ItemTags.BEACON_PAYMENT_ITEMS).add(MB_Items.STEEL_INGOT.get());
         tag(Tags.Items.NUGGETS).add(MB_Items.STEEL_NUGGET.get());
-        tag(MB_Tags.Items.NUGGET_STEEL).add(MB_Items.STEEL_NUGGET.get());
-        tag(MB_Tags.Items.ROD_STEEL).add(MB_Items.STEEL_ROD.get());
-        tag(MB_Tags.Items.PLATE_STEEL).add(MB_Items.STEEL_PLATE.get());
-        copy(MB_Tags.Blocks.STORAGE_BLOCK_STEEL, MB_Tags.Items.BLOCK_STEEL);
+        tag(BaseTags.Items.NUGGETS_STEEL).add(MB_Items.STEEL_NUGGET.get());
+        tag(BaseTags.Items.RODS_STEEL).add(MB_Items.STEEL_ROD.get());
+        tag(BaseTags.Items.PLATES_STEEL).add(MB_Items.STEEL_PLATE.get());
+        copy(BaseTags.Blocks.STORAGE_BLOCKS_STEEL, BaseTags.Items.BLOCKS_STEEL);
         tag(Tags.Items.STORAGE_BLOCKS).add(MB_Blocks.STEEL_BLOCK_ITEM.get());
         tag(ItemTags.STAIRS).add(MB_Blocks.STEEL_STAIRS_ITEM.get());
         tag(ItemTags.SLABS).add(MB_Blocks.STEEL_SLAB_ITEM.get());
@@ -72,21 +72,21 @@ public class ItemTagGenerator extends ItemTagsProvider
         tag(ItemTags.FOOT_ARMOR).add(MB_Items.STEEL_BOOTS.get());
         tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).add(MB_Items.STEEL_BOOTS.get());
 
-        tag(MB_Tags.Items.AXE_STEEL).add(MB_Items.STEEL_AXE.getKey());
-        tag(MB_Tags.Items.PICKAXE_STEEL).add(MB_Items.STEEL_PICKAXE.getKey());
-        tag(MB_Tags.Items.SHOVEL_STEEL).add(MB_Items.STEEL_SHOVEL.getKey());
-        tag(MB_Tags.Items.HOE_STEEL).add(MB_Items.STEEL_HOE.getKey());
-        tag(MB_Tags.Items.SWORD_STEEL).add(MB_Items.STEEL_SWORD.getKey());
-        tag(MB_Tags.Items.HELMET_STEEL).add(MB_Items.STEEL_HELMET.getKey());
-        tag(MB_Tags.Items.CHESTPLATE_STEEL).add(MB_Items.STEEL_CHESTPLATE.getKey());
-        tag(MB_Tags.Items.LEG_STEEL).add(MB_Items.STEEL_LEGGINGS.getKey());
-        tag(MB_Tags.Items.FOOT_STEEL).add(MB_Items.STEEL_BOOTS.getKey());
+        tag(BaseTags.Items.AXES_STEEL).add(MB_Items.STEEL_AXE.getKey());
+        tag(BaseTags.Items.PICKAXES_KEY).add(MB_Items.STEEL_PICKAXE.getKey());
+        tag(BaseTags.Items.SHOVELS_STEEL).add(MB_Items.STEEL_SHOVEL.getKey());
+        tag(BaseTags.Items.HOES_STEEL).add(MB_Items.STEEL_HOE.getKey());
+        tag(BaseTags.Items.SWORDS_STEEL).add(MB_Items.STEEL_SWORD.getKey());
+        tag(BaseTags.Items.HELMETS_STEEL).add(MB_Items.STEEL_HELMET.getKey());
+        tag(BaseTags.Items.CHESTPLATE_STEEL).add(MB_Items.STEEL_CHESTPLATE.getKey());
+        tag(BaseTags.Items.LEGGINGS_STEEL).add(MB_Items.STEEL_LEGGINGS.getKey());
+        tag(BaseTags.Items.BOOTS_STEEL).add(MB_Items.STEEL_BOOTS.getKey());
 
-        tag(MB_Tags.Items.PLATE_IRON).add(MB_Items.IRON_PLATE.get());
-        tag(MB_Tags.Items.ROD_IRON).add(MB_Items.IRON_ROD.get());
-        tag(MB_Tags.Items.RODS).add(MB_Items.IRON_ROD.get()).add(MB_Items.STEEL_ROD.get());
-        tag(MB_Tags.Items.PLATES).add(MB_Items.STEEL_PLATE.get()).add(MB_Items.IRON_PLATE.get());
-        tag(MB_Tags.Items.FLATTER_HAMMERS).add(MB_Items.FLATTER_HAMMER.get()).add(MB_Items.REINFORCED_FLATTER_HAMMER.get());
+        tag(BaseTags.Items.PLATES_IRON).add(MB_Items.IRON_PLATE.get());
+        tag(BaseTags.Items.RODS_IRON).add(MB_Items.IRON_ROD.get());
+        tag(BaseTags.Items.RODS).add(MB_Items.IRON_ROD.get()).add(MB_Items.STEEL_ROD.get());
+        tag(BaseTags.Items.PLATES).add(MB_Items.STEEL_PLATE.get()).add(MB_Items.IRON_PLATE.get());
+        tag(BaseTags.Items.FLATTER_HAMMERS).add(MB_Items.FLATTER_HAMMER.get()).add(MB_Items.REINFORCED_FLATTER_HAMMER.get());
 
     }
 

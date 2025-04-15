@@ -7,12 +7,21 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import tv.mapper.mapperbase.MapperBase;
-import tv.mapper.mapperbase.block.tools.ToolTiers;
-import tv.mapper.mapperbase.block.tools.ToolTypes;
+import tv.mapper.mapperbase.api.block.CustomBlock;
+import tv.mapper.mapperbase.api.block.CustomButtonBlock;
+import tv.mapper.mapperbase.api.block.CustomFenceBlock;
+import tv.mapper.mapperbase.api.block.CustomFenceGateBlock;
+import tv.mapper.mapperbase.api.block.CustomPressurePlateBlock;
+import tv.mapper.mapperbase.api.block.CustomSlabBlock;
+import tv.mapper.mapperbase.api.block.CustomStairBlock;
+import tv.mapper.mapperbase.api.block.CustomWallBlock;
+import tv.mapper.mapperbase.api.block.tools.ToolTiers;
+import tv.mapper.mapperbase.api.block.tools.ToolTypes;
 
 public class MB_Blocks
 {
@@ -35,7 +44,7 @@ public class MB_Blocks
     public static final DeferredItem<BlockItem> STEEL_FENCE_ITEM = BLOCK_ITEMS.registerSimpleBlockItem("steel_fence", STEEL_FENCE);
     public static final DeferredBlock<CustomFenceGateBlock> STEEL_FENCE_GATE = BLOCKS.register("steel_fence_gate", () -> new CustomFenceGateBlock(METAL_PROPERTIES, SoundEvents.IRON_TRAPDOOR_OPEN, SoundEvents.IRON_TRAPDOOR_CLOSE, ToolTypes.PICKAXE, ToolTiers.STONE));
     public static final DeferredItem<BlockItem> STEEL_FENCE_GATE_ITEM = BLOCK_ITEMS.registerSimpleBlockItem("steel_fence_gate", STEEL_FENCE_GATE);
-    public static final DeferredBlock<CustomButtonBlock> STEEL_BUTTON = BLOCKS.register("steel_button", () -> new CustomButtonBlock(BlockSetType.IRON, 20, METAL_PROPERTIES, ToolTypes.PICKAXE, ToolTiers.WOOD));
+    public static final DeferredBlock<CustomButtonBlock> STEEL_BUTTON = BLOCKS.register("steel_button", () -> new CustomButtonBlock(BlockSetType.IRON, 20, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.LANTERN).noCollission().strength(0.5F).pushReaction(PushReaction.DESTROY), ToolTypes.PICKAXE));
     public static final DeferredItem<BlockItem> STEEL_BUTTON_ITEM = BLOCK_ITEMS.registerSimpleBlockItem("steel_button", STEEL_BUTTON);
 
 }

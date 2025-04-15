@@ -1,22 +1,21 @@
 package tv.mapper.mapperbase.data;
 
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.client.model.generators.BlockModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import tv.mapper.mapperbase.MapperBase;
+import tv.mapper.mapperbase.api.data.BaseBlockModelProvider;
 
-public class BlockModelGenerator extends BlockModelProvider
+public class BlockModelGenerator extends BaseBlockModelProvider
 {
-    public BlockModelGenerator(PackOutput output, ExistingFileHelper existingFileHelper)
+    public BlockModelGenerator(PackOutput output, String modid, ExistingFileHelper existingFileHelper, String name)
     {
-        super(output, MapperBase.MODID, existingFileHelper);
+        super(output, modid, existingFileHelper, name);
     }
 
     @Override
     protected void registerModels()
     {
-        getBuilder("steel_wall_inventory").parent(getExistingFile(mcLoc("block/wall_inventory"))).texture("wall", modLoc("block/steel_block"));
-        getBuilder("steel_fence_inventory").parent(getExistingFile(mcLoc("block/fence_inventory"))).texture("texture", modLoc("block/steel_block"));
-        getBuilder("steel_button_inventory").parent(getExistingFile(mcLoc("block/button_inventory"))).texture("texture", modLoc("block/steel_block"));
+        buildWall("steel", modLoc("block/steel_block"));
+        buildFence("steel", modLoc("block/steel_block"));
+        buildButton("steel", modLoc("block/steel_block"));
     }
 }

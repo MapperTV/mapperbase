@@ -7,16 +7,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
+import tv.mapper.mapperbase.api.data.loot.BaseGlobalLootModifierProvider;
 import tv.mapper.mapperbase.item.MB_Items;
 
-public class GlobalLootModifiersGenerator extends GlobalLootModifierProvider
+public class GlobalLootModifiersGenerator extends BaseGlobalLootModifierProvider
 {
 
-    public GlobalLootModifiersGenerator(PackOutput output, CompletableFuture<Provider> registries, String modid)
+    public GlobalLootModifiersGenerator(PackOutput output, CompletableFuture<Provider> registries, String modid, String name)
     {
-        super(output, registries, modid);
+        super(output, registries, modid, name);
     }
 
     @Override

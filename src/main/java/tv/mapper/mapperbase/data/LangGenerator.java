@@ -1,17 +1,17 @@
 package tv.mapper.mapperbase.data;
 
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.common.data.LanguageProvider;
+import tv.mapper.mapperbase.api.data.BaseLanguageProvider;
 import tv.mapper.mapperbase.block.MB_Blocks;
 import tv.mapper.mapperbase.item.MB_Items;
 
-public class LangGenerator extends LanguageProvider
+public class LangGenerator extends BaseLanguageProvider
 {
     private String lang;
 
-    public LangGenerator(PackOutput output, String modid, String locale)
+    public LangGenerator(PackOutput output, String modid, String locale, String name)
     {
-        super(output, modid, locale);
+        super(output, modid, locale, name);
         this.lang = locale;
     }
 

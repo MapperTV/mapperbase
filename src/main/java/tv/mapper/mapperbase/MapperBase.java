@@ -24,7 +24,7 @@ import tv.mapper.mapperbase.item.MB_Tiers;
 public class MapperBase
 {
     public static final String MODID = "mapperbase";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public MapperBase(IEventBus modEventBus, ModContainer modContainer)
     {

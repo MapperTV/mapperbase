@@ -1,20 +1,15 @@
 package tv.mapper.mapperbase.data;
 
-import java.util.stream.Collectors;
-
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup.Provider;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.data.loot.packs.VanillaBlockLoot;
-import net.minecraft.world.level.block.Block;
-import tv.mapper.mapperbase.MapperBase;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import tv.mapper.mapperbase.api.data.loottable.BaseBlockLootSubProvider;
 import tv.mapper.mapperbase.block.MB_Blocks;
 
-public class LootTableGenerator extends VanillaBlockLoot
+public class LootTableGenerator extends BaseBlockLootSubProvider
 {
-    public LootTableGenerator(Provider p_344962_)
+    public LootTableGenerator(Provider provider, DeferredRegister.Blocks blockRegistry)
     {
-        super(p_344962_);
+        super(provider, blockRegistry);
     }
 
     @Override
@@ -29,11 +24,5 @@ public class LootTableGenerator extends VanillaBlockLoot
         dropSelf(MB_Blocks.STEEL_FENCE_GATE.get());
         dropSelf(MB_Blocks.STEEL_BUTTON.get());
 
-    }
-
-    @Override
-    protected Iterable<Block> getKnownBlocks()
-    {
-        return BuiltInRegistries.BLOCK.holders().filter(e -> e.key().location().getNamespace().equals(MapperBase.MODID)).map(Holder.Reference::value).collect(Collectors.toList());
     }
 }
