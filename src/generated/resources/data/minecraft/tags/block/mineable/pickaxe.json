@@ -7,6 +7,7 @@
     "mapperbase:steel_pressure_plate",
     "mapperbase:steel_fence",
     "mapperbase:steel_fence_gate",
-    "mapperbase:steel_button"
+    "mapperbase:steel_button",
+    "mapperbase:raw_steel_block"
   ]
 }

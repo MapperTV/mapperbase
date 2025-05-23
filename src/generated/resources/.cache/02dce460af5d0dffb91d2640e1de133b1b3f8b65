@@ -1,12 +1,13 @@
-// 1.21.1	2025-01-05T23:13:09.6604799	Tags for minecraft:block mod id mapperbase
-3f8bd7a16fe8927f9aa34c7ac2dc796804a5c43c data/c/tags/block/storage_blocks.json
+// 1.21.1	2025-05-22T22:08:06.8802708	Tags for minecraft:block mod id mapperbase
+6f232a60151db12dbc9752ca57b6983096cc7b39 data/c/tags/block/storage_blocks.json
+03a2962aebb873b38049dcf9b72d2ce319bca4c9 data/c/tags/block/storage_blocks/raw_steel.json
 3f8bd7a16fe8927f9aa34c7ac2dc796804a5c43c data/c/tags/block/storage_blocks/steel.json
 3f8bd7a16fe8927f9aa34c7ac2dc796804a5c43c data/minecraft/tags/block/beacon_base_blocks.json
 c25d94a8029c9018e4df42df7f70e0652649469f data/minecraft/tags/block/buttons.json
 39d8c9d9a1ccf1e3db0c7a408f947432fc906e28 data/minecraft/tags/block/fences.json
 a1e5909cbbf75d5899af0ccfe6dd4ebe05843997 data/minecraft/tags/block/fence_gates.json
-4ed7128340a957737c2b04132a5d0b62552f78c6 data/minecraft/tags/block/mineable/pickaxe.json
-12fbb81ce33c7e5ebb038282c11dd9127aabf004 data/minecraft/tags/block/needs_stone_tool.json
+e257ff56b61e144af500a589f8cf9093244540e3 data/minecraft/tags/block/mineable/pickaxe.json
+33d938e458e7850ed114ecb8837a3837ecab6a0c data/minecraft/tags/block/needs_stone_tool.json
 a80c9b04492a72b28e5a00219cdee7bc7c0e2d99 data/minecraft/tags/block/pressure_plates.json
 f8b40c554205df2d2efa86b37f47fc007b95d747 data/minecraft/tags/block/slabs.json
 7e7ce9cc4e59c03d2be0429088247f040f042eeb data/minecraft/tags/block/stairs.json

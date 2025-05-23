@@ -25,7 +25,8 @@ public class BlockTagGenerator extends BaseBlockTagsProvider
     protected void addTags(Provider pProvider)
     {
         tag(BaseTags.Blocks.STORAGE_BLOCKS_STEEL).add(MB_Blocks.STEEL_BLOCK.get());
-        tag(Tags.Blocks.STORAGE_BLOCKS).add(MB_Blocks.STEEL_BLOCK.get());
+        tag(Tags.Blocks.STORAGE_BLOCKS).add(MB_Blocks.STEEL_BLOCK.get()).add(MB_Blocks.RAW_STEEL_BLOCK.get());
+        tag(BaseTags.Blocks.STORAGE_BLOCKS_RAW_STEEL).add(MB_Blocks.RAW_STEEL_BLOCK.get());
         tag(BlockTags.BEACON_BASE_BLOCKS).add(MB_Blocks.STEEL_BLOCK.get());
         tag(BlockTags.STAIRS).add(MB_Blocks.STEEL_STAIRS.get());
         tag(BlockTags.SLABS).add(MB_Blocks.STEEL_SLAB.get());

@@ -1,20 +1,11 @@
 {
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:mod_loaded",
-        "modid": "create"
-      }
-    }
-  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_ingot": {
+    "has_raw_steel": {
       "conditions": {
         "items": [
           {
-            "items": "#c:ingots/iron"
+            "items": "mapperbase:raw_steel"
           }
         ]
       },
@@ -22,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mapperbase:pig_iron_chunk"
+        "recipe": "mapperbase:raw_steel_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_iron_ingot"
+      "has_raw_steel"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mapperbase:pig_iron_chunk"
+      "mapperbase:raw_steel_block"
     ]
   }
 }

@@ -1,4 +1,5 @@
-// 1.21.1	2025-02-08T18:09:15.7837771	Mapper Base Loot Tables
+// 1.21.1	2025-05-22T20:01:52.5711593	Mapper Base Loot Tables
+3b38d252b60ddc12864487388560f6607f735462 data/mapperbase/loot_table/blocks/raw_steel_block.json
 88b978c85410152b6879f5428ca04b4776768798 data/mapperbase/loot_table/blocks/steel_block.json
 8c4f2735f37fe676a7df750bdaca77d819dbdd29 data/mapperbase/loot_table/blocks/steel_button.json
 de32fbac212b524bc876a11dc34b24bd7a161e04 data/mapperbase/loot_table/blocks/steel_fence.json

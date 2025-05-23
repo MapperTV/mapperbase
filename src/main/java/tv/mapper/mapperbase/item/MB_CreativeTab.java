@@ -23,6 +23,7 @@ public class MB_CreativeTab
         output.accept(MB_Blocks.STEEL_FENCE.get());
         output.accept(MB_Blocks.STEEL_FENCE_GATE.get());
         output.accept(MB_Blocks.STEEL_BUTTON.get());
+        output.accept(MB_Blocks.RAW_STEEL_BLOCK.get());
 
         output.accept(MB_Items.STEEL_INGOT.get());
         output.accept(MB_Items.STEEL_NUGGET.get());

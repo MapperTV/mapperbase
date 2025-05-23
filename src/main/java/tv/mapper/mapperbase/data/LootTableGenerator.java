@@ -23,6 +23,7 @@ public class LootTableGenerator extends BaseBlockLootSubProvider
         dropSelf(MB_Blocks.STEEL_FENCE.get());
         dropSelf(MB_Blocks.STEEL_FENCE_GATE.get());
         dropSelf(MB_Blocks.STEEL_BUTTON.get());
+        dropSelf(MB_Blocks.RAW_STEEL_BLOCK.get());
 
     }
 }

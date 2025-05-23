@@ -11,6 +11,8 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
+import net.neoforged.neoforge.common.conditions.NotCondition;
 import tv.mapper.mapperbase.MapperBase;
 import tv.mapper.mapperbase.api.data.BaseRecipeProvider;
 import tv.mapper.mapperbase.api.data.tags.BaseTags;
@@ -33,20 +35,22 @@ public class RecipeGenerator extends BaseRecipeProvider
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MB_Items.REINFORCED_FLATTER_HAMMER.get()).pattern("i").pattern("s").define('i', BaseTags.Items.INGOTS_STEEL).define('s', BaseTags.Items.RODS_IRON).unlockedBy("has_steel_ingot", has(BaseTags.Items.INGOTS_STEEL)).unlockedBy("has_iron_rod", has(BaseTags.Items.RODS_IRON)).save(output);
 
         // Steel processing
-        SimpleCookingRecipeBuilder.blasting(Ingredient.of(Tags.Items.INGOTS_IRON), RecipeCategory.MISC, MB_Items.PIG_IRON_CHUNK, 0.3f, 800).unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON)).save(output);
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Items.RAW_STEEL).requires(MB_Items.PIG_IRON_CHUNK).requires(MB_Items.PIG_IRON_CHUNK).requires(MB_Items.PIG_IRON_CHUNK).requires(BaseTags.Items.FLATTER_HAMMERS).unlockedBy("has_pig_iron_chunk", has(MB_Items.PIG_IRON_CHUNK)).unlockedBy("has_flatter_hammer", has(BaseTags.Items.FLATTER_HAMMERS)).save(output);
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(Tags.Items.INGOTS_IRON), RecipeCategory.MISC, MB_Items.PIG_IRON_CHUNK, 0.3f, 800).unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON)).save(output.withConditions(new NotCondition(new ModLoadedCondition("create"))));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Items.RAW_STEEL).requires(MB_Items.PIG_IRON_CHUNK).requires(MB_Items.PIG_IRON_CHUNK).requires(MB_Items.PIG_IRON_CHUNK).requires(BaseTags.Items.FLATTER_HAMMERS).unlockedBy("has_pig_iron_chunk", has(MB_Items.PIG_IRON_CHUNK)).unlockedBy("has_flatter_hammer", has(BaseTags.Items.FLATTER_HAMMERS)).save(output.withConditions(new NotCondition(new ModLoadedCondition("create"))));
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(MB_Items.RAW_STEEL), RecipeCategory.MISC, MB_Items.STEEL_INGOT.get(), 1.0f, 800).unlockedBy("has_raw_steel", has(MB_Items.RAW_STEEL)).save(output, MapperBase.MODID + ":steel_ingot_from_raw_steel");
 
         // Steel material
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_BLOCK).pattern("aaa").pattern("aaa").pattern("aaa").define('a', BaseTags.Items.INGOTS_STEEL).unlockedBy("has_steel_ingot", has(BaseTags.Items.INGOTS_STEEL)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MB_Items.STEEL_INGOT.get()).pattern("aaa").pattern("aaa").pattern("aaa").define('a', BaseTags.Items.NUGGETS_STEEL).unlockedBy("has_steel_nugget", has(BaseTags.Items.NUGGETS_STEEL)).group("steel_ingot").save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MB_Items.STEEL_INGOT).pattern("aaa").pattern("aaa").pattern("aaa").define('a', BaseTags.Items.NUGGETS_STEEL).unlockedBy("has_steel_nugget", has(BaseTags.Items.NUGGETS_STEEL)).group("steel_ingot").save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Items.STEEL_INGOT.get(), 9).requires(MB_Blocks.STEEL_BLOCK).unlockedBy("has_steel_block", has(MB_Blocks.STEEL_BLOCK)).group("steel_ingot").save(output, MapperBase.MODID + ":steel_ingot_from_block");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Items.STEEL_NUGGET, 9).requires(BaseTags.Items.INGOTS_STEEL).unlockedBy("has_steel_ingot", has(BaseTags.Items.INGOTS_STEEL)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.RAW_STEEL_BLOCK).pattern("aaa").pattern("aaa").pattern("aaa").define('a', MB_Items.RAW_STEEL).unlockedBy("has_raw_steel", has(MB_Items.RAW_STEEL)).save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Items.RAW_STEEL, 9).requires(MB_Blocks.RAW_STEEL_BLOCK).unlockedBy("has_raw_steel_block", has(MB_Blocks.RAW_STEEL_BLOCK)).save(output, MapperBase.MODID + ":raw_steel_from_block");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_STAIRS, 4).pattern("  a").pattern(" aa").pattern("aaa").define('a', BaseTags.Items.BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.BLOCKS_STEEL)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_SLAB, 6).pattern("aaa").define('a', BaseTags.Items.BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.BLOCKS_STEEL)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_WALL, 6).pattern("aaa").pattern("aaa").define('a', BaseTags.Items.BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.BLOCKS_STEEL)).save(output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_PRESSURE_PLATE).pattern("aa").define('a', BaseTags.Items.BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.BLOCKS_STEEL)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_STAIRS, 4).pattern("  a").pattern(" aa").pattern("aaa").define('a', BaseTags.Items.STORAGE_BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.STORAGE_BLOCKS_STEEL)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_SLAB, 6).pattern("aaa").define('a', BaseTags.Items.STORAGE_BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.STORAGE_BLOCKS_STEEL)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_WALL, 6).pattern("aaa").pattern("aaa").define('a', BaseTags.Items.STORAGE_BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.STORAGE_BLOCKS_STEEL)).save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_PRESSURE_PLATE).pattern("aa").define('a', BaseTags.Items.STORAGE_BLOCKS_STEEL).unlockedBy("has_steel_block", has(BaseTags.Items.STORAGE_BLOCKS_STEEL)).save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_FENCE, 3).pattern("bab").pattern("bab").define('a', BaseTags.Items.RODS_STEEL).define('b', BaseTags.Items.PLATES_STEEL).unlockedBy("has_steel_rod", has(BaseTags.Items.RODS_STEEL)).unlockedBy("has_steel_plate", has(BaseTags.Items.PLATES_STEEL)).save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, MB_Blocks.STEEL_FENCE_GATE).pattern("aba").pattern("aba").define('a', BaseTags.Items.RODS_STEEL).define('b', BaseTags.Items.PLATES_STEEL).unlockedBy("has_steel_rod", has(BaseTags.Items.RODS_STEEL)).unlockedBy("has_steel_plate", has(BaseTags.Items.PLATES_STEEL)).save(output);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MB_Blocks.STEEL_BUTTON.get()).requires(BaseTags.Items.PLATES_STEEL).unlockedBy("has_steel_plate", has(BaseTags.Items.PLATES_STEEL)).save(output);
@@ -75,7 +79,3 @@ public class RecipeGenerator extends BaseRecipeProvider
     }
 
 }
-
-// iron + coal -BLAST> pig iron
-// pig iron * 3 + flatter hammer = raw steel
-// raw steel + coal -BLAST> steel

@@ -6,6 +6,7 @@
     "mapperbase:steel_wall",
     "mapperbase:steel_pressure_plate",
     "mapperbase:steel_fence",
-    "mapperbase:steel_fence_gate"
+    "mapperbase:steel_fence_gate",
+    "mapperbase:raw_steel_block"
   ]
 }

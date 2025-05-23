@@ -18,7 +18,8 @@ public class BaseTags
 
         public static final TagKey<Item> INGOTS_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "ingots/steel"));
         public static final TagKey<Item> NUGGETS_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "nuggets/steel"));
-        public static final TagKey<Item> BLOCKS_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/steel"));
+        public static final TagKey<Item> STORAGE_BLOCKS_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/steel"));
+        public static final TagKey<Item> STORAGE_BLOCKS_RAW_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_steel"));
         public static final TagKey<Item> RODS_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "rods/steel"));
         public static final TagKey<Item> PLATES_STEEL = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "plates/steel"));
 
@@ -42,5 +43,7 @@ public class BaseTags
         public static final TagKey<Block> INCORRECT_FOR_STEEL_TOOL = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "incorrect_for_steel_tool"));
 
         public static final TagKey<Block> STORAGE_BLOCKS_STEEL = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/steel"));
+        public static final TagKey<Block> STORAGE_BLOCKS_RAW_STEEL = BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "storage_blocks/raw_steel"));
     }
+    
 }

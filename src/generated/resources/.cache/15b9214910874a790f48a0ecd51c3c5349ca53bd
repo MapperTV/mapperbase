@@ -1,4 +1,5 @@
-// 1.21.1	2025-02-09T18:39:33.314602	Mapper Base Recipes
+// 1.21.1	2025-05-22T20:01:52.5687778	Mapper Base Recipes
+04977031e289cbe41f612f014e68c9fbaf39637d data/mapperbase/advancement/recipes/building_blocks/raw_steel_block.json
 75bb48a916b7c179f7eaed3d67d95925aa9d8042 data/mapperbase/advancement/recipes/building_blocks/steel_block.json
 12f3b2620c325b7f4ae13bb537c9be53f009a09b data/mapperbase/advancement/recipes/building_blocks/steel_fence.json
 b0bf20d4690bb4d6c964474de075dd20fccc9bd0 data/mapperbase/advancement/recipes/building_blocks/steel_fence_gate.json
@@ -14,8 +15,9 @@ e65c5c6ad7c1223cb6cb970402858814086da722 data/mapperbase/advancement/recipes/com
 3ee3d6c66baf080525c800ecc4fe8d30db9e9123 data/mapperbase/advancement/recipes/misc/flatter_hammer.json
 489b0a50ffd38f820f0934d2147a13decd538dae data/mapperbase/advancement/recipes/misc/iron_plate.json
 7a7487d2d2e60b6fabab2c4c6d1524be6a16df80 data/mapperbase/advancement/recipes/misc/iron_rod.json
-e1826434350430266dffbec13460d4fee01b7566 data/mapperbase/advancement/recipes/misc/pig_iron_chunk.json
-6e167ac5325a36b57ccab8797bc1acc00f74d0bb data/mapperbase/advancement/recipes/misc/raw_steel.json
+dab41d0942a3783c76ae3c98cc85b0639d6727c4 data/mapperbase/advancement/recipes/misc/pig_iron_chunk.json
+c1c6847b9cdf858f3d0a3546d5dfc2fb53ce349b data/mapperbase/advancement/recipes/misc/raw_steel.json
+7d6bec2e303c96b86516f44cf351c75c42ad2183 data/mapperbase/advancement/recipes/misc/raw_steel_from_block.json
 cabe7fd1e1eca4835c58388150442f1f8e48dc24 data/mapperbase/advancement/recipes/misc/reinforced_flatter_hammer.json
 38033b4dc6724bb0f299cabe7675839cf34738b7 data/mapperbase/advancement/recipes/misc/rivet.json
 c2895d4ad48ab3c7f64aea146f3489b6f722c820 data/mapperbase/advancement/recipes/misc/steel_button.json
@@ -33,8 +35,10 @@ ba6135dade26e0c479af1c6fcb53b09317d8637e data/mapperbase/advancement/recipes/too
 453fb448a8bc000ddb1ef3a38ba4eb8284bb5473 data/mapperbase/recipe/flatter_hammer.json
 cc39697caee446919767440ad77bfa8e089e59b3 data/mapperbase/recipe/iron_plate.json
 09f551987e2654d0fc7f20de726a7d636437a522 data/mapperbase/recipe/iron_rod.json
-a44d616ed7d443a21f4b616a526061d2b2909939 data/mapperbase/recipe/pig_iron_chunk.json
-ebc891fbde44e8aaf6ce573e0f58eefaa8a1f183 data/mapperbase/recipe/raw_steel.json
+fea715f65831a79b52d96f2e2539c4612a09f046 data/mapperbase/recipe/pig_iron_chunk.json
+d924c3a3cf63070c6284c87a45c1df57c6e2b549 data/mapperbase/recipe/raw_steel.json
+6196de9b7a3ff716d0c1114eaf2c9ca206ecff32 data/mapperbase/recipe/raw_steel_block.json
+05b6c958eb9e5509e9499e2bd9600c9d0d5b97a9 data/mapperbase/recipe/raw_steel_from_block.json
 8639d14c4e6df98a64fc7ff2a80f35d560dd5caa data/mapperbase/recipe/reinforced_flatter_hammer.json
 9e494dc97a206cc52874add41907ff2b1d5c2a39 data/mapperbase/recipe/rivet.json
 dd18018b4454fe072d64dbc557b6c6003fc58c3f data/mapperbase/recipe/steel_axe.json

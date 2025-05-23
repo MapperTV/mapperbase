@@ -1,4 +1,4 @@
-// 1.21.1	2025-01-05T23:03:13.4480561	Tags for minecraft:item mod id mapperbase
+// 1.21.1	2025-05-22T22:08:06.8782703	Tags for minecraft:item mod id mapperbase
 1140c046eef38c2a4a76a2b668fb551fc3fe2362 data/c/tags/item/armors.json
 2467405d2b4c7417b5928b8327716681da8af3fd data/c/tags/item/axes/steel.json
 25fd6fa3f92d45d0f4c582868fbe898821266421 data/c/tags/item/boots/steel.json
@@ -19,7 +19,8 @@ abf3a40539e25e4b641f19c1545c7fc1f3226d5d data/c/tags/item/rods.json
 752d6655e4ba3552c777f88408605a86454752db data/c/tags/item/rods/iron.json
 1ce6ad21c909de87670a709e1e6fdb746f2f8a24 data/c/tags/item/rods/steel.json
 049896e21572e9007ff63c41ca138af48067834d data/c/tags/item/shovels/steel.json
-3f8bd7a16fe8927f9aa34c7ac2dc796804a5c43c data/c/tags/item/storage_blocks.json
+6f232a60151db12dbc9752ca57b6983096cc7b39 data/c/tags/item/storage_blocks.json
+03a2962aebb873b38049dcf9b72d2ce319bca4c9 data/c/tags/item/storage_blocks/raw_steel.json
 3f8bd7a16fe8927f9aa34c7ac2dc796804a5c43c data/c/tags/item/storage_blocks/steel.json
 370071a5a4592852fa89a621f17368413e3a720b data/c/tags/item/swords/steel.json
 654eb2c5e318ae04e9496c259958ef39d997b688 data/c/tags/item/tools.json

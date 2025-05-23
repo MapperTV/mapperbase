@@ -33,6 +33,7 @@ public class LangGenerator extends BaseLanguageProvider
 
                 add(MB_Items.PIG_IRON_CHUNK.get(), "Pig Iron Chunk");
                 add(MB_Items.RAW_STEEL.get(), "Raw Steel");
+                add(MB_Blocks.RAW_STEEL_BLOCK.get(), "Raw Steel Block");
                 add(MB_Items.RIVET.get(), "Rivet");
                 add(MB_Items.FLATTER_HAMMER.get(), "Flatter Hammer");
                 add(MB_Items.REINFORCED_FLATTER_HAMMER.get(), "Reinforced Flatter Hammer");
@@ -70,6 +71,7 @@ public class LangGenerator extends BaseLanguageProvider
 
                 add(MB_Items.PIG_IRON_CHUNK.get(), "Fonte brute");
                 add(MB_Items.RAW_STEEL.get(), "Acier brut");
+                add(MB_Blocks.RAW_STEEL_BLOCK.get(), "Bloc d'acier brut");
                 add(MB_Items.RIVET.get(), "Rivet");
                 add(MB_Items.FLATTER_HAMMER.get(), "Marteau plat");
                 add(MB_Items.REINFORCED_FLATTER_HAMMER.get(), "Marteau plat renforcé");

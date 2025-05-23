@@ -32,8 +32,9 @@ public class ItemTagGenerator extends BaseItemTagsProvider
         tag(BaseTags.Items.NUGGETS_STEEL).add(MB_Items.STEEL_NUGGET.get());
         tag(BaseTags.Items.RODS_STEEL).add(MB_Items.STEEL_ROD.get());
         tag(BaseTags.Items.PLATES_STEEL).add(MB_Items.STEEL_PLATE.get());
-        copy(BaseTags.Blocks.STORAGE_BLOCKS_STEEL, BaseTags.Items.BLOCKS_STEEL);
-        tag(Tags.Items.STORAGE_BLOCKS).add(MB_Blocks.STEEL_BLOCK_ITEM.get());
+        copy(BaseTags.Blocks.STORAGE_BLOCKS_STEEL, BaseTags.Items.STORAGE_BLOCKS_STEEL);
+        copy(BaseTags.Blocks.STORAGE_BLOCKS_RAW_STEEL, BaseTags.Items.STORAGE_BLOCKS_RAW_STEEL);
+        tag(Tags.Items.STORAGE_BLOCKS).add(MB_Blocks.STEEL_BLOCK_ITEM.get()).add(MB_Blocks.RAW_STEEL_BLOCK_ITEM.get());
         tag(ItemTags.STAIRS).add(MB_Blocks.STEEL_STAIRS_ITEM.get());
         tag(ItemTags.SLABS).add(MB_Blocks.STEEL_SLAB_ITEM.get());
         tag(ItemTags.WALLS).add(MB_Blocks.STEEL_WALL_ITEM.get());

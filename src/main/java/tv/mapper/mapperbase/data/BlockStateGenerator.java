@@ -24,5 +24,6 @@ public class BlockStateGenerator extends BaseBlockStateProvider
         fenceBlock(MB_Blocks.STEEL_FENCE.get(), modLoc("block/steel_block"));
         fenceGateBlock(MB_Blocks.STEEL_FENCE_GATE.get(), modLoc("block/steel_block"));
         buttonBlock(MB_Blocks.STEEL_BUTTON.get(), modLoc("block/steel_block"));
+        simpleBlock(MB_Blocks.RAW_STEEL_BLOCK.get());
     }
 }

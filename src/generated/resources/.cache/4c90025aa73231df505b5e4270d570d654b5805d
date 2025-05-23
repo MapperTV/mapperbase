@@ -1,4 +1,5 @@
-// 1.21.1	2025-02-04T23:23:25.2143539	Mapper Base Blockstates
+// 1.21.1	2025-05-22T19:57:42.5827174	Mapper Base Blockstates
+643283765e09eb0019cdf0a339821efc55fde838 assets/mapperbase/blockstates/raw_steel_block.json
 a89676d35698b0ffe06f7b9ece3368be8d5baf31 assets/mapperbase/blockstates/steel_block.json
 84554485a5b40ed0982eec786166f336a4314b89 assets/mapperbase/blockstates/steel_button.json
 9b96f2f4c6c21bb5a16d994a4ac820f1fc6c83db assets/mapperbase/blockstates/steel_fence.json
@@ -7,6 +8,7 @@ cfc83fefa259d53cefa8205cbbe5c60e938a11ef assets/mapperbase/blockstates/steel_pre
 c2e00dc8950c6ed7bdc66e55deea6fe1b8f25f72 assets/mapperbase/blockstates/steel_slab.json
 e39151a92e842d3f59d39d6f476d0ad5b81142bf assets/mapperbase/blockstates/steel_stairs.json
 1d78cd882bb718fac588eceb1a08236f0ed3cb46 assets/mapperbase/blockstates/steel_wall.json
+1f4fd38eb8d00825df054575166e5aaec310add5 assets/mapperbase/models/block/raw_steel_block.json
 ece84f4368a6a2a5a717e1760e935ad5743cdfce assets/mapperbase/models/block/steel_block.json
 8f3d73e48349407a95a5298b625daffac84eac93 assets/mapperbase/models/block/steel_button.json
 fe8e9e402b3c0c6efd058245f7a366b7a340e0e4 assets/mapperbase/models/block/steel_button_pressed.json

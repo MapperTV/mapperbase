@@ -19,7 +19,8 @@ public class ItemModelGenerator extends BaseItemModelProvider
     {
         withExistingParent(MB_Blocks.STEEL_BLOCK.getId().getPath(), modLoc("block/steel_block"));
         registerBlockBasics("steel", false, true, true, true, true, true, true, true);
-
+        withExistingParent(MB_Blocks.RAW_STEEL_BLOCK.getId().getPath(), modLoc("block/raw_steel_block"));
+        
         basicItem(MB_Items.STEEL_INGOT.get());
         basicItem(MB_Items.STEEL_NUGGET.get());
         basicItem(MB_Items.RAW_STEEL.get());
