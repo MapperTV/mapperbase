@@ -1,0 +1,69 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "mapperbase:pig_iron_chunk"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 90.0,
+      "id": "mapperbase:raw_steel"
+    },
+    {
+      "chance": 5.0,
+      "id": "minecraft:iron_nugget"
+    },
+    {
+      "chance": 3.0,
+      "id": "mapperbase:steel_nugget"
+    },
+    {
+      "chance": 2.0,
+      "id": "minecraft:charcoal"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mapperbase:pig_iron_chunk"
+        }
+      ],
+      "results": [
+        {
+          "id": "mapperbase:pig_iron_chunk"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mapperbase:pig_iron_chunk"
+        }
+      ],
+      "results": [
+        {
+          "id": "mapperbase:pig_iron_chunk"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mapperbase:pig_iron_chunk"
+        }
+      ],
+      "results": [
+        {
+          "id": "mapperbase:pig_iron_chunk"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "mapperbase:pig_iron_chunk"
+  }
+}
